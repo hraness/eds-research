@@ -29,7 +29,7 @@ import {
 
 const PROJECT_DIRECTORY = dirname(dirname(fileURLToPath(import.meta.url)));
 const PUBLIC_DIRECTORY = join(PROJECT_DIRECTORY, "public");
-const CORPUS_DIRECTORY = join(PUBLIC_DIRECTORY, "eds");
+const CORPUS_DIRECTORY = join(PUBLIC_DIRECTORY, "eds-corpus");
 const RESEARCH_DIRECTORY = join(PUBLIC_DIRECTORY, "research");
 
 async function parseYamlFile(path: string): Promise<unknown> {

@@ -60,8 +60,8 @@ export default function DataPage() {
       <ul>
         {CORPUS_FILES.map((file) => (
           <li key={file}>
-            <a href={publicSitePath(`/eds/${file}`)}>
-              <code>/eds/{file}</code>
+            <a href={publicSitePath(`/eds-corpus/${file}`)}>
+              <code>/eds-corpus/{file}</code>
             </a>
           </li>
         ))}

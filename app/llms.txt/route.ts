@@ -26,7 +26,7 @@ const LINES = [
   "",
   "## Data files",
   "",
-  `- ${absoluteSiteUrl("/eds/subtypes.yml")}`,
+  `- ${absoluteSiteUrl("/eds-corpus/subtypes.yml")}`,
   `- ${absoluteSiteUrl("/research/sources.yml")}`,
   `- ${absoluteSiteUrl("/research/questions.yml")}`,
   `- ${absoluteSiteUrl("/research/publication-policy.yml")}`,
