@@ -1,0 +1,102 @@
+schema: eds-research/corpus/v1
+category:
+  id: comorbidities
+  label: Comorbidities and systemic features
+  description: The multisystem reality — dysautonomia and POTS, MCAS, GI, pain, fatigue, and the comorbidity structure the community named before the literature did.
+  order: 40
+records:
+  - id: com-trifecta-pattern
+    kind: signal
+    title: The "trifecta" — hEDS, POTS/dysautonomia, and MCAS co-clustering
+    summary: "Patient communities converged on the hEDS–POTS–MCAS triad years before it appeared in clinical reviews. Registry data now supports the clustering: in the Global Registry survey (n=505), POTS and mast cell activation syndrome were among the alternative diagnoses participants most endorsed as accurate. The triad is community-coined and increasingly clinically studied; the mechanism remains unexplained."
+    subtypes: [heds, hsd]
+    status: community-signal
+    criteria_era: international-2017
+    evidence:
+      - stratum: community
+        tier: cross-venue-pattern
+        source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
+        note: Recurring across Reddit and Inspire over multiple years.
+      - stratum: registry
+        tier: registry-analysis
+        source_ids: [source-d4a910b62f451448889e]
+        note: POTS and MCAS among the most-endorsed comorbid diagnoses.
+    corroboration: convergent
+    venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
+    reviewed_at: "2026-09-16"
+    reassess_by: "2026-12-16"
+    tags: [dysautonomia, mcas, trifecta]
+  - id: com-multisystem-2017
+    kind: finding
+    title: The 2017 criteria formalized multisystem involvement
+    summary: The 2017 classification moved EDS from a skin-and-joints frame to an explicitly multisystem one — systemic manifestations entered the hEDS criteria themselves, and companion papers covered GI, cardiovascular-autonomic, pain, and psychiatric comorbidity. This codified what patient communities had long reported.
+    date: "2017-03"
+    date_precision: month
+    subtypes: [all-eds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+      - stratum: clinical
+        tier: expert-review
+        source_ids: [source-1ad3f0edd57e0fab1524]
+    reviewed_at: "2026-09-16"
+    tags: [multisystem]
+  - id: com-misdiagnosis-load
+    kind: finding
+    title: hEDS patients average ten alternative diagnoses before confirmation
+    summary: The Global Registry survey (n=505, clinically confirmed hEDS) found a mean of 10.45 alternative diagnoses — most commonly anxiety, depression, and migraine — with functional neurological disorder and multiple sclerosis among the most-rejected labels. Post-diagnosis, participants most endorsed POTS, cervical instability, and MCAS as accurate.
+    date: "2024"
+    date_precision: year
+    subtypes: [heds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: registry
+        tier: registry-analysis
+        source_ids: [source-d4a910b62f451448889e]
+      - stratum: clinical
+        tier: cohort-study
+        source_ids: [source-21337422dde3976b584c]
+        note: Qualitative confirmation — dismissal and misdiagnosis recur through the diagnostic odyssey literature.
+    corroboration: convergent
+    reviewed_at: "2026-09-16"
+    tags: [misdiagnosis, registry]
+  - id: com-cci-tethered-cord
+    kind: finding
+    title: Craniocervical instability and tethered cord — the contested frontier
+    summary: Craniocervical instability and tethered-cord claims circulate strongly in community venues and some surgical case series, and CCI was among the most-endorsed diagnoses in the registry survey. Controlled evidence remains limited and surgical intervention carries real risk; this index marks the area contested rather than dismissing it.
+    subtypes: [heds, ceds]
+    status: contested
+    criteria_era: international-2017
+    evidence:
+      - stratum: community
+        tier: cross-venue-pattern
+        source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
+      - stratum: registry
+        tier: registry-analysis
+        source_ids: [source-d4a910b62f451448889e]
+        note: CCI among most-endorsed alternative diagnoses in the registry survey.
+    corroboration: convergent
+    venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
+    reviewed_at: "2026-09-16"
+    reassess_by: "2026-12-16"
+    tags: [cci, tethered-cord, contested]
+  - id: com-gi-dysautonomia-cluster
+    kind: finding
+    title: GI dysmotility and autonomic features are documented comorbidity domains
+    summary: The 2017 series and subsequent cohort work document gastrointestinal dysmotility (reflux, gastroparesis, constipation) and autonomic dysfunction (orthostatic intolerance, POTS) as leading comorbidity domains in hEDS/HSD. The German 2025 cohort shows musculoskeletal pain and joint instability as the dominant presenting manifestations.
+    subtypes: [heds, hsd]
+    status: probable
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: expert-review
+        source_ids: [source-1ad3f0edd57e0fab1524]
+      - stratum: clinical
+        tier: cohort-study
+        source_ids: [source-de164233cddfefc4105a]
+    reviewed_at: "2026-09-16"
+    tags: [gi, dysautonomia]

@@ -1,0 +1,209 @@
+schema: eds-research/corpus/v1
+subtypes:
+  - id: heds
+    name: Hypermobile Ehlers-Danlos syndrome
+    abbreviation: hEDS
+    classification: eds-2017
+    inheritance: unknown
+    genes: [KLK15]
+    genetic_status: candidate-emerging
+    villefranche_equivalent: EDS type III / hypermobility type
+    prevalence_display: Most common EDS type; diagnosed EDS/HSD prevalence about 1 in 500 in the 2019 Wales cohort, versus older textbook figures near 1 in 5,000
+    distinguishing_features: Generalized joint hypermobility (Beighton score), musculoskeletal pain, and systemic manifestations; diagnosed clinically under the 2017 three-part criteria because molecular confirmation is not yet available
+    summary: The most common and least genetically resolved EDS type. Diagnosis remains clinical under the 2017 criteria; the KLK15 finding (2025) is the first associated gene but explains only a subset of families, with HEDGE (n=1,000) expected to clarify.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-1ad3f0edd57e0fab1524
+      - source-ee867f99ac8808a4ef80
+      - source-eaeabc3db4dd07d41bc5
+    reviewed_at: "2026-09-16"
+  - id: ceds
+    name: Classical Ehlers-Danlos syndrome
+    abbreviation: cEDS
+    classification: eds-2017
+    inheritance: autosomal-dominant
+    genes: [COL5A1, COL5A2]
+    genetic_status: confirmed-molecular-basis
+    villefranche_equivalent: EDS types I and II
+    prevalence_display: Estimated around 1 in 20,000 to 1 in 40,000
+    distinguishing_features: Skin hyperextensibility with widened atrophic scars, generalized joint hypermobility, easy bruising
+    summary: The archetypal skin-predominant type. Molecular confirmation via COL5A1/COL5A2 identifies the large majority of cases meeting clinical criteria.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+      - source-be972ed50decef4cbf0b
+    reviewed_at: "2026-09-16"
+  - id: veds
+    name: Vascular Ehlers-Danlos syndrome
+    abbreviation: vEDS
+    classification: eds-2017
+    inheritance: autosomal-dominant
+    genes: [COL3A1]
+    genetic_status: confirmed-molecular-basis
+    villefranche_equivalent: EDS type IV
+    prevalence_display: Estimated around 1 in 50,000 to 1 in 200,000
+    distinguishing_features: Arterial and organ rupture risk, thin translucent skin, characteristic facial features; the highest-acuity EDS type
+    summary: The severe vascular type defined by COL3A1 variants. Arterial dissection and organ rupture drive its distinct management, including cautious surgical and anesthetic approaches and celiprolol debate.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+      - source-be972ed50decef4cbf0b
+    reviewed_at: "2026-09-16"
+  - id: cleds
+    name: Classical-like Ehlers-Danlos syndrome
+    abbreviation: clEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [TNXB]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Rare; exact prevalence unknown
+    distinguishing_features: Classical-like skin features without atrophic scarring; TNXB-related (tenascin-X deficiency)
+    summary: Recessive classical-like presentation caused by tenascin-X deficiency; distinguished from cEDS by absent atrophic scarring and recessive inheritance.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: cveds
+    name: Cardiac-valvular Ehlers-Danlos syndrome
+    abbreviation: cvEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [COL1A2]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Ultra-rare; few families described
+    distinguishing_features: Progressive cardiac valve pathology plus classical-like features
+    summary: Ultra-rare recessive type caused by specific COL1A2 variants; severe progressive valvular disease is the defining risk.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: aeds
+    name: Arthrochalasia Ehlers-Danlos syndrome
+    abbreviation: aEDS
+    classification: eds-2017
+    inheritance: autosomal-dominant
+    genes: [COL1A1, COL1A2]
+    genetic_status: confirmed-molecular-basis
+    villefranche_equivalent: EDS type VIIA and VIIB
+    prevalence_display: Ultra-rare; congenital hip dislocation at birth is characteristic
+    distinguishing_features: Severe congenital hypermobility with bilateral hip dislocation, skin hyperextensibility, hypotonia
+    summary: Dominant type caused by variants disrupting the COL1A1/COL1A2 N-propeptide cleavage sites; presents at birth with hip dislocation and marked laxity.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: deds
+    name: Dermatosparaxis Ehlers-Danlos syndrome
+    abbreviation: dEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [ADAMTS2]
+    genetic_status: confirmed-molecular-basis
+    villefranche_equivalent: EDS type VIIC
+    prevalence_display: Ultra-rare
+    distinguishing_features: Extreme skin fragility and laxity, characteristic craniofacial features
+    summary: Recessive type caused by ADAMTS2 deficiency (procollagen N-peptidase), producing extreme skin fragility.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: keds
+    name: Kyphoscoliotic Ehlers-Danlos syndrome
+    abbreviation: kEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [PLOD1, FKBP14]
+    genetic_status: confirmed-molecular-basis
+    villefranche_equivalent: EDS type VI
+    prevalence_display: Rare
+    distinguishing_features: Congenital progressive kyphoscoliosis, hypotonia, joint laxity, ocular fragility risk
+    summary: Recessive type with congenital scoliosis and lysyl-hydroxylase-pathway defects (PLOD1; FKBP14 for a related form).
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: bcs
+    name: Brittle cornea syndrome
+    abbreviation: BCS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [ZNF469, PRDM5]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Ultra-rare
+    distinguishing_features: Extreme corneal thinning and rupture risk, blue sclerae, joint hypermobility
+    summary: Recessive type dominated by ocular fragility; protective eyewear is a standard management point.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: speds
+    name: Spondylodysplastic Ehlers-Danlos syndrome
+    abbreviation: spEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [B4GALT7, B3GALT6, SLC39A13]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Rare
+    distinguishing_features: Short stature, skeletal dysplasia, muscle hypotonia, bowing of limbs
+    summary: Recessive type involving proteoglycan-pathway and zinc-transporter defects; overlaps with spondylo-ocular phenotypes.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: mceds
+    name: Musculocontractural Ehlers-Danlos syndrome
+    abbreviation: mcEDS
+    classification: eds-2017
+    inheritance: autosomal-recessive
+    genes: [CHST14, DSE]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Rare; more reported in East Asian cohorts
+    distinguishing_features: Congenital contractures, progressive scoliosis, characteristic craniofacial features, dermatan-sulfate pathway defects
+    summary: Recessive type caused by dermatan-sulfate epimerase/sulfotransferase defects; congenital contractures are characteristic.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: meds
+    name: Myopathic Ehlers-Danlos syndrome
+    abbreviation: mEDS
+    classification: eds-2017
+    inheritance: autosomal-dominant-or-recessive
+    genes: [COL12A1]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Rare
+    distinguishing_features: Muscle hypotonia and weakness from early childhood plus hypermobility; muscle biopsy changes
+    summary: Type overlapping myopathy and connective-tissue disease, caused by COL12A1 variants; both dominant and recessive forms reported.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: peds
+    name: Periodontal Ehlers-Danlos syndrome
+    abbreviation: pEDS
+    classification: eds-2017
+    inheritance: autosomal-dominant
+    genes: [C1R, C1S]
+    genetic_status: confirmed-molecular-basis
+    prevalence_display: Rare
+    distinguishing_features: Early severe periodontitis and tooth loss, easy bruising, pretibial skin changes
+    summary: Dominant type driven by complement-pathway (C1R/C1S) variants; severe early periodontal disease is the defining feature.
+    source_ids:
+      - source-36ad1cab53c4cea4f4b4
+      - source-c55aca51ea775bf6d160
+    reviewed_at: "2026-09-16"
+  - id: hsd
+    name: Hypermobility spectrum disorder
+    abbreviation: HSD
+    classification: related-spectrum
+    inheritance: unknown
+    genes: []
+    genetic_status: unknown
+    prevalence_display: More common than hEDS by definition of the residual category; true prevalence unresolved
+    distinguishing_features: Symptomatic joint hypermobility not meeting the strict 2017 hEDS criteria; a clinical diagnosis
+    summary: The residual category for symptomatic hypermobility falling short of hEDS criteria. Whether HSD and hEDS are meaningfully distinct is an open research question tracked by this index.
+    source_ids:
+      - source-d7dec285eaee780f18a3
+      - source-36ad1cab53c4cea4f4b4
+      - source-eaeabc3db4dd07d41bc5
+    reviewed_at: "2026-09-16"

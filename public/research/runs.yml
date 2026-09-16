@@ -1,0 +1,16 @@
+schema: eds-research/runs/v1
+runs:
+  - id: run-2026-09-16-bootstrap
+    date: "2026-09-16"
+    scope: Initial corpus bootstrap across all five strata
+    strata: [clinical, community, historical, registry, gray]
+    monitors_used:
+      - pubmed-eds-latest
+      - clinicaltrials-eds
+      - eds-society-research-news
+      - hedge-study-watch
+      - community-signal-scan
+      - preprint-rare-disease-eds
+      - guideline-consortium-watch
+      - historical-archive-sweep
+    notes: Seeded the classification, genetics, diagnostic-journey, management, community, historiography, and folk-practice categories with primary-linked records. Lidocaine resistance admitted as the reference convergent record; KLK15 admitted as emerging pending HEDGE replication.

@@ -1,0 +1,374 @@
+schema: eds-research/sources/v1
+sources:
+  - id: source-008a3b01a05582538013
+    stratum: community
+    tier: cross-venue-pattern
+    media_type: forum-venue
+    publisher: Reddit
+    title: r/Hypermobility
+    url: https://www.reddit.com/r/Hypermobility/
+    venue_id: venue-reddit-hypermobility
+    access: public
+    note: Subreddit for joint hypermobility; overlapping membership with r/ehlersdanlos.
+  - id: source-1ad3f0edd57e0fab1524
+    stratum: clinical
+    tier: expert-review
+    media_type: journal-article
+    publisher: American Journal of Medical Genetics Part C
+    title: "Hypermobile Ehlers-Danlos syndrome (a.k.a. Ehlers-Danlos syndrome type III and Ehlers-Danlos syndrome hypermobility type): Clinical description and natural history"
+    url: https://doi.org/10.1002/ajmg.c.31538
+    published_at: "2017-03"
+    native_id: "10.1002/ajmg.c.31538"
+    access: paywalled
+  - id: source-1f24758814c322b4d394
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Ehlers-Danlos Society
+    title: What is EDS?
+    url: https://www.ehlers-danlos.com/what-is-eds/
+    venue_id: venue-ehlers-danlos-society
+    access: public
+  - id: source-21337422dde3976b584c
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: BMJ
+    title: "Surviving their stripes: the diagnostic odyssey and impact of life with hypermobile Ehlers-Danlos syndrome"
+    url: https://doi.org/10.1136/bmjccgg-2025-000044
+    published_at: "2025"
+    native_id: "10.1136/bmjccgg-2025-000044"
+    access: public
+    note: Qualitative study documenting medical gaslighting and trauma in the hEDS diagnostic journey.
+  - id: source-2542220d7aa64b3f7ca7
+    stratum: registry
+    tier: registry-report
+    media_type: registry-entry
+    publisher: The Ehlers-Danlos Society
+    title: EDS ECHO program
+    url: https://www.ehlers-danlos.com/echo/
+    access: public
+    note: Project ECHO-based clinician and community education program.
+  - id: source-27684d4afee8b83b9d25
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: Journal of Dental Anesthesia and Pain Medicine
+    title: Resistance to local anesthesia in people with the Ehlers-Danlos syndromes presenting for dental surgery
+    url: https://doi.org/10.17245/jdapm.2019.19.5.261
+    published_at: "2019"
+    native_id: "10.17245/jdapm.2019.19.5.261"
+    access: public
+    note: Online survey, 988 respondents with EDS; 88% reported inadequate local anesthesia vs 33% of controls.
+  - id: source-2fd8a13a36c4a8bd2b01
+    stratum: community
+    tier: single-venue-pattern
+    media_type: forum-venue
+    publisher: Ben's Friends
+    title: Ehlers-Danlos Syndrome Patient Support Community
+    url: https://ehlersdanlossyndromesupport.org/
+    venue_id: venue-bens-friends-eds
+    access: registration
+  - id: source-328501b217c2b3d0d2d2
+    stratum: clinical
+    tier: expert-review
+    media_type: journal-article
+    publisher: American Journal of Medical Genetics Part C
+    title: Pain management in the Ehlers-Danlos syndromes
+    url: https://doi.org/10.1002/ajmg.c.31545
+    published_at: "2017-03"
+    native_id: "10.1002/ajmg.c.31545"
+    access: paywalled
+  - id: source-3440a2b9d5d99c580d3a
+    stratum: registry
+    tier: registry-report
+    media_type: registry-entry
+    publisher: The Ehlers-Danlos Society
+    title: "The HEDGE Study: Hypermobile Ehlers-Danlos Genetic Evaluation"
+    url: https://www.ehlers-danlos.com/hedge-study-update/
+    access: public
+    note: 1,000-participant hEDS/HSD genetic evaluation; first publications expected late 2025 into 2026.
+  - id: source-36ad1cab53c4cea4f4b4
+    stratum: clinical
+    tier: consensus-statement
+    media_type: journal-article
+    publisher: American Journal of Medical Genetics Part C
+    title: The 2017 international classification of the Ehlers-Danlos syndromes
+    url: https://doi.org/10.1002/ajmg.c.31552
+    published_at: "2017-03"
+    native_id: "10.1002/ajmg.c.31552"
+    access: paywalled
+    note: Malfait et al.; the current nosology defining 13 subtypes.
+  - id: source-3dd9471fb00916c6141b
+    stratum: historical
+    tier: primary-historical-document
+    media_type: journal-article
+    publisher: PubMed
+    title: "Chernogubov's syndrome: a translation of the first modern case report of the Ehlers-Danlos syndrome"
+    url: https://pubmed.ncbi.nlm.nih.gov/372526/
+    published_at: "1979"
+    access: public
+    note: English translation of the 1892 Chernogubov case reports.
+  - id: source-4a561dc6a492a2155ab1
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Zebra Network
+    title: Patient Network and Support
+    url: https://thezebranetwork.org/
+    venue_id: venue-zebra-network
+    access: public
+  - id: source-50e9fc30eba2907905ba
+    stratum: registry
+    tier: trial-registration
+    media_type: trial-record
+    publisher: ClinicalTrials.gov
+    title: "Local Anesthetic Response in Ehlers-Danlos Syndrome (EDS) and Healthy Volunteers"
+    url: https://clinicaltrials.gov/study/NCT05603741
+    native_id: NCT05603741
+    access: public
+  - id: source-5a8d9db9800230d918cf
+    stratum: registry
+    tier: registry-report
+    media_type: registry-entry
+    publisher: The Ehlers-Danlos Society
+    title: DICE EDS and HSD Global Registry
+    url: https://www.ehlers-danlos.com/registry/
+    access: public
+    note: Global patient registry feeding survey-based research outputs.
+  - id: source-5c33d96b50581fbe82f8
+    stratum: historical
+    tier: retrospective-account
+    media_type: journal-article
+    publisher: British Journal of Haematology
+    title: "Ehlers-Danlos syndrome: a historical review"
+    url: https://doi.org/10.1111/j.1365-2141.2008.06994.x
+    published_at: "2008"
+    native_id: "10.1111/j.1365-2141.2008.06994.x"
+    access: paywalled
+    note: Parapia and Jackson; the standard historiography from Hippocratic descriptions through the Villefranche era.
+  - id: source-641ce29242a70e8a5f01
+    stratum: community
+    tier: cross-venue-pattern
+    media_type: forum-venue
+    publisher: Inspire
+    title: EDS and HSD Support Community
+    url: https://www.inspire.com/groups/eds-and-hsd/
+    venue_id: venue-inspire-eds-hsd
+    access: registration
+    note: Largest dedicated EDS support community; sponsored by The Ehlers-Danlos Society.
+  - id: source-7caade9be5b82d40a0c7
+    stratum: registry
+    tier: trial-registration
+    media_type: registry-entry
+    publisher: ClinicalTrials.gov
+    title: Ehlers-Danlos Syndrome trial search
+    url: https://clinicaltrials.gov/search?cond=Ehlers-Danlos%20Syndrome
+    access: public
+  - id: source-80a5042e5779fea862b6
+    stratum: clinical
+    tier: mechanistic-study
+    media_type: dataset
+    publisher: PubMed
+    title: PubMed Ehlers-Danlos query, most recent
+    url: https://pubmed.ncbi.nlm.nih.gov/?term=%22ehlers-danlos%22&sort=date
+    access: public
+    note: Live discovery surface for the literature monitor; not cited as record evidence.
+  - id: source-8cddcecd9d7a698123e5
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: Annals of the Rheumatic Diseases
+    title: Articular mobility in an African population
+    url: https://pubmed.ncbi.nlm.nih.gov/4259630/
+    published_at: "1973"
+    access: paywalled
+    note: Beighton, Solomon, and Soskolne; the origin of the nine-point Beighton score.
+  - id: source-8d222b21a7423563aba4
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: PLOS ONE
+    title: An exploration of the journey to diagnosis of Ehlers-Danlos Syndrome (EDS) for women living in Australia
+    url: https://doi.org/10.1371/journal.pone.0307574
+    published_at: "2024"
+    native_id: "10.1371/journal.pone.0307574"
+    access: public
+    note: Social-media-recruited survey; reports 10-12 year average diagnostic delay per international support groups.
+  - id: source-a0e3bc5bd3a0b3545cf8
+    stratum: clinical
+    tier: consensus-statement
+    media_type: journal-article
+    publisher: American Journal of Medical Genetics
+    title: "Ehlers-Danlos syndromes: revised nosology, Villefranche, 1997"
+    url: https://pubmed.ncbi.nlm.nih.gov/9557891/
+    published_at: "1998"
+    access: paywalled
+    note: Beighton et al.; the six-type Villefranche nosology that governed diagnosis from 1998 to 2017.
+  - id: source-aef7c864eb540644a26f
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: Journal of the Royal Society of Medicine
+    title: Local anaesthetic failure in joint hypermobility syndrome
+    url: https://pubmed.ncbi.nlm.nih.gov/15684371/
+    published_at: "2005-02"
+    access: public
+    note: Hakim, Grahame, Norris, Hopper; 58% of hypermobile patients reported inadequate local anesthesia vs 21% of controls.
+  - id: source-bb268c000069896e8023
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Ehlers-Danlos Society
+    title: The Norris Lab hEDS Genetic Study update
+    url: https://www.ehlers-danlos.com/norris-lab-update-june-2024/
+    published_at: "2024-06"
+    venue_id: venue-ehlers-danlos-society
+    access: public
+    note: Plain-language patient-org announcement of the KLK15 finding ahead of peer-reviewed publication.
+  - id: source-be972ed50decef4cbf0b
+    stratum: clinical
+    tier: expert-review
+    media_type: book-chapter
+    publisher: NCBI Bookshelf
+    title: Ehlers-Danlos Syndromes and Hypermobility Spectrum Disorders
+    url: https://ncbi.nlm.nih.gov/books/NBK584966/
+    access: public
+  - id: source-c1d4d83f1e715158725f
+    stratum: registry
+    tier: registry-report
+    media_type: registry-entry
+    publisher: Genetic and Rare Diseases Information Center (GARD)
+    title: Ehlers-Danlos syndrome
+    url: https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome
+    access: public
+  - id: source-c55aca51ea775bf6d160
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Ehlers-Danlos Society
+    title: EDS types
+    url: https://www.ehlers-danlos.com/eds-types/
+    venue_id: venue-ehlers-danlos-society
+    access: public
+  - id: source-d4079481e0bd2ac8d5f3
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Ehlers-Danlos Society
+    title: The Ehlers-Danlos Society
+    url: https://www.ehlers-danlos.com/
+    venue_id: venue-ehlers-danlos-society
+    access: public
+    note: Largest international patient organization for EDS and HSD; runs the DICE registry, EDS ECHO, and research funding.
+  - id: source-d4a910b62f451448889e
+    stratum: registry
+    tier: registry-analysis
+    media_type: journal-article
+    publisher: PMC
+    title: "Comorbidity, misdiagnoses, and the diagnostic odyssey in patients with hypermobile Ehlers-Danlos syndrome"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11613559/
+    published_at: "2024"
+    access: public
+    note: Ehlers-Danlos Society Global Registry survey, n=505; mean 10.45 alternative diagnoses before hEDS confirmation.
+  - id: source-d7dec285eaee780f18a3
+    stratum: clinical
+    tier: consensus-statement
+    media_type: journal-article
+    publisher: American Journal of Medical Genetics Part C
+    title: A framework for the classification of joint hypermobility and related conditions
+    url: https://doi.org/10.1002/ajmg.c.31539
+    published_at: "2017-03"
+    native_id: "10.1002/ajmg.c.31539"
+    access: paywalled
+    note: Castori et al.; defines HSD relative to hEDS.
+  - id: source-d91980e8e90850a3f3b9
+    stratum: clinical
+    tier: randomized-trial
+    media_type: journal-article
+    publisher: Regional Anesthesia and Pain Medicine
+    title: "Patients with Ehlers-Danlos syndrome experience reduced effectiveness of lidocaine local anesthetic: a randomized cross-over clinical trial"
+    url: https://doi.org/10.1136/rapm-2025-107416
+    published_at: "2025"
+    native_id: "10.1136/rapm-2025-107416"
+    access: public
+    note: n=135; shorter lidocaine duration in EDS patients, confirming decades of patient reports.
+  - id: source-daaa8e28125b9b3bb775
+    stratum: gray
+    tier: preprint
+    media_type: preprint
+    publisher: Research Square
+    title: Variants in the Kallikrein Gene Family and Hypermobile Ehlers-Danlos Syndrome
+    url: https://doi.org/10.21203/rs.3.rs-4547888/v1
+    published_at: "2024"
+    native_id: "10.21203/rs.3.rs-4547888/v1"
+    access: public
+  - id: source-de164233cddfefc4105a
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: Orphanet Journal of Rare Diseases
+    title: "Health care supply in patients with Ehlers-Danlos syndromes and generalized hypermobility spectrum disorder: a German perspective"
+    url: https://doi.org/10.1186/s13023-025-03937-4
+    published_at: "2025"
+    native_id: "10.1186/s13023-025-03937-4"
+    access: public
+    note: Median diagnostic delay 22 years for hEDS/HSD vs 14.5 years for monogenic EDS.
+  - id: source-eaeabc3db4dd07d41bc5
+    stratum: clinical
+    tier: cohort-study
+    media_type: journal-article
+    publisher: BMJ Open
+    title: "Diagnosed prevalence of Ehlers-Danlos syndrome and hypermobility spectrum disorder in Wales, UK: a national electronic cohort study and case-control comparison"
+    url: https://doi.org/10.1136/bmjopen-2019-031365
+    published_at: "2019-11"
+    native_id: "10.1136/bmjopen-2019-031365"
+    access: public
+    note: Demmler et al.; diagnosed prevalence roughly 1 in 500, far above the older 1 in 5,000 textbook figure.
+  - id: source-ec36295ad04f34148c63
+    stratum: community
+    tier: cross-venue-pattern
+    media_type: forum-venue
+    publisher: Reddit
+    title: r/ehlersdanlos
+    url: https://www.reddit.com/r/ehlersdanlos/
+    venue_id: venue-reddit-ehlersdanlos
+    access: public
+    note: Largest public EDS discussion venue; over one hundred thousand members.
+  - id: source-ed3f4f3ef7068a32fe53
+    stratum: registry
+    tier: registry-report
+    media_type: registry-entry
+    publisher: Orphanet
+    title: Ehlers-Danlos syndrome, Orphanet disease entry
+    url: https://www.orpha.net/en/disease/detail/75531
+    access: public
+  - id: source-ee867f99ac8808a4ef80
+    stratum: clinical
+    tier: mechanistic-study
+    media_type: journal-article
+    publisher: iScience
+    title: KLK15 alters connective tissues in hypermobile Ehlers-Danlos syndrome
+    url: https://www.cell.com/iscience/fulltext/S2589-0042(25)01604-9
+    published_at: "2025-08"
+    access: public
+    note: Norris Lab et al.; first gene associated with hEDS, with knock-in mouse model.
+  - id: source-fa671c0df94cd9c20ecb
+    stratum: clinical
+    tier: systematic-review
+    media_type: journal-article
+    publisher: PubMed
+    title: The diagnostic journey in adults with hypermobile Ehlers-Danlos syndrome and hypermobility spectrum disorders
+    url: https://pubmed.ncbi.nlm.nih.gov/34739411/
+    published_at: "2021"
+    access: public
+    note: Qualitative synthesis of 13 studies; organizes delay drivers into disease, patient, provider, and system factors.
+  - id: source-fcaca0c559f4881b8f2f
+    stratum: community
+    tier: patient-org-synthesis
+    media_type: patient-org-page
+    publisher: The Ehlers-Danlos Society
+    title: EDS and HSD community
+    url: https://www.ehlers-danlos.com/eds-hsd-community/
+    venue_id: venue-ehlers-danlos-society
+    access: public

@@ -1,0 +1,100 @@
+schema: eds-research/corpus/v1
+category:
+  id: diagnosis-and-classification
+  label: Diagnosis and classification
+  description: The criteria machinery — Beighton scoring, the 2017 three-part hEDS criteria, subtype confirmation, and the criteria-era problem.
+  order: 20
+records:
+  - id: class-heds-2017-criteria
+    kind: finding
+    title: The 2017 hEDS criteria require hypermobility, systemic manifestations, and exclusion
+    summary: hEDS diagnosis under the 2017 International Classification requires (1) generalized joint hypermobility by Beighton score, (2) two or more of systemic manifestations, positive family history, or musculoskeletal complications, and (3) exclusion of other connective-tissue disorders. Unlike every other subtype, hEDS has no molecular confirmation test.
+    date: "2017-03"
+    date_precision: month
+    subtypes: [heds, hsd]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+      - stratum: community
+        tier: patient-org-synthesis
+        source_ids: [source-c55aca51ea775bf6d160, source-1f24758814c322b4d394]
+        note: Patient-org diagnostic checklist reflects the same three-part structure.
+    corroboration: convergent
+    reviewed_at: "2026-09-16"
+    tags: [diagnosis, criteria]
+  - id: class-molecular-confirmation-required
+    kind: finding
+    title: Twelve subtypes require molecular confirmation; hEDS remains clinical
+    summary: "Under the 2017 classification, definitive diagnosis of every subtype except hEDS relies on identifying a causative genetic variant. This asymmetry is the central classification problem: the most common type is the only one without a confirmatory test."
+    date: "2017-03"
+    date_precision: month
+    subtypes: [all-eds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+    reviewed_at: "2026-09-16"
+    tags: [diagnosis, genetics]
+  - id: class-hsd-residual-category
+    kind: finding
+    title: HSD was created as the residual category beside hEDS
+    summary: The 2017 framework (Castori et al.) separated symptomatic joint hypermobility into hEDS when the strict criteria are met and HSD when they are not. The boundary is contested — the criteria were designed for research homogeneity, not to declare HSD benign, and the hEDS/HSD criteria review study is ongoing.
+    date: "2017-03"
+    date_precision: month
+    subtypes: [hsd, heds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-d7dec285eaee780f18a3]
+      - stratum: clinical
+        tier: cohort-study
+        source_ids: [source-de164233cddfefc4105a]
+        note: The 2025 German cohort keeps hEDS/HSD together precisely because the boundary is porous.
+    reviewed_at: "2026-09-16"
+    tags: [diagnosis, hsd]
+  - id: class-criteria-era-drift
+    kind: finding
+    title: Criteria-era drift makes old and new EDS literature non-equivalent
+    summary: Villefranche-era "EDS type III" cohorts (1997–2017) do not map cleanly onto 2017 hEDS — the new criteria are stricter and exclude cases now filed as HSD. This index tags every record with its criteria era; meta-claims mixing eras are read with caution.
+    subtypes: [all-eds]
+    status: established
+    criteria_era: era-independent
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4, source-a0e3bc5bd3a0b3545cf8]
+    reviewed_at: "2026-09-16"
+    tags: [methodology, criteria]
+  - id: dx-heds-remains-clinical
+    kind: finding
+    title: hEDS diagnosis remains clinical despite the KLK15 finding
+    summary: The Ehlers-Danlos Society and the KLK15 authors both state that kallikrein genes are not yet on EDS testing panels and that hEDS remains a clinical diagnosis. Replication and the HEDGE study results are the gating evidence.
+    date: "2025-08"
+    date_precision: month
+    subtypes: [heds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: community
+        tier: patient-org-synthesis
+        source_ids: [source-bb268c000069896e8023]
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+      - stratum: clinical
+        tier: mechanistic-study
+        source_ids: [source-ee867f99ac8808a4ef80]
+      - stratum: registry
+        tier: registry-report
+        source_ids: [source-3440a2b9d5d99c580d3a]
+    corroboration: convergent
+    reviewed_at: "2026-09-16"
+    reassess_by: "2026-12-16"
+    tags: [diagnosis, genetics]

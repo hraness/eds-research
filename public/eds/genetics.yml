@@ -1,0 +1,83 @@
+schema: eds-research/corpus/v1
+category:
+  id: genetics
+  label: Genetics and biomarkers
+  description: The molecular map — confirmed genes for twelve subtypes, the hEDS search, registries and cohorts.
+  order: 30
+records:
+  - id: gen-heds-no-confirmed-gene
+    kind: finding
+    title: hEDS is the only subtype without a confirmed molecular basis
+    summary: All twelve other 2017 subtypes have defined causative genes. For hEDS — the most common type — no confirmed molecular basis existed through 2024, forcing purely clinical diagnosis and the strict 2017 criteria as the only gate.
+    subtypes: [heds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+      - stratum: clinical
+        tier: expert-review
+        source_ids: [source-1ad3f0edd57e0fab1524]
+    reviewed_at: "2026-09-16"
+    tags: [genetics]
+  - id: gen-klk15-first-candidate
+    kind: finding
+    title: KLK15 is the first gene associated with hEDS
+    summary: Norris Lab whole-exome sequencing of 200 hEDS patients found rare variants across 14 of 15 kallikrein genes, with a recurrent KLK15 p.Gly226Asp variant segregating in multiple families; a knock-in mouse recapitulated tendon and cardiac-valve features. The authors and the society both caution this does not yet change diagnosis — it is the first candidate, not a test.
+    date: "2025-08"
+    date_precision: month
+    subtypes: [heds]
+    status: emerging
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: mechanistic-study
+        source_ids: [source-ee867f99ac8808a4ef80]
+      - stratum: gray
+        tier: preprint
+        source_ids: [source-daaa8e28125b9b3bb775]
+      - stratum: community
+        tier: patient-org-synthesis
+        source_ids: [source-bb268c000069896e8023]
+    corroboration: convergent
+    reviewed_at: "2026-09-16"
+    reassess_by: "2026-12-16"
+    people: [Russell Norris]
+    organizations: [Medical University of South Carolina]
+    tags: [genetics, frontier]
+  - id: gen-hedge-study
+    kind: program
+    title: HEDGE — the 1,000-participant hEDS genetic evaluation
+    summary: The Hypermobile Ehlers-Danlos Genetic Evaluation study is the largest dedicated hEDS genetics effort, run under The Ehlers-Danlos Society's research program. First publications were expected late 2025 into 2026; this index tracks it as the pivotal watch item for the subtype.
+    subtypes: [heds, hsd]
+    status: emerging
+    criteria_era: international-2017
+    evidence:
+      - stratum: registry
+        tier: registry-report
+        source_ids: [source-3440a2b9d5d99c580d3a]
+      - stratum: community
+        tier: patient-org-synthesis
+        source_ids: [source-bb268c000069896e8023]
+    corroboration: convergent
+    reviewed_at: "2026-09-16"
+    reassess_by: "2026-12-16"
+    organizations: [The Ehlers-Danlos Society]
+    tags: [genetics, registry, frontier]
+  - id: gen-collagen-and-pathway-map
+    kind: finding
+    title: The molecular map concentrates in collagen and collagen-processing pathways
+    summary: Confirmed subtype genes cluster into collagen structure (COL5A1/A2, COL3A1, COL1A1/A2, COL12A1), collagen processing (ADAMTS2, PLOD1), proteoglycan and glycosaminoglycan pathways (B4GALT7, B3GALT6, CHST14, DSE), complement (C1R, C1S), and signaling (TNXB, SLC39A13, ZNF469, PRDM5, FKBP14). The 2017 classification groups subtypes by shared pathway for research purposes.
+    subtypes: [all-eds]
+    status: established
+    criteria_era: international-2017
+    evidence:
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+      - stratum: clinical
+        tier: expert-review
+        source_ids: [source-be972ed50decef4cbf0b]
+    reviewed_at: "2026-09-16"
+    tags: [genetics]

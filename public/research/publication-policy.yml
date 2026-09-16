@@ -1,0 +1,43 @@
+schema: eds-research/publication-policy/v1
+auto_publishable:
+  - stratum: registry
+    media_type: trial-record
+    condition: ClinicalTrials.gov or equivalent registry entries with a registry identifier; bibliographic facts only.
+  - stratum: clinical
+    media_type: journal-article
+    condition: Bibliographic admission only (venue, date, identifier); claim-level admission still requires review.
+review_required:
+  - stratum: community
+    scope: Everything. Community material is admitted as venue-level patterns, never individual posts or named posters, and never as health recommendations.
+  - stratum: historical
+    scope: Everything. Historical and folk records must carry provenance tiering and the documented-not-endorsed rule.
+  - stratum: clinical
+    scope: Any claim-level record, practice assessment, or risk annotation.
+  - stratum: gray
+    scope: Everything; preprints are admitted provisionally and must be marked emerging.
+  - stratum: registry
+    scope: Any interpretation beyond the registry's own reported fields.
+rules:
+  - id: no-medical-advice
+    text: The index describes evidence and provenance; it never recommends, prescribes, or discourages a specific course of care for an individual.
+  - id: venue-level-community
+    text: Community evidence is indexed at venue level. No individual poster, handle, or verbatim post enters the corpus.
+  - id: documented-not-endorsed
+    text: Folk and historical practices are admitted as documented history. Admission records existence and provenance, never efficacy.
+  - id: subtype-scoping
+    text: Every record declares its subtype scope. hEDS findings are never silently generalized to vEDS or other monogenic types.
+  - id: criteria-era-tagging
+    text: Records carry the diagnostic-criteria era of their sources so pre-2017 claims are not read as modern nosology.
+  - id: corroboration-declared
+    text: Multi-stratum records must declare convergent, contested, or refuted; disagreement between strata is publishable signal, not noise.
+  - id: risk-visible
+    text: Practices with documented harm potential carry a visible risk note rather than silent omission.
+  - id: append-only-ledger
+    text: Research runs, decisions, and publication attestations are append-only; corrections add a new record rather than rewriting history.
+  - id: emerging-needs-date
+    text: Emerging, contested, and community-signal records must carry a reassessment date; undated emerging claims are inadmissible.
+reassessment_days:
+  emerging: 60
+  contested: 90
+  community_signal: 90
+  established: 365

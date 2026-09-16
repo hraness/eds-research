@@ -1,0 +1,74 @@
+schema: eds-research/questions/v1
+questions:
+  - id: heds-molecular-basis
+    question: What is the molecular basis of hEDS, and how genetically heterogeneous is it?
+    why_open: KLK15 is the first associated gene but explains only a fraction of families; HEDGE (n=1,000) publications are expected to clarify. hEDS remains a clinical diagnosis.
+    status: watching
+    strata_sought: [clinical, gray, registry]
+    related_source_ids:
+      - source-ee867f99ac8808a4ef80
+      - source-daaa8e28125b9b3bb775
+      - source-3440a2b9d5d99c580d3a
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: hsd-heds-boundary
+    question: Should the hEDS/HSD boundary be maintained, and how would a molecular marker change it?
+    why_open: HSD was defined as a residual category in 2017; patients excluded by strict hEDS criteria may share the same biology. The criteria review study is active.
+    status: open
+    strata_sought: [clinical, registry, community]
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: true-prevalence
+    question: What is the true prevalence of hEDS/HSD, and how much does underdiagnosis distort it?
+    why_open: Textbook figures (1 in 5,000) conflict with diagnosed-prevalence data (about 1 in 500 in Wales) and community estimates are higher still. Ascertainment bias runs in both directions.
+    status: open
+    strata_sought: [clinical, registry, community]
+    related_source_ids:
+      - source-eaeabc3db4dd07d41bc5
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: mcas-pots-heds-trifecta
+    question: Is the hEDS-POTS-MCAS clustering a shared mechanism or a referral artifact?
+    why_open: The triad is community-observed and registry-supported, but mechanism evidence is thin and diagnostic criteria for each leg differ in rigor.
+    status: watching
+    strata_sought: [clinical, registry, community]
+    related_source_ids:
+      - source-d4a910b62f451448889e
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: exercise-intervention-evidence
+    question: Which exercise and physiotherapy modalities measurably help hEDS/HSD, and at what dose?
+    why_open: PT is the mainstay recommendation but trials are small and heterogeneous; community practice runs ahead of the trial record.
+    status: open
+    strata_sought: [clinical, community]
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: anesthetic-resistance-mechanism
+    question: What mechanism explains reduced local-anesthetic effectiveness in EDS?
+    why_open: The phenomenon is now trial-confirmed but the mechanism is unexplained; hypotheses range from tissue diffusion to sodium-channel and connective-tissue effects.
+    status: watching
+    strata_sought: [clinical]
+    related_source_ids:
+      - source-d91980e8e90850a3f3b9
+      - source-aef7c864eb540644a26f
+      - source-27684d4afee8b83b9d25
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: cci-tethered-cord-evidence
+    question: How should craniocervical instability and tethered-cord claims in hEDS be weighed?
+    why_open: Strong community and some surgical-literature attention, limited controlled evidence, and meaningful surgical risk make this the sharpest contested area.
+    status: watching
+    strata_sought: [clinical, community]
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"
+  - id: diagnostic-delay-reduction
+    question: Which interventions actually shorten the EDS diagnostic odyssey?
+    why_open: Delays of 10-22 years are documented across cohorts; clinician-education programs exist (EDS ECHO) but effectiveness evidence is early.
+    status: open
+    strata_sought: [clinical, community, registry]
+    related_source_ids:
+      - source-de164233cddfefc4105a
+      - source-d4a910b62f451448889e
+      - source-fa671c0df94cd9c20ecb
+    opened_at: "2026-09-16"
+    last_reviewed: "2026-09-16"

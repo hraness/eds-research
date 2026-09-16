@@ -1,0 +1,67 @@
+schema: eds-research/venues/v1
+venues:
+  - id: venue-inspire-eds-hsd
+    name: EDS and HSD Support Community (Inspire)
+    kind: forum
+    host: Inspire
+    url: https://www.inspire.com/groups/eds-and-hsd/
+    access: registration
+    scale_display: largest dedicated EDS support community
+    moderation: professional
+    note: Sponsored by The Ehlers-Danlos Society as an Inspire trusted partner.
+  - id: venue-reddit-ehlersdanlos
+    name: r/ehlersdanlos
+    kind: subreddit
+    host: Reddit
+    url: https://www.reddit.com/r/ehlersdanlos/
+    access: public
+    scale_display: 100k+ members
+    moderation: volunteer
+    note: High-volume public venue; strong norms against individual medical advice.
+  - id: venue-reddit-hypermobility
+    name: r/Hypermobility
+    kind: subreddit
+    host: Reddit
+    url: https://www.reddit.com/r/Hypermobility/
+    access: public
+    moderation: volunteer
+  - id: venue-bens-friends-eds
+    name: Ehlers-Danlos Syndrome Support (Ben's Friends)
+    kind: forum
+    host: Ben's Friends rare-disease community network
+    url: https://ehlersdanlossyndromesupport.org/
+    access: registration
+    moderation: volunteer
+    note: Publicly readable threads; long-lived venue with strong mutual-support norms.
+  - id: venue-ehlers-danlos-society
+    name: The Ehlers-Danlos Society
+    kind: patient-org
+    host: ehlers-danlos.com
+    url: https://www.ehlers-danlos.com/
+    access: public
+    moderation: professional
+    note: Largest international patient organization; operates the DICE Global Registry, EDS ECHO, local groups, and research programs.
+  - id: venue-zebra-network
+    name: The Zebra Network
+    kind: patient-org
+    host: thezebranetwork.org
+    url: https://thezebranetwork.org/
+    access: public
+    moderation: volunteer
+    note: Patient-designed support network; the zebra is the community's emblem.
+  - id: venue-facebook-eds-groups
+    name: Facebook EDS and hypermobility groups
+    kind: social-group
+    host: Meta
+    url: https://www.facebook.com/
+    access: membership
+    moderation: volunteer
+    note: Multiple large closed groups; researchers have used them for survey recruitment.
+  - id: venue-dice-registry
+    name: DICE EDS and HSD Global Registry
+    kind: registry
+    host: The Ehlers-Danlos Society
+    url: https://www.ehlers-danlos.com/registry/
+    access: membership
+    moderation: professional
+    note: Structured patient-reported registry; sources the society's published survey analyses.

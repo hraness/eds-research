@@ -1,0 +1,82 @@
+schema: eds-research/monitors/v1
+monitors:
+  - id: pubmed-eds-latest
+    label: PubMed Ehlers-Danlos latest
+    kind: literature-query
+    strata: [clinical]
+    target: https://pubmed.ncbi.nlm.nih.gov/?term=%22ehlers-danlos%22&sort=date
+    cadence_days: 14
+    purpose: New peer-reviewed EDS literature across all subtypes and comorbidity domains.
+    last_checked: "2026-09-16"
+    active: true
+  - id: pubmed-hypermobility-spectrum
+    label: PubMed hypermobility spectrum latest
+    kind: literature-query
+    strata: [clinical]
+    target: https://pubmed.ncbi.nlm.nih.gov/?term=%22hypermobility+spectrum+disorder%22&sort=date
+    cadence_days: 30
+    purpose: HSD literature that borders or feeds the hEDS corpus.
+    last_checked: "2026-09-16"
+    active: true
+  - id: clinicaltrials-eds
+    label: ClinicalTrials.gov EDS condition search
+    kind: trial-registry
+    strata: [registry]
+    target: https://clinicaltrials.gov/search?cond=Ehlers-Danlos%20Syndrome
+    cadence_days: 30
+    purpose: New and updated interventional and observational trials in EDS.
+    last_checked: "2026-09-16"
+    active: true
+  - id: eds-society-research-news
+    label: Ehlers-Danlos Society research news
+    kind: org-feed
+    strata: [community, registry]
+    target: https://www.ehlers-danlos.com/
+    cadence_days: 14
+    purpose: Registry reports, HEDGE milestones, funded-study announcements, guideline updates.
+    last_checked: "2026-09-16"
+    active: true
+  - id: hedge-study-watch
+    label: HEDGE study publication watch
+    kind: registry-watch
+    strata: [registry, clinical]
+    target: https://www.ehlers-danlos.com/hedge-study-update/
+    cadence_days: 30
+    purpose: First HEDGE publications were expected late 2025 into 2026; watch for genetic-marker findings.
+    last_checked: "2026-09-16"
+    active: true
+  - id: community-signal-scan
+    label: Public community venue signal scan
+    kind: venue-scan
+    strata: [community]
+    target: r/ehlersdanlos, r/Hypermobility, Inspire EDS and HSD public surfaces
+    cadence_days: 60
+    purpose: Recurring practice and comorbidity signals reported by patients; never individual posters.
+    last_checked: "2026-09-16"
+    active: true
+  - id: preprint-rare-disease-eds
+    label: Preprint servers EDS watch
+    kind: preprint-watch
+    strata: [gray]
+    target: medRxiv and Research Square Ehlers-Danlos queries
+    cadence_days: 30
+    purpose: Genetics and biomarker preprints ahead of peer review (e.g., KLK15 lineage).
+    last_checked: "2026-09-16"
+    active: true
+  - id: guideline-consortium-watch
+    label: International Consortium and guideline watch
+    kind: guideline-watch
+    strata: [clinical, registry]
+    target: The Ehlers-Danlos Society, International Consortium on EDS and HSD publications
+    cadence_days: 60
+    purpose: Criteria revision proposals, management guideline updates, pediatric framework follow-ups.
+    last_checked: "2026-09-16"
+    active: true
+  - id: historical-archive-sweep
+    label: Historical archive sweep
+    kind: venue-scan
+    strata: [historical]
+    target: Google Books, HathiTrust, and archive.org searches for pre-1988 descriptions and folk management
+    cadence_days: 180
+    purpose: Pre-nosology case descriptions and documented folk management of joint laxity.
+    active: true
