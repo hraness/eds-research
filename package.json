@@ -47,7 +47,7 @@
   "dependencies": {
     "@hraness/site-footer": "github:hraness/site-footer#v0.12.0",
     "@hraness/vercel-delivery": "github:hraness/vercel-delivery#v0.1.2",
-    "@hraness/web-discovery": "github:hraness/web-discovery#v0.2.0",
+    "@hraness/web-discovery": "github:hraness/web-discovery#v0.3.1",
     "next": "16.2.12",
     "react": "19.2.3",
     "react-dom": "19.2.3",
