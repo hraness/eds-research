@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 
 import { SUBTYPE_LABELS } from "../../display";
 import { RecordItem } from "../../record-view";
-import { breadcrumbJsonLd } from "../../seo";
+import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, socialMetadata } from "../../site";
 
 export const dynamic = "force-static";
@@ -68,6 +68,15 @@ export default async function SubtypePage({ params }: PageProps) {
           { name: subtype.abbreviation, path: `/subtypes/${subtype.id}` },
         ])}
         id="eds-subtype-breadcrumb"
+      />
+      <JsonLdScript
+        data={webPageJsonLd({
+          title: `${subtype.name} (${subtype.abbreviation})`,
+          description: subtype.summary,
+          path: `/subtypes/${subtype.id}`,
+          reviewedAt: subtype.reviewed_at,
+        })}
+        id="eds-subtype-webpage"
       />
       <p className="eyebrow">Subtype</p>
       <h1 className="page-title">
