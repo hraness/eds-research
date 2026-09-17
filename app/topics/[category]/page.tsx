@@ -68,6 +68,9 @@ export default async function CategoryPage({ params }: PageProps) {
           collectionPageJsonLd(resolved.records, {
             description: resolved.category.description,
             path: `/topics/${category}`,
+            reviewedAt: [...resolved.records.map((r) => r.reviewed_at)]
+              .sort()
+              .at(-1),
             title: resolved.category.label,
           }),
         ]}

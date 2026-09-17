@@ -53,7 +53,12 @@ export function websiteJsonLd() {
 
 export function collectionPageJsonLd(
   items: readonly Readonly<{ id: string; title: string }>[],
-  input: Readonly<{ description: string; path: SitePath; title: string }>,
+  input: Readonly<{
+    description: string;
+    path: SitePath;
+    reviewedAt?: string | undefined;
+    title: string;
+  }>,
 ) {
   const url = absoluteSiteUrl(input.path);
   return {
@@ -65,10 +70,36 @@ export function collectionPageJsonLd(
     description: input.description,
     inLanguage: "en-US",
     isPartOf: { "@id": `${SITE_ORIGIN}#website` },
+    ...(input.reviewedAt !== undefined && { dateModified: input.reviewedAt }),
     hasPart: items.map((item) => ({
       "@type": "ListItem",
       name: item.title,
     })),
+  } as const;
+}
+
+export function webPageJsonLd(
+  input: Readonly<{
+    citations?: readonly string[] | undefined;
+    description: string;
+    path: SitePath;
+    reviewedAt?: string | undefined;
+    title: string;
+  }>,
+) {
+  const url = absoluteSiteUrl(input.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: input.title,
+    description: input.description,
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${SITE_ORIGIN}#website` },
+    ...(input.reviewedAt !== undefined && { dateModified: input.reviewedAt }),
+    ...(input.citations !== undefined &&
+      input.citations.length > 0 && { citation: [...input.citations] }),
   } as const;
 }
 

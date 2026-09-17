@@ -29,7 +29,12 @@ export default async function SubtypesPage() {
       <JsonLdScript
         data={collectionPageJsonLd(
           subtypes.map(({ id, name }) => ({ id, title: name })),
-          { description: DESCRIPTION, path: "/subtypes", title: TITLE },
+          {
+            description: DESCRIPTION,
+            path: "/subtypes",
+            reviewedAt: [...subtypes.map((s) => s.reviewed_at)].sort().at(-1),
+            title: TITLE,
+          },
         )}
         id="eds-subtypes-structured-data"
       />
