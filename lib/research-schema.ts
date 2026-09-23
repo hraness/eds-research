@@ -165,8 +165,8 @@ export const ResearchSourceCatalogSchema = z
 export type ResearchSourceCatalog = z.infer<typeof ResearchSourceCatalogSchema>;
 
 /*
- * Community venues are indexed as venues — with access level, moderation
- * model, and reporting rules — never as scraped threads or named posters.
+ * Community venues are recorded as venues, with access level, moderation
+ * model, and reporting rules, never as scraped threads or named posters.
  */
 export const CommunityVenueSchema = z.strictObject({
   id: VenueIdSchema,
@@ -198,8 +198,9 @@ export const CommunityVenueCatalogSchema = z.strictObject({
 export type CommunityVenueCatalog = z.infer<typeof CommunityVenueCatalogSchema>;
 
 /*
- * Discovery monitors: bounded, declared inputs the research program watches.
- * Each monitor names the strata it feeds and the cadence it runs on.
+ * Discovery monitors: the searches the index plans to run for new evidence.
+ * Each names the strata it feeds and how often it should run. Nothing in this
+ * repository runs them automatically; `last_checked` records a manual check.
  */
 export const ResearchMonitorSchema = z.strictObject({
   id: SlugSchema,
@@ -230,6 +231,18 @@ export const ResearchMonitorCatalogSchema = z.strictObject({
 
 export type ResearchMonitorCatalog = z.infer<typeof ResearchMonitorCatalogSchema>;
 
+/*
+ * One correction in a run: what it targets (record IDs, source IDs, or a
+ * catalog file), what changed, and the evidence for the change.
+ */
+export const ResearchCorrectionSchema = z.strictObject({
+  target: CompactTextSchema.max(400),
+  change: CompactTextSchema.max(500),
+  evidence: CompactTextSchema.max(300).optional(),
+});
+
+export type ResearchCorrection = z.infer<typeof ResearchCorrectionSchema>;
+
 /* Append-only research run ledger. */
 export const ResearchRunSchema = z.strictObject({
   id: z.string().regex(/^run-\d{4}-\d{2}-\d{2}-[a-z0-9]+$/u).max(60),
@@ -248,6 +261,7 @@ export const ResearchRunSchema = z.strictObject({
     )
     .max(100)
     .optional(),
+  corrections: z.array(ResearchCorrectionSchema).max(200).optional(),
   notes: CompactTextSchema.max(500).optional(),
 });
 

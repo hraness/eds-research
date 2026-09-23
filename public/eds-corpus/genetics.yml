@@ -1,14 +1,15 @@
 schema: eds-research/corpus/v1
 category:
   id: genetics
-  label: Genetics and biomarkers
-  description: The molecular map — confirmed genes for twelve subtypes, the hEDS search, registries and cohorts.
+  label: Genetics
+  description: Confirmed genes for twelve EDS types and the search for genes behind hEDS, the one type without a known cause.
   order: 30
 records:
   - id: gen-heds-no-confirmed-gene
     kind: finding
     title: hEDS is the only subtype without a confirmed molecular basis
-    summary: All twelve other 2017 subtypes have defined causative genes. For hEDS — the most common type — no confirmed molecular basis existed through 2024, forcing purely clinical diagnosis and the strict 2017 criteria as the only gate.
+    description: All twelve other types in the 2017 classification have known causative genes. hEDS, the most common type, has no confirmed gene.
+    summary: All twelve other types in the 2017 classification have known causative genes. hEDS, the most common type, has no confirmed molecular basis, so it is diagnosed from clinical criteria alone under the 2017 classification.
     subtypes: [heds]
     status: established
     criteria_era: international-2017
@@ -23,8 +24,9 @@ records:
     tags: [genetics]
   - id: gen-klk15-first-candidate
     kind: finding
-    title: KLK15 is the first gene associated with hEDS
-    summary: Norris Lab whole-exome sequencing of 200 hEDS patients found rare variants across 14 of 15 kallikrein genes, with a recurrent KLK15 p.Gly226Asp variant segregating in multiple families; a knock-in mouse recapitulated tendon and cardiac-valve features. The authors and the society both caution this does not yet change diagnosis — it is the first candidate, not a test.
+    title: KLK15 is a candidate gene for hEDS, not yet a diagnostic test
+    description: Exome sequencing of 200 people with hEDS found a recurrent KLK15 variant in several families. KLK15 is a candidate gene, not a diagnostic test.
+    summary: Whole-exome sequencing of 200 people with hEDS by the Norris Lab found rare and low-frequency variants in 14 of the 15 kallikrein (KLK) genes, including a recurrent KLK15 variant (p.Gly226Asp) that segregated in multiple families. Mice carrying the variant showed hEDS features in tendons and heart valves. The Ehlers-Danlos Society says KLK genes are not on EDS genetic testing panels and hEDS remains a clinical diagnosis, and the authors say the study does not propose a diagnostic framework.
     date: "2025-08"
     date_precision: month
     subtypes: [heds]
@@ -37,10 +39,12 @@ records:
       - stratum: gray
         tier: preprint
         source_ids: [source-daaa8e28125b9b3bb775]
+        note: The 2024 preprint of the same study.
       - stratum: community
         tier: patient-org-synthesis
         source_ids: [source-bb268c000069896e8023]
-    corroboration: convergent
+        note: The society's June 2024 summary of the same study.
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     reassess_by: "2026-12-16"
     people: [Russell Norris]
@@ -48,8 +52,9 @@ records:
     tags: [genetics, frontier]
   - id: gen-hedge-study
     kind: program
-    title: HEDGE — the 1,000-participant hEDS genetic evaluation
-    summary: The Hypermobile Ehlers-Danlos Genetic Evaluation study is the largest dedicated hEDS genetics effort, run under The Ehlers-Danlos Society's research program. First publications were expected late 2025 into 2026; this index tracks it as the pivotal watch item for the subtype.
+    title: HEDGE is studying the genetics of 1,000 people with hEDS
+    description: HEDGE is studying the genetics of 1,000 people with hEDS. In October 2025 the society expected first publications in late 2025 or early 2026.
+    summary: HEDGE (Hypermobile Ehlers-Danlos Genetic Evaluation), listed among The Ehlers-Danlos Society's research programs, is studying the genetics of 1,000 people with hEDS. In October 2025 the society said it expected the first publications in late 2025 or early 2026, and that timelines may shift.
     subtypes: [heds, hsd]
     status: emerging
     criteria_era: international-2017
@@ -60,15 +65,17 @@ records:
       - stratum: community
         tier: patient-org-synthesis
         source_ids: [source-bb268c000069896e8023]
-    corroboration: convergent
+        note: Both pages come from The Ehlers-Danlos Society.
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     reassess_by: "2026-12-16"
     organizations: [The Ehlers-Danlos Society]
     tags: [genetics, registry, frontier]
   - id: gen-collagen-and-pathway-map
     kind: finding
-    title: The molecular map concentrates in collagen and collagen-processing pathways
-    summary: Confirmed subtype genes cluster into collagen structure (COL5A1/A2, COL3A1, COL1A1/A2, COL12A1), collagen processing (ADAMTS2, PLOD1), proteoglycan and glycosaminoglycan pathways (B4GALT7, B3GALT6, CHST14, DSE), complement (C1R, C1S), and signaling (TNXB, SLC39A13, ZNF469, PRDM5, FKBP14). The 2017 classification groups subtypes by shared pathway for research purposes.
+    title: The 2017 classification groups EDS genes by the process they affect
+    description: The 2017 classification groups the EDS genes by the process they affect, from collagen structure to the complement pathway, for research use.
+    summary: "To serve research, the 2017 classification groups the EDS types with known genes by the process each gene affects: collagen primary structure and processing (COL5A1, COL5A2, COL3A1, COL1A1, COL1A2, ADAMTS2), collagen folding and cross-linking (PLOD1, FKBP14), the myomatrix, where muscle meets the extracellular matrix (TNXB, COL12A1), glycosaminoglycan biosynthesis (B4GALT7, B3GALT6, CHST14, DSE), the complement pathway (C1R, C1S), and intracellular processes (SLC39A13, ZNF469, PRDM5). hEDS is listed as unresolved."
     subtypes: [all-eds]
     status: established
     criteria_era: international-2017

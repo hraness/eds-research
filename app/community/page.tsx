@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Community knowledge";
 const DESCRIPTION =
-  "What EDS patient venues carry that the formal literature still lacks — indexed at venue level, filed as reports, never as clinical proof.";
+  "Patterns reported in EDS patient forums and organizations, filed as patient reports rather than clinical findings. Venues are named, individual posters never.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -29,23 +29,22 @@ export default async function CommunityPage() {
     <>
       <h1 className="page-title">Community knowledge</h1>
       <p className="page-lede">
-        Patient communities accumulate dense lived-experience signal years
-        before clinicians study it. This index admits that signal at venue level
-        — patterns, not posters — and files it as community evidence, never as
-        clinical proof.
+        Patient communities sometimes notice problems before researchers study
+        them. The index records patterns that recur across forums and patient
+        organizations, names the venue rather than any person, and labels them
+        as patient reports.
       </p>
       <div className="notice">
-        <strong>Reports, not proof.</strong> Community records describe what
-        patients report. When a community signal is later confirmed by clinical
-        research — as with local-anesthetic resistance — the record shows the
-        whole arc.
+        <strong>Reports, not proof.</strong> These records describe what
+        patients report. When clinical research later supports a pattern, as a
+        2026 trial did for local anesthetic resistance, the record cites both.
       </div>
 
       <section className="section">
-        <h2 className="section-title">Indexed venues</h2>
+        <h2 className="section-title">Venues</h2>
         <p className="section-sub">
-          Venues are indexed with their access level and moderation model.
-          Threads, handles, and individual posters are never cataloged.
+          Each venue is listed with who can read it and how it is moderated.
+          Threads, usernames, and individual posters are never cataloged.
         </p>
         <ul className="card-grid">
           {research.venues.map((venue) => (
@@ -66,10 +65,10 @@ export default async function CommunityPage() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Community signals</h2>
+        <h2 className="section-title">Reported patterns</h2>
         <p className="section-sub">
-          Recurring patterns across venues, admitted under the publication
-          policy as signals with mandatory reassessment dates.
+          Patterns reported across venues. Each carries a date by which it will
+          be reassessed.
         </p>
         <ul className="record-list">
           {signals.map((record) => (

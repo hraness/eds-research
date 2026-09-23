@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Privacy";
 const DESCRIPTION =
-  "What the EDS Research Index collects — and, mostly, what it does not.";
+  "What the EDS Research Index collects from readers, and what it does not.";
 
 export function generateMetadata(): Metadata {
   return {

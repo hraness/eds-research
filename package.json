@@ -2,7 +2,7 @@
   "name": "@hraness/eds-research",
   "version": "0.1.0",
   "private": true,
-  "description": "An independent, open-source research index for the Ehlers-Danlos syndromes, indexing peer-reviewed literature, corroborated community knowledge, and documented historical and folk practice with per-stratum evidence tiers.",
+  "description": "An independent index of Ehlers-Danlos syndromes research. Each record links its sources and labels the kind of evidence, from clinical trials to patient forums.",
   "license": "MIT",
   "type": "module",
   "packageManager": "bun@1.3.14",

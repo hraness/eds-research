@@ -1,6 +1,6 @@
 /**
  * Inline product mark for the social image: the same ringed-index motif as
- * `app/icon.svg` — a ringed record point on crosshair axes. Rendered in
+ * `app/icon.svg`: a ringed record point on crosshair axes. Rendered in
  * currentColor inside the shared card's top bar.
  */
 export function EdsMark() {

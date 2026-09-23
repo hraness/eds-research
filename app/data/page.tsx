@@ -1,13 +1,14 @@
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
+import { CORPUS_FILES, RESEARCH_FILES } from "../data-files";
 import { absoluteSiteUrl, publicSitePath, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Data";
 const DESCRIPTION =
-  "The open YAML corpus behind the EDS research index — sources, records, subtypes, monitors, questions, and the run ledger, downloadable and auditable.";
+  "Download the YAML files behind the EDS Research Index: sources, records, subtypes, searches, open questions, and the log of changes.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -19,43 +20,20 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const CORPUS_FILES = [
-  "subtypes.yml",
-  "historiography.yml",
-  "diagnosis-and-classification.yml",
-  "genetics.yml",
-  "comorbidities.yml",
-  "management.yml",
-  "community-knowledge.yml",
-  "folk-and-early-management.yml",
-  "patient-experience.yml",
-  "research-programs.yml",
-] as const;
-
-const RESEARCH_FILES = [
-  "sources.yml",
-  "venues.yml",
-  "monitors.yml",
-  "runs.yml",
-  "questions.yml",
-  "collections.yml",
-  "publication-policy.yml",
-] as const;
-
 export default function DataPage() {
   return (
     <article className="prose">
       <h1 className="page-title">Data</h1>
       <p className="page-lede">
-        {site.datasetDescription} Every file is plain YAML, validated against
-        the published schema at build time. Nothing on this site exists that is
-        not in these files.
+        {site.datasetDescription} Each file is checked against the published
+        schema when the site builds, and every record, source, and date on the
+        site comes from these files.
       </p>
 
       <h2>Corpus</h2>
       <p>
-        The research records — findings, practices, events, signals, and
-        programs — plus the subtype registry.
+        The research records (findings, practices, events, patient-reported
+        patterns, and programs) and the subtype registry.
       </p>
       <ul>
         {CORPUS_FILES.map((file) => (
@@ -67,10 +45,10 @@ export default function DataPage() {
         ))}
       </ul>
 
-      <h2>Research infrastructure</h2>
+      <h2>Sources, searches, and the change log</h2>
       <p>
-        The source catalog, venue registry, discovery monitors, append-only run
-        ledger, open questions, collections, and publication policy.
+        The source catalog, venues, searches for new evidence, change log, open
+        questions, collections, and publication policy.
       </p>
       <ul>
         {RESEARCH_FILES.map((file) => (
@@ -82,14 +60,14 @@ export default function DataPage() {
         ))}
       </ul>
 
-      <h2>Provenance contract</h2>
+      <h2>How the files stay consistent</h2>
       <p>
-        Source identifiers are deterministic — derived from the canonical URL
-        and publication date — so the same source always resolves to the same
-        ID and duplicates fail validation. Record references, venue references,
-        collection membership, and run admissions are all checked for
-        referential integrity at build time; a broken reference fails the
-        build, not the page.
+        Each source&apos;s ID is built from its URL and publication date, so
+        the same source always gets the same ID and duplicates are caught. The
+        build also checks that every record, venue, collection, and log entry
+        points to something that exists, and that each record gives a source
+        the same evidence level as the source catalog. A broken reference stops
+        the build rather than breaking a page.
       </p>
     </article>
   );

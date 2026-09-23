@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Research program";
 const DESCRIPTION =
-  "The living research machinery behind the index: discovery monitors, open questions, curated collections, and the append-only run ledger.";
+  "Open questions the EDS Research Index is tracking, the searches it uses to find new evidence, curated collections, and the log of every change to the data.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -29,16 +29,15 @@ export default async function ResearchPage() {
     <>
       <h1 className="page-title">Research program</h1>
       <p className="page-lede">
-        The index is a running research program: declared monitors feed intake,
-        intake is logged in an append-only ledger, and open questions track
-        what the evidence has not settled.
+        What the index is tracking: open questions, the searches it uses to
+        find new evidence, and a log of every change to the data.
       </p>
 
       <section className="section">
         <h2 className="section-title">Open questions</h2>
         <p className="section-sub">
-          What the index is watching. Each names the strata it seeks evidence
-          from.
+          Questions the evidence has not settled, with the kinds of evidence
+          that could answer each.
         </p>
         <ul className="record-list">
           {research.questions.map((question) => (
@@ -81,10 +80,10 @@ export default async function ResearchPage() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Discovery monitors</h2>
+        <h2 className="section-title">Searches for new evidence</h2>
         <p className="section-sub">
-          Declared, bounded inputs on fixed cadences — what the program watches
-          and why.
+          Each search, what it looks for, how often it should run, and when it
+          was last checked. Nothing runs these searches automatically.
         </p>
         <ul className="record-list">
           {research.monitors.map((monitor) => (
@@ -109,10 +108,10 @@ export default async function ResearchPage() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Run ledger</h2>
+        <h2 className="section-title">Change log</h2>
         <p className="section-sub">
-          Append-only intake log. Corrections add new entries; history is never
-          rewritten.
+          Every update to the data, oldest first. Corrections add a new entry;
+          earlier entries are not edited.
         </p>
         <ul className="record-list">
           {research.runs.map((run) => (
@@ -122,6 +121,21 @@ export default async function ResearchPage() {
               </div>
               {run.notes !== undefined && (
                 <p className="record-item__summary">{run.notes}</p>
+              )}
+              {run.corrections !== undefined && run.corrections.length > 0 && (
+                <ul className="source-list">
+                  {run.corrections.map((correction, index) => (
+                    <li key={index}>
+                      <strong>{correction.target}</strong>: {correction.change}
+                      {correction.evidence !== undefined && (
+                        <span className="source-list__meta">
+                          {" "}
+                          Evidence: {correction.evidence}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               )}
               <p className="record-item__meta">
                 {run.id} · {run.date} · strata:{" "}

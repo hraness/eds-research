@@ -2,13 +2,13 @@ schema: eds-research/corpus/v1
 category:
   id: community-knowledge
   label: Community knowledge
-  description: What patient venues carry that the formal literature still lacks — recurring self-reported signals, practical knowledge, and lived patterns.
+  description: "Patterns that recur in patient forums and organizations: practical advice, self-management, and problems patients report before research has studied them."
   order: 60
 records:
   - id: signal-subluxation-load
     kind: signal
     title: Subluxation, braces, taping, and joint-stabilization self-management
-    summary: Across community venues the dominant practical corpus concerns joints that slip rather than dislocate — users trade taping, bracing, and stabilization techniques for joints that partially sublux without medical confirmation. The clinical literature acknowledges subluxation as a criterion-adjacent feature; the community knowledge layer is operational rather than diagnostic.
+    summary: Much of the practical discussion in patient communities is about joints that partly slip out of place (subluxation) rather than fully dislocate. Members swap taping, bracing, and stabilizing techniques, often for subluxations no doctor has confirmed. Clinical literature treats subluxation as close to, but not itself, a diagnostic criterion; the community discussion is about day-to-day management rather than diagnosis.
     subtypes: [heds, hsd, ceds]
     status: community-signal
     criteria_era: era-independent
@@ -17,7 +17,7 @@ records:
         tier: cross-venue-pattern
         source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
       - stratum: community
-        tier: patient-org-synthesis
+        tier: single-venue-pattern
         source_ids: [source-2fd8a13a36c4a8bd2b01]
     venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
     reviewed_at: "2026-09-16"
@@ -25,8 +25,8 @@ records:
     tags: [subluxation, self-management]
   - id: signal-pt-that-knows-eds
     kind: signal
-    title: Finding "a PT who knows EDS" is itself a researched problem
-    summary: Community venues treat physical-therapy provider selection as a navigational problem — directories, word-of-mouth referrals, and filters for providers who do not prescribe harmful generic exercise. The "find an EDS-literate PT" pattern is a structural access problem, not a treatment dispute.
+    title: Finding “a PT who knows EDS”
+    summary: Members treat finding a physical therapist as a search problem. They share directories and word-of-mouth referrals and look for therapists who avoid the generic exercise programs members consider harmful.
     subtypes: [heds, hsd]
     status: community-signal
     criteria_era: era-independent
@@ -41,7 +41,8 @@ records:
   - id: signal-meds-anesthesia-cautions
     kind: signal
     title: Medication, dental, and procedural caution knowledge
-    summary: Community venues carry a mature caution corpus — local-anesthetic duration problems, post-operative flares, and medication-sensitivity reports that predate the clinical confirmation. This layer is now partly validated (the lidocaine arc) and partly still anecdotal (medication sensitivity reports).
+    description: Patient communities keep lists of cautions about local anesthetics that wear off early, flares after surgery, and sensitivity to medications.
+    summary: Patient communities keep long-running lists of cautions about local anesthetics that wear off early, flares after surgery, and reported sensitivity to medications, many of them predating clinical study. Surveys and a 2026 trial have since supported the anesthetic reports; the medication-sensitivity reports remain anecdotal.
     subtypes: [all-eds]
     status: community-signal
     criteria_era: era-independent
@@ -56,7 +57,8 @@ records:
   - id: signal-diagnosis-navigation
     kind: signal
     title: Diagnosis navigation and specialist-finding strategies
-    summary: Community venues maintain informal routing — which specialists diagnose, which tests matter, how to prepare a diagnostic case. This is the community's response to the documented multi-year diagnostic delay, not a clinical pathway.
+    description: Members of EDS patient communities share advice on which specialists diagnose EDS, which tests matter, and how to prepare for an appointment.
+    summary: Members share advice on which specialists diagnose EDS, which tests matter, and how to prepare for an appointment, in response to diagnostic delays that often last years. This is peer advice, not a clinical pathway.
     subtypes: [heds, hsd]
     status: community-signal
     criteria_era: international-2017
@@ -66,8 +68,8 @@ records:
         source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
-        note: Registry data on alternative-diagnosis load explains why the navigation corpus exists.
+        source_ids: [source-9a67b455782a95159bd9]
+        note: In the Global Registry survey, people with hEDS reported an average of 10.45 other diagnoses and 10.39 years to diagnosis.
     corroboration: convergent
     venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
     reviewed_at: "2026-09-16"

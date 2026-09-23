@@ -1,12 +1,11 @@
 schema: eds-research/collections/v1
 collections:
   - id: cross-stratum-convergences
-    label: Cross-stratum convergences
-    description: Records where independent strata agree — the pattern this index exists to surface.
+    label: Where kinds of evidence agree
+    description: Records where independent studies or reports from more than one kind of evidence point the same way.
     record_ids:
       - mgmt-lidocaine-resistance
       - px-diagnostic-odyssey-2021
-      - hist-early-circus-performers
   - id: heds-genetics-frontier
     label: The hEDS genetics frontier
     description: The search for hEDS molecular markers, from unknown status to KLK15 and HEDGE.

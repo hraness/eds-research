@@ -2,12 +2,13 @@ schema: eds-research/corpus/v1
 category:
   id: diagnosis-and-classification
   label: Diagnosis and classification
-  description: The criteria machinery — Beighton scoring, the 2017 three-part hEDS criteria, subtype confirmation, and the criteria-era problem.
+  description: "How EDS is diagnosed: the Beighton score, the three-part 2017 hEDS criteria, genetic confirmation of the other types, and why older studies used different criteria."
   order: 20
 records:
   - id: class-heds-2017-criteria
     kind: finding
     title: The 2017 hEDS criteria require hypermobility, systemic manifestations, and exclusion
+    description: The 2017 hEDS criteria require joint hypermobility, two or more further features, and exclusion of other conditions. No genetic test confirms hEDS.
     summary: hEDS diagnosis under the 2017 International Classification requires (1) generalized joint hypermobility by Beighton score, (2) two or more of systemic manifestations, positive family history, or musculoskeletal complications, and (3) exclusion of other connective-tissue disorders. Unlike every other subtype, hEDS has no molecular confirmation test.
     date: "2017-03"
     date_precision: month
@@ -21,8 +22,8 @@ records:
       - stratum: community
         tier: patient-org-synthesis
         source_ids: [source-c55aca51ea775bf6d160, source-1f24758814c322b4d394]
-        note: Patient-org diagnostic checklist reflects the same three-part structure.
-    corroboration: convergent
+        note: The society's diagnostic checklist restates the same three-part structure.
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     tags: [diagnosis, criteria]
   - id: class-molecular-confirmation-required
@@ -43,7 +44,7 @@ records:
   - id: class-hsd-residual-category
     kind: finding
     title: HSD was created as the residual category beside hEDS
-    summary: The 2017 framework (Castori et al.) separated symptomatic joint hypermobility into hEDS when the strict criteria are met and HSD when they are not. The boundary is contested — the criteria were designed for research homogeneity, not to declare HSD benign, and the hEDS/HSD criteria review study is ongoing.
+    summary: The 2017 framework (Castori et al.) separated symptomatic joint hypermobility into hEDS when the strict criteria are met and HSD when they are not. The boundary is contested. The criteria were designed to define a more uniform group for research, not to declare HSD benign, and the hEDS/HSD criteria review study is ongoing.
     date: "2017-03"
     date_precision: month
     subtypes: [hsd, heds]
@@ -54,15 +55,15 @@ records:
         tier: consensus-statement
         source_ids: [source-d7dec285eaee780f18a3]
       - stratum: clinical
-        tier: cohort-study
+        tier: cross-sectional-study
         source_ids: [source-de164233cddfefc4105a]
-        note: The 2025 German cohort keeps hEDS/HSD together precisely because the boundary is porous.
+        note: The 2025 German survey groups hEDS and HSD together because their features overlap.
     reviewed_at: "2026-09-16"
     tags: [diagnosis, hsd]
   - id: class-criteria-era-drift
     kind: finding
     title: Criteria-era drift makes old and new EDS literature non-equivalent
-    summary: Villefranche-era "EDS type III" cohorts (1997–2017) do not map cleanly onto 2017 hEDS — the new criteria are stricter and exclude cases now filed as HSD. This index tags every record with its criteria era; meta-claims mixing eras are read with caution.
+    summary: Villefranche-era “EDS type III” cohorts (1997–2017) do not map cleanly onto 2017 hEDS. The 2017 criteria are stricter, and some people who met the older hypermobility-type criteria would now be diagnosed with HSD. Studies that mix eras need to be read with that in mind.
     subtypes: [all-eds]
     status: established
     criteria_era: era-independent
@@ -75,7 +76,8 @@ records:
   - id: dx-heds-remains-clinical
     kind: finding
     title: hEDS diagnosis remains clinical despite the KLK15 finding
-    summary: The Ehlers-Danlos Society and the KLK15 authors both state that kallikrein genes are not yet on EDS testing panels and that hEDS remains a clinical diagnosis. Replication and the HEDGE study results are the gating evidence.
+    description: The Ehlers-Danlos Society says KLK genes are not on EDS genetic testing panels and hEDS remains a clinical diagnosis despite the KLK15 finding.
+    summary: The Ehlers-Danlos Society says kallikrein (KLK) genes are not on EDS genetic testing panels and that hEDS remains a clinical diagnosis, and that further studies, including the HEDGE study, are needed to replicate the KLK15 finding. The KLK15 authors say their study does not propose a diagnostic framework and that the absence of KLK15 variants should not rule out a clinical diagnosis.
     date: "2025-08"
     date_precision: month
     subtypes: [heds]

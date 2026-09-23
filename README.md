@@ -1,22 +1,20 @@
 # EDS Research Index
 
-An independent, open-source research index for the Ehlers-Danlos syndromes, published at [hraness.com/eds](https://hraness.com/eds).
+An independent, open-source index of research on the Ehlers-Danlos syndromes, published at [hraness.com/eds](https://hraness.com/eds). It is not medical advice. Each record links its sources and labels the kind of evidence: clinical, patient community, historical, registry, or gray literature (preprints and theses).
 
-The index treats rare-disease knowledge as what it is: spread across peer-reviewed literature, patient registries, community venues, preprints, and four centuries of historical record. Every record names its sources, its stratum, its evidence tier, its subtype scope, and the diagnostic-criteria era its evidence worked under.
+## Methodology
 
-## The methodology in one paragraph
-
-Sources are filed under five strata — **clinical**, **community**, **historical**, **registry**, **gray literature** — each with its own evidence-tier ladder. Records attested by multiple strata must declare a corroboration state (`convergent`, `contested`, `refuted`). Community evidence is indexed at venue level only — patterns, never posters. Historical and folk practices are documented as history, never as endorsement. Every record carries a `reviewed_at` date; emerging, contested, and community-signal records cannot enter the corpus without a `reassess_by` date.
+Each kind of evidence has its own scale of evidence levels, and a record gives each source the level recorded in the source catalog. Records that cite more than one kind of evidence state how it relates: `convergent`, `single-origin` (the kinds restate one underlying study or report), `contested`, or `refuted`. Community evidence is recorded by venue, never by poster. Historical and folk practices are listed as history, not as recommendations. Every record carries a `reviewed_at` date, and emerging, contested, and community-signal records also need a `reassess_by` date.
 
 The full methodology is on the site at [/eds/methodology](https://hraness.com/eds/methodology).
 
 ## Repository layout
 
-- `lib/` — Zod schemas (`eds-schema`, `research-schema`), stable source identity, and the content loader with referential-integrity checks.
-- `public/eds/` — the record corpus: one YAML file per category plus `subtypes.yml` (all thirteen 2017 types plus HSD).
-- `public/research/` — `sources.yml`, `venues.yml`, `monitors.yml`, `runs.yml`, `questions.yml`, `collections.yml`, `publication-policy.yml`.
-- `app/` — the public Next.js site (basePath `/eds`).
-- `scripts/` — `source-id.ts`, `audit-eds-research.ts`, `submit-indexnow.ts`.
+- `lib/`: Zod schemas (`eds-schema`, `research-schema`), stable source identity, and the content loader with referential-integrity checks.
+- `public/eds-corpus/`: the record corpus, one YAML file per category plus `subtypes.yml` (all thirteen 2017 types plus HSD).
+- `public/research/`: `sources.yml`, `venues.yml`, `monitors.yml`, `runs.yml`, `questions.yml`, `collections.yml`, `publication-policy.yml`.
+- `app/`: the public Next.js site (basePath `/eds`).
+- `scripts/`: `source-id.ts`, `audit-eds-research.ts`, `submit-indexnow.ts`.
 
 ## Commands
 
@@ -32,9 +30,11 @@ bun run research:source-id    # stable source ID for a URL
 ## Adding a source
 
 1. Compute its ID: `bun run research:source-id -- <url> [published-at]`.
-2. Add it to `public/research/sources.yml` sorted by ID, with stratum and a tier belonging to that stratum.
-3. Reference it from records via `source_ids`; the audit rejects unknown or stratum-mismatched references.
+2. Resolve its DOI, PMID, or other identifier and confirm that the title, venue, and year at the link match the entry.
+3. Add it to `public/research/sources.yml` sorted by ID, with its stratum and a tier belonging to that stratum.
+4. Reference it from records via `source_ids`, using the catalog tier; the audit rejects unknown references and tiers that differ from the catalog.
+5. Log the addition in a new run in `public/research/runs.yml`.
 
 ## Boundaries
 
-Not medical advice. The index documents evidence and provenance; it does not diagnose, recommend, or discourage any course of care. Community evidence is filed as reports, not proof. Historical and folk records document what was done, not what works.
+The index describes evidence and where it comes from; it does not diagnose, recommend, or discourage any course of care. Community evidence is filed as patient reports. Historical and folk records describe what was done, not what works.

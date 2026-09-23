@@ -10,7 +10,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Source catalog";
 const DESCRIPTION =
-  "Every source cited by the EDS research index, filed by stratum with its evidence tier, publisher, and stable identifier.";
+  "Every source the EDS Research Index cites, grouped by kind of evidence, with its evidence level, publisher, and permanent ID.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -37,9 +37,10 @@ export default async function SourcesPage() {
     <>
       <h1 className="page-title">Source catalog</h1>
       <p className="page-lede">
-        {research.sources.length} sources across five strata. Each carries a
-        stable identifier derived from its canonical URL and publication date —
-        records attest to sources, and the loader rejects anything unresolved.
+        {research.sources.length} sources in five categories. Each has a
+        permanent ID built from its URL and publication date. The site will not
+        build if a record cites a source missing from this list or gives a
+        source a different evidence level than this catalog does.
       </p>
       {STRATUM_ORDER.map((stratum) => {
         const sources = research.sources.filter(
@@ -67,7 +68,7 @@ export default async function SourcesPage() {
                     {source.access !== "public" ? ` · ${source.access}` : ""}
                     <br />
                     {source.id}
-                    {source.note !== undefined ? ` — ${source.note}` : ""}
+                    {source.note !== undefined ? ` · ${source.note}` : ""}
                   </span>
                 </li>
               ))}

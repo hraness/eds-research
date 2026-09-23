@@ -2,13 +2,14 @@ schema: eds-research/corpus/v1
 category:
   id: patient-experience
   label: Patient experience and diagnostic odyssey
-  description: The measured human cost — diagnostic delay, dismissal, and the structured record of what getting diagnosed actually takes.
+  description: How long diagnosis takes, how patients are treated on the way, and the studies that describe both.
   order: 80
 records:
   - id: px-diagnostic-odyssey-2021
     kind: finding
-    title: The diagnostic odyssey is measured in years, not visits
-    summary: The 2021 systematic review of the EDS diagnostic journey documents protracted time-to-diagnosis, serial misdiagnosis, and healthcare dismissal across patient populations. Delay is not an anecdote — it is a measured property of the system.
+    title: Diagnosing EDS and HSD often takes years
+    description: A 2021 review of 13 qualitative studies found several causes of delayed hEDS and HSD diagnosis, from the symptoms themselves to fragmented care.
+    summary: A 2021 review of 13 qualitative studies of adults with hEDS or HSD found diagnosis delayed by the symptoms themselves and the lack of a confirmatory test, by patients seeing many providers and receiving many diagnoses, by limited clinician knowledge, and by fragmented health systems. Surveys put numbers on the delay. At one German EDS clinic, the median time to diagnosis was 23.0 years for hEDS or HSD and 14.5 years for classical and classical-like EDS. In an Australian survey of 152 women with EDS, more than half had first noticed symptoms more than 15 years before diagnosis.
     date: "2021"
     date_precision: year
     subtypes: [all-eds]
@@ -19,55 +20,57 @@ records:
         tier: systematic-review
         source_ids: [source-fa671c0df94cd9c20ecb]
       - stratum: clinical
-        tier: cohort-study
+        tier: cross-sectional-study
         source_ids: [source-8d222b21a7423563aba4, source-de164233cddfefc4105a]
-        note: "Cohort data: 10–12 year average delay (Australia) and 22-year median for hEDS/HSD (Germany)."
+        note: "Australia, 152 women with EDS: more than half first noticed symptoms over 15 years before diagnosis. Germany, 99 patients at one clinic: median time to diagnosis 23.0 years for hEDS/HSD, 14.5 years for classical and classical-like EDS (the paper's table; its abstract calls these means)."
       - stratum: community
         tier: cross-venue-pattern
         source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
-        note: Diagnostic-odyssey posts are a durable fixture across community venues.
+        note: Long searches for a diagnosis come up repeatedly in these forums.
     corroboration: convergent
     reviewed_at: "2026-09-16"
     tags: [diagnosis, delay]
   - id: px-trauma-informed-2025
     kind: finding
-    title: Diagnosis itself can be traumatic — the 2025 phenomenological record
-    summary: The 2025 BMJ phenomenological study (n=9, in-depth interviews) describes an "endless struggle" marked by uncertainty, dismissal, and medical gaslighting — and urges trauma-informed care at the diagnostic encounter itself. The psychiatric-label misdiagnosis burden is documented alongside it.
+    title: A 2025 qualitative study describes the hEDS diagnostic journey as traumatic
+    description: A 2025 qualitative study of people with hEDS describes dismissal and medical gaslighting on the way to diagnosis.
+    summary: A qualitative study of people diagnosed with hEDS, published in BMJ Connections Clinical Genetics and Genomics in December 2025, found that experiences with providers ranged from harmful dismissal to validation, and that a diagnosis brought both validation and grief. The authors say physicians who diagnose and treat hEDS should be aware of possible medical post-traumatic stress disorder and past experiences of medical gaslighting. In a separate Global Registry survey of people with hEDS, anxiety and depression were among the most common other diagnoses they had received.
     date: "2025"
     date_precision: year
     subtypes: [heds, hsd]
-    status: established
+    status: probable
     criteria_era: international-2017
     evidence:
       - stratum: clinical
-        tier: cohort-study
+        tier: qualitative-study
         source_ids: [source-21337422dde3976b584c]
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
-        note: Anxiety and depression were the most-common pre-EDS alternative diagnoses in the registry survey.
+        source_ids: [source-9a67b455782a95159bd9]
+        note: Anxiety, depression, and migraine were the most common other diagnoses in the registry survey.
     corroboration: convergent
     reviewed_at: "2026-09-16"
     tags: [trauma-informed, gaslighting]
   - id: px-german-cohort-manifestations
     kind: finding
-    title: What hEDS/HSD patients actually present with — the 2025 German cohort
-    summary: "The 2025 German outpatient cohort (n=105, diagnosed 2021–2024) shows the real-world presentation profile: musculoskeletal pain, joint instability and subluxation as dominant features, alongside fatigue and the expected comorbidity load. A current-era complement to the criteria literature."
+    title: Pain and joint instability lead the symptoms reported at a German EDS clinic
+    summary: A survey of 99 adults diagnosed at the EDS clinic of University Hospital Cologne, 80 of them with hEDS or HSD, was published in 2025. Musculoskeletal pain and joint instability, including repeated subluxations and dislocations, were the most common first symptoms. Pain was the problem respondents most often said severely affected daily activities (60.2%), followed by joint instability (38.8%), other orthopedic problems (36.7%), digestive complaints (35.7%), and fatigue (32.7%). The results come from one specialist clinic.
     date: "2025"
     date_precision: year
     subtypes: [heds, hsd]
-    status: established
+    status: probable
     criteria_era: international-2017
     evidence:
       - stratum: clinical
-        tier: cohort-study
+        tier: cross-sectional-study
         source_ids: [source-de164233cddfefc4105a]
     reviewed_at: "2026-09-16"
     tags: [manifestations, cohort]
   - id: px-fatigue-underrecognized
     kind: finding
-    title: Fatigue is severe, common, and systematically underweighted
-    summary: Fatigue is among the highest-burden symptoms in hEDS/HSD cohorts yet historically underweighted against joint and skin features. The 2017 multisystem criteria and subsequent cohort work restored it to the clinical picture.
+    title: Fatigue severely limits daily life for many people with hEDS or HSD
+    description: In a 2025 survey at a German EDS clinic, 32.7% of respondents said fatigue severely affected their daily activities.
+    summary: In a 2025 survey at a German EDS clinic, 32.7% of respondents said fatigue severely affected their daily activities, after pain, joint instability, other orthopedic problems, and digestive complaints. Fatigue is not one of the 2017 hEDS diagnostic criteria.
     subtypes: [heds, hsd]
     status: probable
     criteria_era: international-2017
@@ -76,7 +79,7 @@ records:
         tier: expert-review
         source_ids: [source-1ad3f0edd57e0fab1524]
       - stratum: clinical
-        tier: cohort-study
+        tier: cross-sectional-study
         source_ids: [source-de164233cddfefc4105a]
     reviewed_at: "2026-09-16"
     tags: [fatigue]

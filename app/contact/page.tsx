@@ -24,10 +24,9 @@ export default function ContactPage() {
     <article className="prose">
       <h1 className="page-title">Contact and corrections</h1>
       <p className="page-lede">
-        Corrections are a first-class input to this index. If a record misstates
-        its evidence, mis-scopes a subtype, or mislabels a stratum, that is a
-        bug — the corpus is public, the validation is deterministic, and the
-        fix lands in the ledger.
+        If a record gets its evidence, EDS type, or kind of source wrong, please
+        tell us. The data is public, and each correction is logged with what
+        changed and why.
       </p>
 
       <h2>Corrections and source suggestions</h2>
@@ -35,23 +34,21 @@ export default function ContactPage() {
         Open an issue or pull request at{" "}
         <a href={GITHUB_REPOSITORY_URL}>github.com/hraness/eds-research</a>. For
         a correction, cite the record ID and the source that contradicts it.
-        For a suggested source, the canonical URL and publication date are what
-        the admission pipeline needs.
+        For a new source, send its URL and publication date.
       </p>
 
       <h2>What corrections do</h2>
       <p>
-        The corpus is append-only at the ledger level: a correction lands as a
-        new run entry naming what changed and why. A record found to be wrong is
-        marked refuted or revised with its history intact — it is not silently
-        rewritten.
+        Each correction is added to the change log as a new entry that names
+        what changed and why. A record found to be wrong is marked refuted, or
+        revised with the change logged; it is not silently rewritten.
       </p>
 
       <h2>What this channel is not for</h2>
       <p>
         Personal medical questions cannot be answered here. Community evidence
-        is indexed at venue level only — please do not send screenshots or
-        quotes of identifiable patient posts.
+        is recorded by venue only, so please do not send screenshots or quotes
+        of identifiable patient posts.
       </p>
     </article>
   );

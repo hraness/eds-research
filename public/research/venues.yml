@@ -6,7 +6,6 @@ venues:
     host: Inspire
     url: https://www.inspire.com/groups/eds-and-hsd/
     access: registration
-    scale_display: largest dedicated EDS support community
     moderation: professional
     note: Sponsored by The Ehlers-Danlos Society as an Inspire trusted partner.
   - id: venue-reddit-ehlersdanlos
@@ -15,7 +14,6 @@ venues:
     host: Reddit
     url: https://www.reddit.com/r/ehlersdanlos/
     access: public
-    scale_display: 100k+ members
     moderation: volunteer
     note: High-volume public venue; strong norms against individual medical advice.
   - id: venue-reddit-hypermobility
@@ -40,7 +38,7 @@ venues:
     url: https://www.ehlers-danlos.com/
     access: public
     moderation: professional
-    note: Largest international patient organization; operates the DICE Global Registry, EDS ECHO, local groups, and research programs.
+    note: International patient organization; operates the DICE Global Registry, EDS ECHO, local groups, and research programs.
   - id: venue-zebra-network
     name: The Zebra Network
     kind: patient-org
@@ -61,7 +59,7 @@ venues:
     name: DICE EDS and HSD Global Registry
     kind: registry
     host: The Ehlers-Danlos Society
-    url: https://www.ehlers-danlos.com/registry/
+    url: https://www.ehlers-danlos.com/eds-global-registry/
     access: membership
     moderation: professional
     note: Structured patient-reported registry; sources the society's published survey analyses.

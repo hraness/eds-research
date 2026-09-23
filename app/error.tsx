@@ -7,8 +7,8 @@ export default function Error({
     <article className="prose">
       <h1 className="page-title">Something went wrong</h1>
       <p>
-        The page failed to render. The underlying corpus is unaffected — the
-        dataset is always available under <a href="/eds/data">/eds/data</a>.
+        This page did not load. The data behind it is unaffected, and every
+        file is listed at <a href="/eds/data">/eds/data</a>.
       </p>
       <p>
         <button

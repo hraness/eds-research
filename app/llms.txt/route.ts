@@ -1,3 +1,4 @@
+import { CORPUS_FILES, RESEARCH_FILES } from "../data-files";
 import { absoluteSiteUrl, site } from "../site";
 
 export const dynamic = "force-static";
@@ -7,31 +8,31 @@ const LINES = [
   "",
   `> ${site.description}`,
   "",
-  "This is a research index, not medical advice. Records carry per-stratum",
-  "evidence tiers; community material is venue-level and filed as reports,",
-  "and historical/folk records document practice without endorsing it.",
+  "This is a research index, not medical advice. Each record labels its",
+  "evidence by kind (clinical, community, historical, registry, or gray",
+  "literature) and by level within that kind. Community material is",
+  "summarized by venue and labeled as patient reports. Historical and folk",
+  "records describe what was done, not what works.",
   "",
-  "## Surfaces",
+  "## Pages",
   "",
-  `- [Index](${absoluteSiteUrl("/")}): corpus overview and cross-stratum convergences`,
-  `- [Subtypes](${absoluteSiteUrl("/subtypes")}): the 2017 classification plus HSD`,
-  `- [Timeline](${absoluteSiteUrl("/timeline")}): the disease concept across criteria eras`,
-  `- [Practices](${absoluteSiteUrl("/practices")}): management and folk practice with risk annotations`,
-  `- [Community](${absoluteSiteUrl("/community")}): venue-level patient-knowledge signals`,
-  `- [Sources](${absoluteSiteUrl("/sources")}): the canonical source catalog by stratum`,
-  `- [Methodology](${absoluteSiteUrl("/methodology")}): strata, tiers, corroboration, lifecycle`,
-  `- [Research](${absoluteSiteUrl("/research")}): monitors, questions, collections, run ledger`,
-  `- [Data](${absoluteSiteUrl("/data")}): the open YAML corpus`,
-  `- [About](${absoluteSiteUrl("/about")}): editorial position and independence`,
+  `- [Index](${absoluteSiteUrl("/")}): overview and records where kinds of evidence agree`,
+  `- [Subtypes](${absoluteSiteUrl("/subtypes")}): the 13 types in the 2017 classification plus HSD`,
+  `- [Timeline](${absoluteSiteUrl("/timeline")}): how the idea of EDS changed over time`,
+  `- [Practices](${absoluteSiteUrl("/practices")}): management and folk practice, with known risks`,
+  `- [Community](${absoluteSiteUrl("/community")}): patterns reported in patient venues`,
+  `- [Sources](${absoluteSiteUrl("/sources")}): every cited source, by kind of evidence`,
+  `- [Methodology](${absoluteSiteUrl("/methodology")}): how evidence is sorted, graded, and reviewed`,
+  `- [Research](${absoluteSiteUrl("/research")}): open questions, searches, collections, and the change log`,
+  `- [Data](${absoluteSiteUrl("/data")}): every YAML data file`,
+  `- [About](${absoluteSiteUrl("/about")}): who publishes the index and the rules it follows`,
   "",
   "## Data files",
   "",
-  `- ${absoluteSiteUrl("/eds-corpus/subtypes.yml")}`,
-  `- ${absoluteSiteUrl("/research/sources.yml")}`,
-  `- ${absoluteSiteUrl("/research/questions.yml")}`,
-  `- ${absoluteSiteUrl("/research/publication-policy.yml")}`,
+  ...CORPUS_FILES.map((file) => `- ${absoluteSiteUrl(`/eds-corpus/${file}`)}`),
+  ...RESEARCH_FILES.map((file) => `- ${absoluteSiteUrl(`/research/${file}`)}`),
   "",
-] as const;
+];
 
 export function GET() {
   return new Response(`${LINES.join("\n")}\n`, {

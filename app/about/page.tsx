@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 
 const TITLE = "About";
 const DESCRIPTION =
-  "What the EDS Research Index is, why it exists, and the editorial position it runs on.";
+  "Who publishes the EDS Research Index, why it exists, and the rules it follows for weighing clinical, patient, and historical evidence.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -29,45 +29,45 @@ export default function AboutPage() {
     <article className="prose">
       <h1 className="page-title">About</h1>
       <p className="page-lede">
-        An independent, open-source research index for the Ehlers-Danlos
-        syndromes — built to answer a structural question: how do you honestly
-        index what is known about a rare disease when the knowledge lives in
-        journals, registries, forums, and four centuries of case notes at once?
+        The EDS Research Index is an independent, open-source guide to what is
+        known about the Ehlers-Danlos syndromes. It draws on journals,
+        registries, patient forums, and historical case reports, and it keeps
+        track of which kind of source each claim comes from.
       </p>
 
       <h2>Why this exists</h2>
       <p>
-        EDS is under-researched relative to its burden, its diagnostic criteria
-        have been revised three times in forty years, and the most common type
-        had no associated gene until 2025. Patient communities have carried
-        real signal — local-anesthetic resistance being the documented example —
-        for years before formal study confirmed it. A serious index for this
-        disease has to take all of that seriously without pretending a forum
-        post is a clinical trial.
+        The diagnostic criteria for EDS have been revised three times in forty
+        years, and the most common type, hEDS, still has no confirmed gene. A
+        candidate gene, KLK15, was reported in a 2024 preprint and published
+        in 2025. Patients sometimes notice a problem long before researchers
+        study it; local anesthetics failing in EDS is one example, now
+        supported by surveys and a 2026 trial. The index takes patient reports seriously and
+        labels them as reports, so they are not mistaken for trial results.
       </p>
 
       <h2>Editorial position</h2>
       <ul>
         <li>
-          Evidence is stratified, never flattened. Clinical, community,
-          historical, registry, and gray-literature sources each carry their
-          own tier ladder.
+          Each source is filed as clinical, community, historical, registry, or
+          gray literature, and each kind has its own scale of evidence levels.
         </li>
         <li>
-          Community material is indexed at venue level — patterns, never
-          posters — and filed as reports, not proof.
+          Patient-community material is summarized by venue. No individual is
+          named or quoted, and these records are labeled as patient reports.
         </li>
         <li>
-          Historical and folk practices are documented as historical objects.
-          Admission records existence and provenance, never efficacy.
+          Historical and folk practices are listed because they happened.
+          Listing one says nothing about whether it works.
         </li>
         <li>
-          Uncertainty is publishable. Contested records are labeled contested;
-          emerging records carry reassessment dates.
+          When the evidence is unsettled, the record says so: contested records
+          are labeled contested, and emerging ones carry a date for
+          reassessment.
         </li>
         <li>
-          Every record names its sources, its subtype scope, and the diagnostic
-          era its evidence worked under.
+          Every record names its sources, the EDS types it applies to, and the
+          diagnostic criteria in force when its evidence was gathered.
         </li>
       </ul>
 
@@ -83,20 +83,20 @@ export default function AboutPage() {
       <p>
         The index is published by Hraness as an independent editorial project.
         It is not affiliated with, endorsed by, or funded by The Ehlers-Danlos
-        Society or any medical body — the society appears throughout the corpus
-        because it operates the field&apos;s central research infrastructure.
-        The full corpus and the code that validates and renders it are public
+        Society or any medical body. The society appears throughout the index
+        because it runs the DICE Global Registry and EDS ECHO. The data and the code that checks and renders it are public
         at{" "}
         <a href={GITHUB_REPOSITORY_URL}>github.com/hraness/eds-research</a>.
       </p>
 
       <h2>Contact and corrections</h2>
       <p>
-        Corrections are a first-class input — see{" "}
-        <a href={publicSitePath("/contact")}>contact</a>. The methodology is{" "}
-        <a href={publicSitePath("/methodology")}>documented in full</a>, and the
-        research machinery is on the{" "}
-        <a href={publicSitePath("/research")}>research program</a> page.
+        Corrections are welcome; see{" "}
+        <a href={publicSitePath("/contact")}>contact</a>. The{" "}
+        <a href={publicSitePath("/methodology")}>methodology</a> sets out the
+        rules, and the{" "}
+        <a href={publicSitePath("/research")}>research program</a> page lists
+        open questions, searches, and the change log.
       </p>
     </article>
   );

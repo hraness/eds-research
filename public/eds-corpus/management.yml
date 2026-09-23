@@ -2,15 +2,15 @@ schema: eds-research/corpus/v1
 category:
   id: management
   label: Management and clinical care
-  description: What the clinical literature supports — physiotherapy mainstay, pain management, anesthetic and surgical cautions — with evidence tiers made explicit.
+  description: Physical therapy, pain management, and cautions about anesthesia and surgery, with the strength of the evidence behind each.
   order: 50
 records:
   - id: mgmt-pt-mainstay
     kind: practice
-    title: Physiotherapy and exercise are the management mainstay
-    summary: "Clinical guidance positions individualized physical therapy — strengthening, proprioceptive work, pacing — as the primary management for hEDS/HSD. The honest limitation: the trial record is small and heterogeneous; the recommendation rests on expert consensus and cohort experience more than large trials."
+    title: Physical therapy and exercise are the main management approach
+    summary: Clinical guidance gives individualized physical therapy (strengthening, proprioceptive work, and pacing) a central role in managing hEDS and HSD. A 2017 paper on physical therapy by Engelbert and colleagues says the research on managing these conditions is limited in size and quality, so the advice rests more on expert consensus and clinical experience than on large trials.
     subtypes: [heds, hsd]
-    status: established
+    status: probable
     criteria_era: international-2017
     practice_kind: physical-therapy
     evidence:
@@ -18,20 +18,20 @@ records:
         tier: expert-review
         source_ids: [source-1ad3f0edd57e0fab1524]
       - stratum: clinical
-        tier: consensus-statement
+        tier: expert-review
         source_ids: [source-328501b217c2b3d0d2d2]
     reviewed_at: "2026-09-16"
     reassess_by: "2027-03-16"
     risk:
       level: caution
-      note: Generic exercise prescriptions can aggravate unstable joints; EDS-literate, individualized programming matters.
+      note: Generic exercise programs can aggravate unstable joints; the guidance favors individualized programs.
     tags: [physical-therapy]
   - id: mgmt-lidocaine-resistance
     kind: practice
-    title: Local anesthetic resistance — the index's reference convergence
-    summary: Patients reported local-anesthetic failure for decades. Hakim and Grahame's 2005 survey found 58% of hypermobile patients reported inadequate anesthesia vs 21% of controls; a 2019 survey (n=988) found 88% vs 33%; in 2025 a randomized cross-over trial (n=135) confirmed shorter lidocaine duration in EDS patients. The arc — forum reports, structured survey, randomized confirmation — is the model this index exists to document.
-    date: "2025"
-    date_precision: year
+    title: "Local anesthetic resistance in EDS: patient reports, two surveys, and a 2026 trial"
+    summary: People with EDS often report that local anesthetics fail or wear off early. In a survey reported in 2005, 58% of 172 women with joint hypermobility syndrome said a local anesthetic had not been as effective as it should have been, against 21% of 53 age-matched controls without hypermobility. In a 2019 online survey, 88% of 980 people with EDS who had a dental local anesthetic recalled inadequate pain prevention, against 33% of 249 people without EDS. A randomized cross-over trial published in 2026 (135 participants, 91 with EDS) found that fewer participants with EDS still had numbness 15 and 30 minutes after a lidocaine injection, which the authors read as a shorter-lasting effect.
+    date: "2026-03"
+    date_precision: month
     subtypes: [all-eds]
     status: established
     criteria_era: international-2017
@@ -40,13 +40,13 @@ records:
       - stratum: community
         tier: cross-venue-pattern
         source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
-        note: Dental-procedure anesthetic failure is among the oldest recurring community reports.
+        note: Anesthetic failure during dental work is a recurring report in these forums.
       - stratum: clinical
-        tier: cohort-study
-        source_ids: [source-aef7c864eb540644a26f, source-27684d4afee8b83b9d25]
+        tier: cross-sectional-study
+        source_ids: [source-99c47d7654307a3505da, source-27684d4afee8b83b9d25]
       - stratum: clinical
         tier: randomized-trial
-        source_ids: [source-d91980e8e90850a3f3b9]
+        source_ids: [source-ed80c4098795181b156a]
       - stratum: registry
         tier: trial-registration
         source_ids: [source-50e9fc30eba2907905ba]
@@ -55,12 +55,12 @@ records:
     reviewed_at: "2026-09-16"
     risk:
       level: caution
-      note: Procedure planning should anticipate reduced local-anesthetic duration; flag the diagnosis before dental and minor surgical work.
+      note: In the 2026 trial, fewer people with EDS than healthy controls still had numbness 15 and 30 minutes after lidocaine. The authors say clinicians should be aware of this reduced effectiveness and adjust care.
     tags: [anesthesia, dental, convergence]
   - id: mgmt-pain-management-2017
     kind: practice
-    title: Pain management guidance formalized in 2017
-    summary: "Chopra et al.'s 2017 management paper remains the reference for EDS pain care — multimodal analgesia, physiotherapy, psychological support, and caution about long-term opioids. Evidence tiers here are low: mostly expert consensus and small series."
+    title: A 2017 review of pain management in EDS
+    summary: Chopra and colleagues' 2017 review describes chronic pain as common in EDS and often one of the first symptoms. It traces pain to causes including subluxations and dislocations, earlier surgery, muscle weakness, and proprioceptive problems, and discusses physical therapy, medications, and equipment such as cushions, compression garments, and braces. The authors say studies of these treatments are few and insufficient to guide management.
     date: "2017-03"
     date_precision: month
     subtypes: [all-eds]
@@ -70,14 +70,14 @@ records:
     evidence:
       - stratum: clinical
         tier: expert-review
-        source_ids: [source-328501b217c2b3d0d2d2]
+        source_ids: [source-d7ba05272083315d9e1f]
     reviewed_at: "2026-09-16"
     reassess_by: "2027-03-16"
     tags: [pain]
   - id: mgmt-surgical-caution
     kind: practice
     title: Surgical and tissue-handling caution
-    summary: Tissue fragility, wound-healing complications, and — in vEDS — arterial rupture risk make surgery a deliberate decision. The 2017 orthopaedic guidance favors conservative management; the record is cautious rather than prohibitionist.
+    summary: Fragile tissue, poor wound healing, and, in vEDS, the risk of arterial rupture make surgery a weighed decision. The National Academies' 2022 report says all conservative, nonsurgical measures should be exhausted before surgery is considered for people with EDS or HSD.
     subtypes: [all-eds]
     status: probable
     criteria_era: international-2017
@@ -92,12 +92,12 @@ records:
     reviewed_at: "2026-09-16"
     risk:
       level: significant
-      note: In vEDS, arterial and organ rupture make surgical and anesthetic decisions materially different from other types; subtype scoping is not optional here.
+      note: In vEDS, the risk of arterial and organ rupture makes surgical and anesthetic decisions different from those in other types.
     tags: [surgery, tissue-fragility]
   - id: mgmt-psych-support
     kind: practice
     title: Psychological support and trauma-informed care
-    summary: The diagnostic-odyssey literature documents medical gaslighting and post-traumatic stress in hEDS patients; management guidance includes psychological support. The 2025 BMJ phenomenological study urges trauma-informed care at the point of diagnosis.
+    summary: Studies of the diagnostic journey in hEDS describe medical gaslighting and post-traumatic stress, and management guidance includes psychological support. A 2025 qualitative study of people with hEDS says physicians should be aware of possible medical post-traumatic stress disorder and highlights the importance of trauma-informed care.
     date: "2025"
     date_precision: year
     subtypes: [heds, hsd]
@@ -106,7 +106,7 @@ records:
     practice_kind: psychological
     evidence:
       - stratum: clinical
-        tier: cohort-study
+        tier: qualitative-study
         source_ids: [source-21337422dde3976b584c]
       - stratum: clinical
         tier: systematic-review

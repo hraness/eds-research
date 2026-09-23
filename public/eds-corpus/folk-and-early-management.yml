@@ -2,13 +2,13 @@ schema: eds-research/corpus/v1
 category:
   id: folk-and-early-management
   label: Folk practices and early management
-  description: Pre-criteria management and folk practices — how laxity was accommodated and treated before the modern evidence era. Documented as historical record, not endorsement.
+  description: How people managed loose joints before modern evidence existed. These records describe history; they are not recommendations.
   order: 70
 records:
   - id: folk-rest-immobilization-era
     kind: practice
     title: Rest, immobilization, and the brace era
-    summary: Before modern physiotherapy, management of joint instability centered on rest and immobilization — bandaging, splinting, activity restriction. The clinical consensus has moved the opposite direction toward active strengthening, but the historical record documents what was actually done.
+    summary: "Before modern physiotherapy, management of joint instability centered on rest and immobilization: bandaging, splinting, and restricting activity. Clinical consensus has since moved the other way, toward active strengthening."
     date: "1900"
     date_precision: century
     subtypes: [unspecified]
@@ -23,12 +23,12 @@ records:
     reviewed_at: "2026-09-16"
     risk:
       level: caution
-      note: Sustained immobilization is now understood to weaken the musculature that stabilizes hypermobile joints; the historical record documents the practice, it does not endorse it.
+      note: Sustained immobilization is now understood to weaken the muscles that stabilize hypermobile joints.
     tags: [rest, immobilization]
   - id: folk-performer-training
     kind: practice
     title: Performer conditioning and occupational flexibility practice
-    summary: The travelling-show era's "elastic" performers trained and protected their flexibility as an occupational skill — the historical record documents lifestyle adaptation to hypermobility rather than treatment. It is indexed as folk knowledge about living with laxity, not therapy.
+    summary: The “elastic” performers of travelling shows trained and protected their flexibility as a working skill. The sources describe how they lived with hypermobility, not a treatment for it.
     date: "1880"
     date_precision: decade
     subtypes: [unspecified]
@@ -37,15 +37,16 @@ records:
     practice_kind: folk-practice
     evidence:
       - stratum: historical
-        tier: contemporaneous-clinical-account
+        tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
-        note: Wile 1883 and Gould and Pyle 1897 documented performers and their practices; the record is a historical trace, not a treatment claim.
+        note: Wile 1883 and Gould and Pyle 1897 documented performers and their practices, as cited by Parapia and Jackson.
     reviewed_at: "2026-09-16"
     tags: [performers, folk-context]
   - id: folk-diet-supportive
     kind: practice
     title: Diet, tonics, and general constitutional support
-    summary: Historical management of connective-tissue fragility included dietary measures and general constitutional tonics — the standard pre-specific-therapy response to a poorly understood systemic condition. These are historical objects with no validated mechanism for EDS.
+    description: Historical management of fragile connective tissue included diets and general tonics. None has a validated mechanism in EDS.
+    summary: Historical management of connective-tissue fragility included dietary measures and general constitutional tonics, the usual response to a poorly understood systemic condition before specific therapies existed. None has a validated mechanism in EDS.
     date: "1900"
     date_precision: century
     subtypes: [unspecified]
@@ -59,5 +60,5 @@ records:
     reviewed_at: "2026-09-16"
     risk:
       level: caution
-      note: No dietary measure has validated evidence as an EDS treatment; the historical record documents the practice.
+      note: No dietary measure has validated evidence as an EDS treatment.
     tags: [diet, constitutional]
