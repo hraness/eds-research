@@ -4,7 +4,7 @@
 - `lib/research-schema.ts` – source catalog, venues, monitors, run ledger, questions, collections, publication policy.
 - `lib/source-identity.ts` – deterministic source identity and stable IDs.
 - `lib/content.ts` – YAML loading from `unknown`, referential integrity, and corpus resolution.
-- `public/eds/` – the record corpus: one category file per subject area plus `subtypes.yml`.
+- `public/eds-corpus/` – the record corpus: one category file per subject area plus `subtypes.yml`.
 - `public/research/` – sources, venues, monitors, runs, questions, collections, and the publication policy.
 - `app/` – the public site at `hraness.com/eds` (basePath `/eds`): index, subtypes, topics, records, timeline, practices, community, sources, methodology, research, data, about/contact/privacy, and discovery surfaces.
 - `scripts/` – `source-id.ts` (stable IDs), `audit-eds-research.ts` (integrity + coverage), `submit-indexnow.ts`.
@@ -13,15 +13,36 @@
 # Guidelines
 
 - Use Bun 1.3.14 for installs, builds, and tests. One `bun.lock`; no other package manager.
-- Parse every foreign value from `unknown`. Reject unknown keys, duplicate IDs, unresolved references, malformed URLs, wrong-stratum tiers, and invalid dates at schema level — the loader fails the build, not the page.
-- Never collapse strata. A randomized trial and a forum pattern are both real evidence and are never the same kind of real. Community material enters at venue level only: no posters, handles, or verbatim posts.
+- Parse every foreign value from `unknown`. Reject unknown keys, duplicate IDs, unresolved references, malformed URLs, wrong-stratum tiers, record tiers that differ from the source catalog, and invalid dates at schema level. The loader fails the build, not the page.
+- Never collapse strata into one score; each stratum has its own tier scale. Community material enters at venue level only: no posters, handles, or verbatim posts.
 - Historical and folk records document practice; they never endorse it. `historical-record` and `community-signal` are not gradations of clinical truth.
 - Every record declares subtype scope and criteria era. Emerging, contested, and community-signal records are inadmissible without `reassess_by`.
-- The corpus is append-only at the ledger level: corrections append new runs; records are marked refuted rather than silently rewritten.
+- The corpus is append-only at the ledger level: every correction appends a run to `public/research/runs.yml` that lists each changed record or source under `corrections` with the evidence for the change. A record whose central claim is wrong is marked `refuted` rather than rewritten; a wrong detail may be corrected in place only with that run entry. Never change a record ID: record IDs are URLs.
 - Source IDs are derived (`scripts/source-id.ts`); never invent one by hand.
-- The site is not medical advice and never recommends, prescribes, or discourages a course of care. Keep that boundary visible in public copy.
+- The site is not medical advice and never recommends, prescribes, or discourages a course of care. State that once, near the top of a page, rather than repeating it in every section.
 - Pin Hraness dependencies to reviewed immutable releases or full commits.
 - Run `bun run check` before handoff.
+
+# Writing and evidence rules for records
+
+These rules govern every record, source note, question, and page an agent writes for this index. Public text also follows `STYLE.md` and `WRITING.md`; text a model writes for publication also follows `hraness-generation-style/v1` and the "Digest or gist" addendum in [`GENERATION_STYLE.md`](https://github.com/hraness/.github/blob/main/GENERATION_STYLE.md).
+
+- Write for patients and clinicians who have not read the sources. Use plain sentences, no em dashes, and sentence-case titles that state the finding. Do not use "X: the Y" or "X, the Y" epithets as titles, and do not write clauses about how the index files, indexes, or tracks a record.
+- Quote every number with its statistic (mean or median), its denominator, and its population, taken from the paper's results, tables, or abstract, never from its introduction or its account of other work. When the abstract and the tables disagree, use the tables and say so.
+- Before adding a source, resolve its DOI, PMID, PMCID, or arXiv ID and confirm that the title, venue, and year at the link match the catalog entry. A link that resolves does not show that it is the right paper. Record the check in the run entry.
+- A record's tier for a source must equal that source's tier in `sources.yml`; the loader enforces this. Choose the catalog tier from the study design: interview studies are `qualitative-study`, one-time surveys are `cross-sectional-study`, and a review that retells a historical report is `retrospective-account`, not a primary document.
+- `convergent` needs independent studies or reports in different strata. A paper, its preprint, and a press release are one study, and a classification and a patient-organization summary of it are one source; mark those `single-origin`.
+- Status follows the evidence, not the other way round. If a record needs an upgraded tier to pass the `established` check, it is `probable`.
+- Risk notes describe reported effects and attribute any advice to its source ("The trial authors say…"). They never tell the reader what to do.
+- Say a caveat once. The "not medical advice" and "listed, not recommended" notices live on the page, not in each record.
+- Every change to a record, source, question, or subtype appends a run entry that names each target and what changed.
+
+<!-- hraness-public-copy:start -->
+- Public copy (websites, READMEs, docs, package and GitHub descriptions, CLI help, `llms.txt`, generated pages) follows `STYLE.md`, synced from hraness/.github. Text a model writes for publication also follows `GENERATION_STYLE.md`.
+- The delivery vocabulary in this file (admission, qualification, custody, receipt, bounded, lane, gate, surface, projection) is internal. Translate it into what the reader gets.
+- Take one-line product and sibling descriptions from the portfolio registry and versions from the release record. Tests pin facts, not prose.
+- Run `bun run check:copy` before handoff when the repository has it.
+<!-- hraness-public-copy:end -->
 
 <!-- oompa-local-efficiency:start -->
 - Treat the user's request to change this repository as standing authorization for routine task-owned commits, pushes, pull requests, merges, releases, deployments, and production verification after the gates applicable to that action pass. Do not ask for duplicate confirmation. Build confidence through relevant automated checks, bounded diagnostics, and independent review, not another human approval. Passing checks does not expand task scope or authority.

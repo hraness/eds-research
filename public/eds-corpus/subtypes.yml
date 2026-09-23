@@ -10,7 +10,7 @@ subtypes:
     villefranche_equivalent: EDS type III / hypermobility type
     prevalence_display: Most common EDS type; diagnosed EDS/HSD prevalence about 1 in 500 in the 2019 Wales cohort, versus older textbook figures near 1 in 5,000
     distinguishing_features: Generalized joint hypermobility (Beighton score), musculoskeletal pain, and systemic manifestations; diagnosed clinically under the 2017 three-part criteria because molecular confirmation is not yet available
-    summary: The most common and least genetically resolved EDS type. Diagnosis remains clinical under the 2017 criteria; the KLK15 finding (2025) is the first associated gene but explains only a subset of families, with HEDGE (n=1,000) expected to clarify.
+    summary: The most common EDS type and the only one in the 2017 classification without a confirmed gene. Diagnosis is clinical, under the 2017 criteria. KLK15, published in 2025, is a candidate gene that is not yet used for diagnosis, and the HEDGE study of 1,000 people with hEDS is expected to report further findings.
     source_ids:
       - source-36ad1cab53c4cea4f4b4
       - source-1ad3f0edd57e0fab1524
@@ -199,9 +199,9 @@ subtypes:
     inheritance: unknown
     genes: []
     genetic_status: unknown
-    prevalence_display: More common than hEDS by definition of the residual category; true prevalence unresolved
+    prevalence_display: Unresolved. A 2019 Wales study found about 1 in 500 people with a recorded diagnosis of EDS or joint hypermobility syndrome, an older term covering both hEDS and HSD
     distinguishing_features: Symptomatic joint hypermobility not meeting the strict 2017 hEDS criteria; a clinical diagnosis
-    summary: The residual category for symptomatic hypermobility falling short of hEDS criteria. Whether HSD and hEDS are meaningfully distinct is an open research question tracked by this index.
+    summary: The residual category for symptomatic hypermobility falling short of hEDS criteria. Whether HSD and hEDS are meaningfully distinct is an open research question.
     source_ids:
       - source-d7dec285eaee780f18a3
       - source-36ad1cab53c4cea4f4b4

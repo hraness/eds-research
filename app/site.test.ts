@@ -25,3 +25,26 @@ describe("site paths", () => {
     expect(SITE_ORIGIN).toBe("https://hraness.com/eds");
   });
 });
+
+describe("site description", () => {
+  it("fits a meta description and uses no em dash", async () => {
+    const { site } = await import("./site");
+    expect(site.description.length).toBeLessThanOrEqual(160);
+    expect(site.description).not.toContain("—");
+    expect(site.description).toContain("Ehlers-Danlos");
+  });
+});
+
+describe("llms.txt", () => {
+  it("lists every public data file", async () => {
+    const { GET } = await import("./llms.txt/route");
+    const { CORPUS_FILES, RESEARCH_FILES } = await import("./data-files");
+    const text = await GET().text();
+    for (const file of CORPUS_FILES) {
+      expect(text).toContain(`https://hraness.com/eds/eds-corpus/${file}`);
+    }
+    for (const file of RESEARCH_FILES) {
+      expect(text).toContain(`https://hraness.com/eds/research/${file}`);
+    }
+  });
+});

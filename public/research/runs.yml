@@ -14,3 +14,133 @@ runs:
       - guideline-consortium-watch
       - historical-archive-sweep
     notes: Seeded the classification, genetics, diagnostic-journey, management, community, historiography, and folk-practice categories with primary-linked records. Lidocaine resistance admitted as the reference convergent record; KLK15 admitted as emerging pending HEDGE replication.
+  - id: run-2026-09-23-corrections
+    date: "2026-09-23"
+    scope: Citation, evidence-label, and number corrections after resolving every cited DOI and PMID
+    strata: [clinical, community, historical, registry, gray]
+    admitted_source_ids:
+      - source-0bcf3a495f5d5a3f3899
+      - source-1dfb4ae3ff5aafdd0577
+      - source-99c47d7654307a3505da
+      - source-9a67b455782a95159bd9
+      - source-d7ba05272083315d9e1f
+      - source-ed80c4098795181b156a
+      - source-fd495bad5265f19454c2
+    corrections:
+      - target: source-aef7c864eb540644a26f
+        change: Replaced by source-99c47d7654307a3505da. The link pointed to PMID 15684371 ("Appendicitis after appendicectomy"); the Hakim et al. letter is PMID 15684369. Tier cohort-study changed to cross-sectional-study.
+        evidence: PubMed E-utilities records for PMIDs 15684371 and 15684369; Schubart et al. 2019 (PMC6834718) describes the Hakim data as a survey.
+      - target: source-8cddcecd9d7a698123e5
+        change: Replaced by source-0bcf3a495f5d5a3f3899. PMID 4259630 is a 1972 cartilage paper (Bjelle et al.); Beighton, Solomon, and Soskolne 1973 is PMID 4751776. Tier cohort-study changed to cross-sectional-study.
+        evidence: PubMed E-utilities records for PMIDs 4259630 and 4751776.
+      - target: source-328501b217c2b3d0d2d2
+        change: Title corrected. DOI 10.1002/ajmg.c.31545 is Engelbert et al.'s physical therapy paper, not Chopra et al.'s pain paper. The ID is unchanged because the URL and date are unchanged.
+        evidence: Crossref record for 10.1002/ajmg.c.31545.
+      - target: source-d7ba05272083315d9e1f
+        change: Added Chopra et al., Pain management in the Ehlers-Danlos syndromes (10.1002/ajmg.c.31554), now cited by mgmt-pain-management-2017.
+        evidence: Crossref record for 10.1002/ajmg.c.31554; PubMed 28186390.
+      - target: source-5a8d9db9800230d918cf
+        change: Replaced by source-1dfb4ae3ff5aafdd0577. https://www.ehlers-danlos.com/registry/ returns 404; the DICE registry page is /eds-global-registry/. The venue-dice-registry URL was updated to match.
+        evidence: HTTP status checks on 2026-09-23.
+      - target: source-d91980e8e90850a3f3b9
+        change: Replaced by source-ed80c4098795181b156a. Publication date 2025 changed to 2026-03. Note restated from the abstract; "confirming decades of patient reports" removed.
+        evidence: Crossref (published online 2026-03-03); Europe PMC, PMID 41775498.
+      - target: source-d4a910b62f451448889e
+        change: Replaced by source-9a67b455782a95159bd9. Publication year 2024 changed to 2023 and publisher PMC to Genetics in Medicine Open. Note restated from the abstract.
+        evidence: Crossref record for 10.1016/j.gimo.2023.100812; Europe PMC abstract.
+      - target: source-3dd9471fb00916c6141b
+        change: Replaced by source-fd495bad5265f19454c2. Publication year 1979 changed to 1978; publisher PubMed changed to The Journal of Rheumatology.
+        evidence: PubMed record 372526 (J Rheumatol, 1978 Fall).
+      - target: source-21337422dde3976b584c
+        change: Tier cohort-study changed to qualitative-study; publisher BMJ changed to BMJ Connections Clinical Genetics and Genomics.
+        evidence: Crossref record and abstract for 10.1136/bmjccgg-2025-000044.
+      - target: source-27684d4afee8b83b9d25, source-8d222b21a7423563aba4, source-de164233cddfefc4105a
+        change: Tier cohort-study changed to cross-sectional-study for these three surveys. Notes restated from the papers. The German 22-year figure is the overall median (mean 22.9 years); the hEDS/HSD median is 23.0 years. The paper's abstract calls these medians means; its Table 2 and discussion give them as medians with interquartile ranges. The Australian 10 to 12 years is a support-group estimate quoted in the paper's introduction.
+        evidence: Europe PMC abstracts and full texts PMC6834718, PMC11271888, and PMC12358066 (Table 2).
+      - target: source-fa671c0df94cd9c20ecb, source-be972ed50decef4cbf0b
+        change: Publishers corrected from PubMed and NCBI Bookshelf to the Journal of the American Association of Nurse Practitioners and the National Academies Press (chapter 4 of the 2022 report).
+        evidence: Europe PMC record for PMID 34739411; NCBI Books record for NBK584966.
+      - target: public/research/sources.yml, public/research/venues.yml
+        change: Removed unsourced claims that Inspire, r/ehlersdanlos, and The Ehlers-Danlos Society are the largest of their kind, and the unverified member count for r/ehlersdanlos.
+      - target: mgmt-pt-mainstay
+        change: Tier for source-328501b217c2b3d0d2d2 changed from consensus-statement to its catalog tier, expert-review. Status established changed to probable, since no remaining attestation meets the established rule.
+      - target: mgmt-pain-management-2017
+        change: Now cites the Chopra paper instead of the physical therapy paper. Summary restated from the Chopra abstract; the claims about opioid caution, psychological support, and being the reference for pain care were removed because the abstract does not support them.
+        evidence: PubMed 28186390 abstract.
+      - target: mgmt-lidocaine-resistance
+        change: Trial date changed to 2026-03. Survey tiers changed to cross-sectional-study. Summary restated from the papers, and "for decades" removed. The risk note now attributes its advice to the trial authors.
+        evidence: Europe PMC abstracts for PMIDs 41775498 and 31723666.
+      - target: px-trauma-informed-2025
+        change: Tier changed to qualitative-study and status established to probable. Journal named correctly. The sample size (n=9) and the quoted phrase could not be confirmed from the abstract and were removed.
+        evidence: Crossref abstract for 10.1136/bmjccgg-2025-000044.
+      - target: px-german-cohort-manifestations
+        change: n=105 and "diagnosed 2021 to 2024" corrected to 99 respondents (80 with hEDS or HSD) at the Cologne clinic, surveyed December 2021 to May 2023. Symptoms restated from the full text. Tier changed to cross-sectional-study and status established to probable.
+        evidence: Europe PMC abstract and full text PMC12358066.
+      - target: px-diagnostic-odyssey-2021
+        change: Summary restated from the sources with each population named. "22-year median for hEDS/HSD" corrected to a median of 23.0 years for hEDS/HSD (22.0 is the median for all respondents); the Australian 10 to 12 year figure removed as a support-group estimate.
+        evidence: Europe PMC abstracts for PMID 34739411, PMC11271888, and PMC12358066.
+      - target: com-misdiagnosis-load
+        change: Date 2024 changed to 2023. Status established changed to probable after the qualitative source was relabeled.
+        evidence: Crossref record for 10.1016/j.gimo.2023.100812.
+      - target: com-trifecta-pattern, com-cci-tethered-cord
+        change: Removed unsourced claims that patient communities named the triad before clinical reviews and that surgical case series support CCI and tethered-cord claims. Registry wording matched to the survey.
+        evidence: Europe PMC abstract, PMC11613559.
+      - target: hist-van-meekren-1682, hist-ehlers-1901, hist-danlos-1908, hist-early-circus-performers, folk-performer-training
+        change: Attestations of the 2008 Parapia and Jackson review changed from primary-historical-document or contemporaneous-clinical-account to its catalog tier, retrospective-account.
+      - target: hist-van-meekren-1682
+        change: Removed the citation of Denko's 1978 translation, which translates Chernogubov's 1892 reports and is not a primary document for the 1682 case.
+        evidence: PubMed record 372526.
+      - target: signal-subluxation-load
+        change: Attestation of the Ben's Friends venue changed from patient-org-synthesis to its catalog tier, single-venue-pattern.
+      - target: hist-sack-1936-dysvascularis, hist-barabas-1967-vascular
+        change: Removed the attestation of the National Academies chapter, which does not mention Sack or Barabas, and with it the convergent label.
+        evidence: National Academies Press, Selected Heritable Disorders of Connective Tissue and Disability (2022), chapter 4 text.
+      - target: hist-named-ehlers-danlos-1949
+        change: Marked refuted. The National Academies chapter it cites credits Johnson and Falls (1949) with the first report of autosomal-dominant inheritance and cites Ronchese's 1936 paper on "the so-called Ehlers-Danlos syndrome", so the name was in use before 1949.
+        evidence: National Academies Press (2022), chapter 4 history section and references.
+      - target: hist-danlos-1908
+        change: Removed the claim that Danlos's own case was likely pseudoxanthoma elasticum; neither cited source supports it.
+        evidence: National Academies Press (2022), chapter 4 history section.
+      - target: hist-berlin-1988
+        change: Marked contested. The record says the 1988 nosology had eleven types; the National Academies chapter it cites says nine. Not resolved in this run.
+        evidence: National Academies Press (2022), chapter 4 history section.
+      - target: gen-klk15-first-candidate, hist-klk15-2025, gen-hedge-study, hist-chernogubov-1892, hist-ehlers-1901, hist-danlos-1908, hist-international-2017, class-heds-2017-criteria
+        change: Corroboration convergent changed to single-origin. In each record the strata restate one study, one program's own pages, one classification, or one historical report, so they do not corroborate each other.
+      - target: gen-klk15-first-candidate, hist-klk15-2025, subtypes.yml heds, questions.yml heds-molecular-basis
+        change: Removed claims that KLK15 is the first gene associated with hEDS; neither the paper nor the society's summary says so. KLK15 is described as a candidate gene.
+        evidence: iScience abstract (PMC12424230); Ehlers-Danlos Society Norris Lab update, June 2024.
+      - target: hist-beighton-score-1973
+        change: Source tier changed to cross-sectional-study. Added the 2017 classification as the source for the use of the Beighton score in the hEDS criteria.
+      - target: cross-stratum-convergences
+        change: Removed hist-early-circus-performers, which cites one stratum and carries no corroboration.
+      - target: subtypes.yml hsd
+        change: Prevalence no longer says HSD is more common than hEDS by definition; it gives the 2019 Wales figure for EDS and joint hypermobility syndrome combined.
+        evidence: Demmler et al. 2019 abstract (194.2 per 100,000).
+      - target: prog-dice-registry
+        change: Replaced the claim that the registry is a recruitment rail for HEDGE with what the 2023 survey paper reports, that its respondents were registry members also enrolled in HEDGE.
+        evidence: Halverson et al. 2023, Materials and Methods (PMC11613559).
+      - target: questions.yml diagnostic-delay-reduction
+        change: The claim that delays of 10 to 22 years are documented across cohorts was replaced with the registry survey's average and the German clinic's median, with their populations.
+        evidence: Europe PMC abstracts for PMC11613559 and PMC12358066.
+      - target: com-multisystem-2017
+        change: Removed the claim that systemic manifestations such as digestive, autonomic, pain, and fatigue problems entered the 2017 hEDS criteria, and the unsourced claim that the criteria codified patient reports. The criteria's systemic features are connective-tissue signs. Added the Chopra pain review as a source for the companion-paper sentence.
+        evidence: The Ehlers-Danlos Society's 2017 hEDS diagnostic checklist (Criterion 2, Feature A); Tinkle et al. 2017 abstract, PubMed 28145611.
+      - target: px-fatigue-underrecognized
+        change: Removed the unsourced claims that fatigue was systematically underweighted and that the 2017 criteria restored it to the clinical picture. The summary now gives the German survey figure for fatigue.
+        evidence: PMC12358066, results on burden of disease.
+      - target: gen-hedge-study
+        change: The claim that HEDGE is the largest dedicated hEDS genetics effort was removed as unsourced; the society's October 2025 timeline is quoted with its caveat that timelines may shift.
+        evidence: The Ehlers-Danlos Society, HEDGE Study Update, published 2025-10-28.
+      - target: public/research/publication-policy.yml
+        change: Policy rule texts restated in plain words. The corroboration rule now names single-origin, the state added in this run; the ledger rule now says a wrong record is marked refuted rather than silently rewritten.
+      - target: gen-collagen-and-pathway-map
+        change: Gene groups rebuilt from the 2017 classification's pathogenetic scheme. The record had placed PLOD1 under collagen processing, COL12A1 under collagen structure, and TNXB, FKBP14, SLC39A13, ZNF469, and PRDM5 under a "signaling" group the classification does not have.
+        evidence: Malfait et al. 2017, Table II (groups A to F and unresolved forms).
+      - target: dx-heds-remains-clinical
+        change: The society's position is quoted as it states it (further studies are needed to replicate the finding), rather than as a condition for ending clinical diagnosis.
+        evidence: The Ehlers-Danlos Society, Norris Lab update, June 2024.
+      - target: 23 records in the corpus
+        change: Added a page description to each record whose first summary sentence is longer than 160 characters, restating facts already in the record.
+      - target: all corpus files, collections.yml, questions.yml, venues.yml
+        change: Titles, summaries, notes, and category descriptions edited for plain language without changing their claims. Em dashes, title epithets, and clauses describing how the index files a record were removed. Claims that changed are listed in the entries above.
+    notes: Every DOI and PMID in the source catalog was resolved against PubMed, Crossref, and Europe PMC on 2026-09-23, and the resolved title, venue, and year were compared with the catalog entry. Record IDs are unchanged; corrected source IDs are re-derived from their URLs and dates. Drafted by an AI agent (Claude Code) during the 2026-09-23 editorial pass; no independent human review is recorded.

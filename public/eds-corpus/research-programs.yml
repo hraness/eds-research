@@ -2,31 +2,31 @@ schema: eds-research/corpus/v1
 category:
   id: research-programs
   label: Research programs, registries, and trials
-  description: The living research infrastructure — the Global Registry, ECHO, HEDGE, clinical trials, and the institutes carrying EDS science forward.
+  description: Registries, trial listings, and programs that support EDS research, including the DICE Global Registry, EDS ECHO, ClinicalTrials.gov, Orphanet, and GARD.
   order: 90
 records:
   - id: prog-dice-registry
     kind: program
-    title: DICE — the Global Registry for EDS and HSD
-    summary: The Ehlers-Danlos Society's DICE Global Registry is the central patient-powered research registry — the infrastructure behind the misdiagnosis survey and the recruitment rail for studies like HEDGE. Indexed as first-party registry infrastructure.
+    title: DICE, the Ehlers-Danlos Society's global patient registry
+    summary: The Ehlers-Danlos Society's DICE EDS and HSD Global Registry collects health information that patients report about themselves. A 2023 survey on misdiagnosis was circulated through it to registry members with hEDS who were also enrolled in the HEDGE genetics study; 505 completed it.
     subtypes: [all-eds]
     status: established
     criteria_era: international-2017
     evidence:
       - stratum: registry
         tier: registry-report
-        source_ids: [source-5a8d9db9800230d918cf]
+        source_ids: [source-1dfb4ae3ff5aafdd0577]
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
-        note: The registry is the sampling frame behind the published hEDS misdiagnosis analysis.
+        source_ids: [source-9a67b455782a95159bd9]
+        note: The published hEDS misdiagnosis survey was circulated through the registry.
     reviewed_at: "2026-09-16"
     organizations: [The Ehlers-Danlos Society]
     tags: [registry]
   - id: prog-echo
     kind: program
-    title: EDS ECHO — the professional-education research rail
-    summary: The ECHO program is the society's clinician-education and community-of-practice rail — how research and management knowledge reaches the providers patients actually see. Indexed as research-infrastructure, not a data source.
+    title: EDS ECHO, the society's clinician education program
+    summary: EDS ECHO is The Ehlers-Danlos Society's education program for clinicians and community members, built on the Project ECHO model. It is meant to bring research and management knowledge to the clinicians patients see.
     subtypes: [all-eds]
     status: established
     criteria_era: international-2017
@@ -40,7 +40,7 @@ records:
   - id: prog-clinicaltrials-portfolio
     kind: program
     title: The ClinicalTrials.gov EDS portfolio
-    summary: The federal trial registry is the canonical index of active EDS interventional and observational studies — the anesthetic-resistance RCT among them. The index's monitor tracks this portfolio for new registrations.
+    summary: The US federal trial registry lists interventional and observational EDS studies, including the local anesthetic trial (NCT05603741).
     subtypes: [all-eds]
     status: established
     criteria_era: era-independent
@@ -53,8 +53,9 @@ records:
     tags: [trials, registry]
   - id: prog-orpha-gard
     kind: program
-    title: Orphanet and GARD — the rare-disease reference rails
-    summary: Orphanet (ORPHA:75531) and NIH GARD carry the reference-level disease records that anchor subtype nomenclature and prevalence estimates for rare-disease infrastructure. Indexed as reference rails rather than primary evidence.
+    title: Orphanet and GARD, the rare-disease reference databases
+    description: Orphanet and the NIH's GARD keep reference records for rare diseases, including EDS nomenclature and prevalence estimates.
+    summary: Orphanet (ORPHA:75531) and the NIH's Genetic and Rare Diseases Information Center (GARD) keep reference records for rare diseases, including EDS nomenclature and prevalence estimates.
     subtypes: [all-eds]
     status: established
     criteria_era: era-independent

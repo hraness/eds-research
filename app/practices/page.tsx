@@ -11,7 +11,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Practices";
 const DESCRIPTION =
-  "Management, treatment, and folk-practice records for the Ehlers-Danlos syndromes — each with its evidence tier, stratum, and risk annotation explicit.";
+  "Care and management records for the Ehlers-Danlos syndromes, from physical therapy to historical folk practice, with the evidence level and any known risk.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -51,14 +51,15 @@ export default async function PracticesPage() {
     <>
       <h1 className="page-title">Practices</h1>
       <p className="page-lede">
-        What is done — and what was done — for EDS. Clinical management sits
-        beside documented folk practice; the strata and statuses keep them
-        distinct. Nothing here is a recommendation.
+        How EDS is managed today and how it was managed in the past. Clinical
+        guidance and historical folk practice appear on the same page, each
+        labeled by the kind and strength of its evidence. Nothing here is a
+        recommendation.
       </p>
       <div className="notice">
-        <strong>Documented, not endorsed.</strong> Folk and historical practices
-        are indexed as historical objects. A practice&apos;s presence records
-        its provenance, never its efficacy.
+        <strong>Listed, not recommended.</strong> Folk and historical practices
+        are included because people used them. Being listed says nothing about
+        whether a practice works.
       </div>
       {PRACTICE_KIND_ORDER.map((practiceKind) => {
         const records = byKind.get(practiceKind);

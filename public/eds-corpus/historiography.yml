@@ -8,7 +8,7 @@ records:
   - id: hist-hippocratic-early-accounts
     kind: event
     title: Early descriptions of laxity and bruising attributed to antiquity
-    summary: The standard historiography (Parapia and Jackson, 2008) traces descriptions consistent with joint laxity and easy bruising to Hippocratic-era medicine. These are retrospective attributions — the syndrome concept did not exist — and are indexed here as historical framing, not diagnosis.
+    summary: "The standard historiography (Parapia and Jackson, 2008) traces descriptions consistent with joint laxity and easy bruising to Hippocratic-era medicine. These are attributions made in hindsight: the syndrome had not been described, and no one in these accounts was diagnosed with it."
     date: "-0400"
     date_precision: century
     subtypes: [unspecified]
@@ -24,7 +24,7 @@ records:
   - id: hist-van-meekren-1682
     kind: event
     title: van Meek'ren reports extraordinary skin extensibility
-    summary: Amsterdam surgeon Job Janszoon van Meek'ren documented a 23-year-old patient who could pull the skin of the chest over the head — commonly cited as the first detailed clinical description of the skin phenotype later associated with EDS.
+    summary: Amsterdam surgeon Job Janszoon van Meek'ren documented a 23-year-old patient who could pull the skin of the chest over the head. The report is commonly cited as the first detailed clinical description of the skin phenotype later associated with EDS.
     date: "1682"
     date_precision: year
     subtypes: [unspecified]
@@ -32,15 +32,15 @@ records:
     criteria_era: pre-nosology
     evidence:
       - stratum: historical
-        tier: primary-historical-document
-        source_ids: [source-5c33d96b50581fbe82f8, source-3dd9471fb00916c6141b]
+        tier: retrospective-account
+        source_ids: [source-5c33d96b50581fbe82f8]
         note: Recorded through the historical-review literature; the original report is a 1682 Amsterdam surgical text.
     reviewed_at: "2026-09-16"
     tags: [retrospective-attribution, skin-phenotype]
   - id: hist-early-circus-performers
     kind: event
     title: "India Rubber Men and elastic performers in travelling shows"
-    summary: Late nineteenth-century travelling shows featured performers whose extreme flexibility and skin elasticity were their livelihood — James Morris at Barnum and Bailey earned $150 per week in the 1880s. Medical literature of the era (Wile 1883, Gould and Pyle 1897) documented some of them. Retrospective attribution to EDS is plausible for some performers and unprovable for most; the record documents the social niche, not a diagnosis.
+    summary: Late nineteenth-century travelling shows featured performers whose extreme flexibility and skin elasticity were their livelihood. James Morris, who performed with Barnum and Bailey, earned $150 per week in the 1880s. Medical literature of the era (Wile 1883, Gould and Pyle 1897) documented some of them. Attributing EDS to them in hindsight is plausible for some performers and unprovable for most.
     date: "1883"
     date_precision: decade
     subtypes: [unspecified]
@@ -48,7 +48,7 @@ records:
     criteria_era: pre-nosology
     evidence:
       - stratum: historical
-        tier: contemporaneous-clinical-account
+        tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
         note: Wile 1883 and Gould and Pyle 1897 as cited by Parapia and Jackson.
     reviewed_at: "2026-09-16"
@@ -56,7 +56,8 @@ records:
   - id: hist-chernogubov-1892
     kind: event
     title: Chernogubov presents the first modern case reports
-    summary: Nikolai Chernogubov (Tschernogobow) presented two patients to the Moscow Venereology and Dermatology Society with skin fragility and hyperelasticity, joint hypermobility and luxation, and molluscoid pseudotumours — the first comprehensive modern case description. The syndrome is still known as Chernogubov's syndrome in Russian literature.
+    description: In 1892 Nikolai Chernogubov presented two patients with fragile, stretchy skin and loose joints to a Moscow medical society.
+    summary: Nikolai Chernogubov (Tschernogobow) presented two patients to the Moscow Venereology and Dermatology Society with skin fragility and hyperelasticity, joint hypermobility and luxation, and molluscoid pseudotumours. It is the first comprehensive modern case description. The syndrome is still known as Chernogubov's syndrome in Russian literature.
     date: "1892"
     date_precision: year
     subtypes: [unspecified]
@@ -65,20 +66,21 @@ records:
     evidence:
       - stratum: historical
         tier: primary-historical-document
-        source_ids: [source-3dd9471fb00916c6141b]
+        source_ids: [source-fd495bad5265f19454c2]
       - stratum: historical
         tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
       - stratum: clinical
         tier: expert-review
         source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     people: [Nikolai Chernogubov]
   - id: hist-ehlers-1901
     kind: event
     title: Edvard Ehlers recognizes the syndrome as a distinct entity
-    summary: Danish dermatologist Edvard Lauritz Ehlers published a case report of a patient with joint laxity, stretchy skin, easy bruising, frequent knee subluxations, and delayed walking — the description for which the syndrome is named.
+    description: In 1901 Danish dermatologist Edvard Ehlers reported a patient with loose joints, stretchy skin, easy bruising, and knee subluxations.
+    summary: Danish dermatologist Edvard Lauritz Ehlers published a case report of a patient with joint laxity, stretchy skin, easy bruising, frequent knee subluxations, and delayed walking. The syndrome takes part of its name from this description.
     date: "1901"
     date_precision: year
     subtypes: [unspecified]
@@ -86,18 +88,18 @@ records:
     criteria_era: pre-nosology
     evidence:
       - stratum: historical
-        tier: primary-historical-document
+        tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
       - stratum: clinical
         tier: expert-review
         source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     people: [Edvard Ehlers]
   - id: hist-danlos-1908
     kind: event
     title: Henri-Alexandre Danlos fixes skin extensibility and fragility as cardinal features
-    summary: French physician Henri-Alexandre Danlos, working with Pautier, described the skin features that completed the syndrome's early clinical picture. Decades later it emerged that Danlos's own case was likely pseudoxanthoma elasticum — an early lesson in the hazards of phenotype-only classification.
+    summary: French physician Henri-Alexandre Danlos, working with Pautier, described the skin features that completed the syndrome's early clinical picture.
     date: "1908"
     date_precision: year
     subtypes: [unspecified]
@@ -105,18 +107,18 @@ records:
     criteria_era: pre-nosology
     evidence:
       - stratum: historical
-        tier: primary-historical-document
+        tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
       - stratum: clinical
         tier: expert-review
         source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     people: [Henri-Alexandre Danlos]
   - id: hist-sack-1936-dysvascularis
     kind: event
     title: Sack describes status dysvascularis
-    summary: Georg Sack described the vascular catastrophe form — arterial rupture and organ fragility — later formalized as the vascular type. This is the historical root of vEDS recognition.
+    summary: Georg Sack described a form with arterial rupture and organ fragility that was later formalized as the vascular type. This is the historical root of vEDS recognition.
     date: "1936"
     date_precision: year
     subtypes: [veds]
@@ -126,10 +128,6 @@ records:
       - stratum: historical
         tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
-      - stratum: clinical
-        tier: expert-review
-        source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
     reviewed_at: "2026-09-16"
     people: [Georg Sack]
   - id: hist-named-ehlers-danlos-1949
@@ -139,7 +137,7 @@ records:
     date: "1949"
     date_precision: year
     subtypes: [unspecified]
-    status: historical-record
+    status: refuted
     criteria_era: pre-nosology
     evidence:
       - stratum: historical
@@ -148,12 +146,13 @@ records:
       - stratum: clinical
         tier: expert-review
         source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
+        note: The chapter credits Johnson and Falls (1949) with the first report of autosomal-dominant inheritance, in a family with 32 affected members, and cites Ronchese's 1936 paper on “the so-called Ehlers-Danlos syndrome”.
+    corroboration: refuted
     reviewed_at: "2026-09-16"
   - id: hist-barabas-1967-vascular
     kind: event
     title: Barabas establishes heterogeneity and the arterial complication profile
-    summary: A. P. Barabas demonstrated that EDS was heterogeneous and delineated the form with arterial complications — the direct ancestor of the vascular subtype (type IV in Villefranche, vEDS today).
+    summary: A. P. Barabas demonstrated that EDS was heterogeneous and delineated the form with arterial complications, the direct ancestor of the vascular subtype (type IV in Villefranche, vEDS today).
     date: "1967"
     date_precision: year
     subtypes: [veds]
@@ -163,16 +162,13 @@ records:
       - stratum: historical
         tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
-      - stratum: clinical
-        tier: expert-review
-        source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
     reviewed_at: "2026-09-16"
     people: [A. P. Barabas]
   - id: hist-beighton-score-1973
     kind: event
     title: Beighton score published for epidemiological joint-mobility assessment
-    summary: Beighton, Solomon, and Soskolne published the nine-point articular mobility score in an Annals of the Rheumatic Diseases population study — designed for epidemiology, later adopted as the clinical hypermobility measure still used in the 2017 hEDS criteria.
+    description: Beighton, Solomon, and Soskolne published the nine-point Beighton score in 1973. The 2017 hEDS criteria use it to measure joint hypermobility.
+    summary: Beighton, Solomon, and Soskolne published the nine-point articular mobility score in 1973, in an Annals of the Rheumatic Diseases study of joint mobility in an African population. It was designed for epidemiology and later became the clinical measure of hypermobility used in the 2017 hEDS criteria.
     date: "1973"
     date_precision: year
     subtypes: [all-eds]
@@ -180,14 +176,18 @@ records:
     criteria_era: pre-nosology
     evidence:
       - stratum: clinical
-        tier: cohort-study
-        source_ids: [source-8cddcecd9d7a698123e5]
+        tier: cross-sectional-study
+        source_ids: [source-0bcf3a495f5d5a3f3899]
+      - stratum: clinical
+        tier: consensus-statement
+        source_ids: [source-36ad1cab53c4cea4f4b4]
+        note: The 2017 hEDS criteria assess generalized joint hypermobility with the Beighton score.
     reviewed_at: "2026-09-16"
     people: [Peter Beighton]
   - id: hist-berlin-1988
     kind: event
     title: Berlin nosology expands EDS to eleven numbered types
-    summary: The 1988 Berlin nosology for heritable connective-tissue disorders expanded EDS into eleven numbered types — a proliferation that blurred clinical boundaries and set up the later consolidation.
+    summary: The 1988 Berlin nosology for heritable connective-tissue disorders expanded EDS into eleven numbered types. The proliferation blurred clinical boundaries and set up the later consolidation.
     date: "1988"
     date_precision: year
     subtypes: [all-eds]
@@ -200,12 +200,14 @@ records:
       - stratum: clinical
         tier: expert-review
         source_ids: [source-be972ed50decef4cbf0b]
-    corroboration: convergent
+        note: This chapter says nine types of EDS were proposed in the 1988 nosology.
+    corroboration: contested
     reviewed_at: "2026-09-16"
   - id: hist-villefranche-1997
     kind: event
     title: Villefranche nosology consolidates to six types
-    summary: Beighton et al. published the revised Villefranche nosology (1997, printed 1998) consolidating EDS to six major types — classical (I/II), hypermobility (III), vascular (IV), kyphoscoliosis (VI), arthrochalasia (VIIA/B), dermatosparaxis (VIIC) — aligning clinical types with the emerging molecular era.
+    description: The 1997 Villefranche nosology, published in 1998, consolidated EDS into six major types.
+    summary: "Beighton et al. published the revised Villefranche nosology (1997, printed 1998), consolidating EDS into six major types: classical (I/II), hypermobility (III), vascular (IV), kyphoscoliosis (VI), arthrochalasia (VIIA/B), and dermatosparaxis (VIIC). The revision aligned clinical types with the emerging molecular era."
     date: "1998"
     date_precision: year
     subtypes: [all-eds]
@@ -219,6 +221,7 @@ records:
   - id: hist-international-2017
     kind: event
     title: 2017 International Classification defines thirteen subtypes
+    description: The 2017 International Classification defines thirteen EDS types and requires genetic confirmation for all except hEDS.
     summary: "Malfait et al. and the International EDS Consortium published the current classification: thirteen subtypes, molecular confirmation required for all except hEDS, a pathogenetic scheme grouping by pathway, and the companion framework separating hEDS from HSD. Management guidelines for comorbidities accompanied the criteria for the first time."
     date: "2017-03"
     date_precision: month
@@ -233,14 +236,15 @@ records:
         tier: patient-org-synthesis
         source_ids: [source-c55aca51ea775bf6d160]
         note: The society's type pages present the same 13-type structure to patients.
-    corroboration: convergent
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     people: [Fransiska Malfait]
     organizations: [International EDS Consortium, The Ehlers-Danlos Society]
   - id: hist-klk15-2025
     kind: event
-    title: KLK15 identified as the first gene associated with hEDS
-    summary: "The Norris Lab and colleagues published whole-exome work implicating kallikrein-family variants in hEDS: a recurrent KLK15 missense variant segregating in multiple families, burden enrichment across KLK genes, and a knock-in mouse recapitulating connective-tissue features. Published in iScience (August 2025) after a 2024 preprint and society announcement; hEDS remains a clinical diagnosis pending replication and HEDGE results."
+    title: "2025: KLK15 published as a candidate gene for hEDS"
+    description: In August 2025 the Norris Lab published a KLK15 variant as a candidate cause of hEDS. hEDS remains a clinical diagnosis.
+    summary: "In August 2025 the Norris Lab and colleagues published whole-exome work in iScience implicating kallikrein (KLK) gene variants in hEDS: a recurrent KLK15 variant segregating in multiple families, rare and low-frequency variants in 14 of the 15 KLK genes, and a knock-in mouse with hEDS features in tendons and heart valves. A preprint and The Ehlers-Danlos Society's summary appeared in June 2024. The society says hEDS remains a clinical diagnosis and that replication, including in the HEDGE study, is needed."
     date: "2025-08"
     date_precision: month
     subtypes: [heds]
@@ -259,7 +263,7 @@ records:
       - stratum: registry
         tier: registry-report
         source_ids: [source-3440a2b9d5d99c580d3a]
-    corroboration: convergent
+    corroboration: single-origin
     reviewed_at: "2026-09-16"
     reassess_by: "2026-12-16"
     organizations: [Norris Lab, Medical University of South Carolina, The Ehlers-Danlos Society]

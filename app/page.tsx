@@ -22,17 +22,16 @@ const STRATUM_SUMMARIES: Record<string, string> = {
   clinical:
     "Peer-reviewed literature, trials, guidelines, and consensus statements.",
   community:
-    "Venue-level patterns from forums, support groups, and patient organizations — never individual posters.",
+    "Patterns reported across forums, support groups, and patient organizations. The index names the venue, never the person.",
   historical:
-    "Pre-nosology case descriptions, performer-era records, and documented folk management.",
+    "Case reports from before EDS was formally classified, accounts of 19th-century performers, and folk treatments.",
   registry:
-    "Patient registries, trial registrations, and rare-disease reference rails.",
-  gray: "Preprints, theses, and working papers ahead of peer review.",
+    "Patient registries, trial registrations, and rare-disease reference databases such as Orphanet and GARD.",
+  gray: "Preprints, theses, and working papers that have not been peer reviewed.",
 };
 
-export async function generateMetadata(): Promise<Metadata> {
-  const corpus = await loadCorpus();
-  const title = `${site.indexTitle}: ${corpus.records.length} sourced records`;
+export function generateMetadata(): Metadata {
+  const title = `${site.indexTitle}: sourced evidence on the Ehlers-Danlos syndromes`;
   return {
     title,
     description: site.description,
@@ -50,16 +49,23 @@ export default async function Home() {
   ]);
 
   const featured = corpus.records.filter(
-    ({ corroboration }) => corroboration === "convergent",
+    ({ corroboration, status }) =>
+      corroboration === "convergent" &&
+      status !== "contested" &&
+      status !== "refuted",
   );
   const featuredByPriority = [
     corpus.records.find(({ id }) => id === "mgmt-lidocaine-resistance"),
     ...featured.filter(({ id }) => id !== "mgmt-lidocaine-resistance"),
   ].filter((record) => record !== undefined);
 
+  const edsTypeCount = subtypes.filter(
+    ({ classification }) => classification === "eds-2017",
+  ).length;
+
   const strataCounts = new Map<string, number>();
   for (const record of corpus.records) {
-    for (const { stratum } of record.evidence) {
+    for (const stratum of new Set(record.evidence.map((e) => e.stratum))) {
       strataCounts.set(stratum, (strataCounts.get(stratum) ?? 0) + 1);
     }
   }
@@ -75,14 +81,15 @@ export default async function Home() {
       />
       <h1 className="page-title">EDS Research Index</h1>
       <p className="page-lede">
-        An independent, source-linked index of what is known — and what is still
-        being worked out — about the Ehlers-Danlos syndromes. Every record names
-        its evidence, its stratum, its subtype scope, and its diagnostic era.
+        An independent index of research on the Ehlers-Danlos syndromes (EDS),
+        covering what is known and what is still unsettled. Each record links
+        its sources, says what kind of evidence they are, and names the EDS
+        types and the diagnostic criteria it applies to.
       </p>
       <div className="notice">
-        <strong>Not medical advice.</strong> This index documents evidence and
-        provenance. It does not diagnose, recommend, or discourage any course of
-        care. Historical and folk records describe what was done, not what
+        <strong>Not medical advice.</strong> This index describes the evidence
+        and where it comes from. It does not diagnose, recommend, or discourage
+        any course of care. Historical and folk records describe what was done, not what
         works.
       </div>
 
@@ -96,8 +103,8 @@ export default async function Home() {
           <span className="stat__label">sources</span>
         </span>
         <span className="stat">
-          <span className="stat__n">{subtypes.length}</span>
-          <span className="stat__label">subtypes</span>
+          <span className="stat__n">{edsTypeCount}</span>
+          <span className="stat__label">EDS types, plus HSD</span>
         </span>
         <span className="stat">
           <span className="stat__n">{research.questions.length}</span>
@@ -105,17 +112,17 @@ export default async function Home() {
         </span>
         <span className="stat">
           <span className="stat__n">{research.monitors.length}</span>
-          <span className="stat__label">live monitors</span>
+          <span className="stat__label">search monitors</span>
         </span>
       </div>
 
       <section className="section">
-        <h2 className="section-title">Five strata of evidence</h2>
+        <h2 className="section-title">Five kinds of evidence</h2>
         <p className="section-sub">
-          Rare-disease knowledge does not live in one place. This index files
-          every source under one of five strata and never collapses them into a
-          single score — a forum pattern and a randomized trial are both real
-          evidence, and they are not the same kind of real.
+          Knowledge about rare diseases is scattered. The index files each
+          source under one of five kinds of evidence and keeps them apart
+          rather than blending them into one score, so a pattern seen in
+          patient forums never carries the weight of a randomized trial.
         </p>
         <ul className="card-grid">
           {STRATUM_ORDER.map((stratum) => (
@@ -127,7 +134,7 @@ export default async function Home() {
               </p>
               <p className="card__body">{STRATUM_SUMMARIES[stratum]}</p>
               <p className="card__meta">
-                {strataCounts.get(stratum) ?? 0} attestations
+                Cited in {strataCounts.get(stratum) ?? 0} records
               </p>
             </li>
           ))}
@@ -141,8 +148,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/subtypes")}>
               <p className="card__title">Subtypes</p>
               <p className="card__body">
-                All thirteen 2017-classification types plus HSD — genes,
-                inheritance, prevalence, and what distinguishes each.
+                The thirteen types in the 2017 classification, plus HSD: genes,
+                inheritance, prevalence, and what sets each apart.
               </p>
             </a>
           </li>
@@ -160,8 +167,9 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/practices")}>
               <p className="card__title">Practices</p>
               <p className="card__body">
-                Management and treatment records — clinical, community-reported,
-                and folk — with evidence tier and risk made explicit.
+                Treatments and management approaches, from clinical guidance to
+                patient-reported and folk practice, with the evidence level and
+                any known risk.
               </p>
             </a>
           </li>
@@ -169,8 +177,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/community")}>
               <p className="card__title">Community knowledge</p>
               <p className="card__body">
-                Venue-level signals from forums and support groups, filed as
-                reports — with the venues named and individuals never.
+                Patterns reported in forums and support groups, filed as patient
+                reports. Venues are named; individuals are not.
               </p>
             </a>
           </li>
@@ -178,8 +186,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/sources")}>
               <p className="card__title">Source catalog</p>
               <p className="card__body">
-                Every cited source with its stratum, tier, publisher, and
-                stable identifier.
+                Every cited source with its kind of evidence, evidence level,
+                publisher, and permanent ID.
               </p>
             </a>
           </li>
@@ -187,8 +195,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/research")}>
               <p className="card__title">Research program</p>
               <p className="card__body">
-                Discovery monitors, open questions, collections, and the
-                append-only run ledger.
+                Open questions, the searches the index uses to find new evidence,
+                and a log of every change to the data.
               </p>
             </a>
           </li>
@@ -196,8 +204,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/methodology")}>
               <p className="card__title">Methodology</p>
               <p className="card__body">
-                The full research methodology: strata, tiers, corroboration,
-                criteria eras, review lifecycle, and publication policy.
+                How sources are sorted and graded, how settled each claim is, and
+                when records are reviewed.
               </p>
             </a>
           </li>
@@ -205,8 +213,8 @@ export default async function Home() {
             <a className="card__link" href={publicSitePath("/data")}>
               <p className="card__title">Data</p>
               <p className="card__body">
-                The open YAML corpus behind every page — downloadable,
-                diffable, auditable.
+                Every record and source as plain YAML files you can download and
+                check.
               </p>
             </a>
           </li>
@@ -214,12 +222,13 @@ export default async function Home() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Cross-stratum convergences</h2>
+        <h2 className="section-title">Where kinds of evidence agree</h2>
         <p className="section-sub">
-          Records where independent strata agree — the pattern a rare-disease
-          index exists to surface. The lidocaine record is the reference case:
-          patients reported anesthetic failure for decades before a randomized
-          trial confirmed it.
+          Records where independent studies or reports from more than one kind
+          of evidence point the same way. Local anesthetics are the clearest
+          case: patients reported that they failed, surveys measured how often,
+          and a randomized trial published in 2026 found a shorter effect in
+          people with EDS.
         </p>
         <ul className="record-list">
           {featuredByPriority.slice(0, 6).map((record) => (

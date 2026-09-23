@@ -3,16 +3,10 @@ import { z } from "zod";
 export const EDS_CORPUS_SCHEMA_VERSION = "eds-research/corpus/v1" as const;
 
 /*
- * Source strata.
+ * Source strata: the five kinds of source the index files evidence under.
  *
- * Rare-disease knowledge does not live in one place. Peer-reviewed literature
- * is sparse and lags practice; patient communities accumulate dense
- * lived-experience signal before clinicians study it; the historical record
- * holds both the disease's nosology and pre-diagnostic folk management.
- *
- * Every source belongs to exactly one stratum. Every record attests its
- * evidence per stratum, and records may carry attestations from several
- * strata at once — that convergence is the point of the index.
+ * Every source belongs to exactly one stratum. Each record lists its evidence
+ * per stratum and may cite several strata at once.
  */
 export const sourceStrata = [
   "clinical",
@@ -25,8 +19,9 @@ export const sourceStrata = [
 export type SourceStratum = (typeof sourceStrata)[number];
 
 /*
- * Evidence tiers are stratum-specific. A randomized trial and a recurring
- * forum pattern are both real evidence; they are not the same kind of real.
+ * Evidence tiers are defined per stratum, so a trial and a forum pattern are
+ * never ranked on one scale. A record's tier for a source must equal the tier
+ * the source catalog gives that source (checked in lib/content.ts).
  */
 export const evidenceTiers = {
   clinical: [
@@ -35,8 +30,10 @@ export const evidenceTiers = {
     "randomized-trial",
     "cohort-study",
     "case-control",
+    "cross-sectional-study",
     "case-series",
     "case-report",
+    "qualitative-study",
     "clinical-guideline",
     "consensus-statement",
     "expert-review",
@@ -85,10 +82,9 @@ export function evidenceTierBelongsToStratum(
 }
 
 /*
- * Diagnostic criteria era. The meaning of "EDS" changed with each nosology:
- * a 1975 cohort and a 2020 hEDS cohort are not the same population. Records
- * carry the era their sources worked under so old claims are never silently
- * read as modern ones.
+ * Diagnostic criteria era. The meaning of "EDS" changed with each nosology,
+ * so a 1975 cohort and a 2020 hEDS cohort are not the same population.
+ * Records carry the era their sources worked under.
  */
 export const criteriaEras = [
   "pre-nosology",
@@ -101,9 +97,9 @@ export const criteriaEras = [
 export type CriteriaEra = (typeof criteriaEras)[number];
 
 /*
- * Epistemic status. `community-signal` and `historical-record` are
- * deliberately not gradations of clinical truth: they name evidence that is
- * real in its own stratum and has not (yet) earned a clinical one.
+ * Record status. `community-signal` and `historical-record` are not steps on
+ * the clinical scale: they label patient reports and documented history that
+ * clinical research has not tested.
  */
 export const recordStatuses = [
   "established",
@@ -118,13 +114,21 @@ export const recordStatuses = [
 export type RecordStatus = (typeof recordStatuses)[number];
 
 /*
- * Cross-stratum corroboration. Required whenever a record's evidence spans
- * more than one stratum. `convergent` marks independent strata agreeing —
- * the pattern a rare-disease index exists to surface, e.g. local-anesthetic
- * resistance reported by patients for decades before trial confirmation.
+ * Cross-stratum corroboration, required whenever a record's evidence spans
+ * more than one stratum.
+ *
+ * - `convergent`: independent studies or reports in different strata agree,
+ *   for example patient reports, surveys, and a trial on local anesthetics.
+ * - `single-origin`: the strata restate one underlying study, report, or
+ *   account (a paper, its preprint, and a press release; a classification
+ *   and a patient-organization summary of it; two reviews retelling one
+ *   historical report). They do not corroborate each other.
+ * - `contested`: the sources disagree.
+ * - `refuted`: stronger evidence contradicts the record.
  */
 export const corroborationStates = [
   "convergent",
+  "single-origin",
   "contested",
   "refuted",
 ] as const;
@@ -269,7 +273,12 @@ export const EvidenceAttestationSchema = z.strictObject({
 
 export type EvidenceAttestation = z.infer<typeof EvidenceAttestationSchema>;
 
-const clinicalConsensusTiers = new Set<string>([
+/*
+ * Clinical tiers that can make a finding "established". Which tiers belong
+ * here is an open editorial decision; the methodology page renders this list
+ * so the page and the code cannot disagree.
+ */
+export const clinicalConsensusTiers = [
   "systematic-review",
   "meta-analysis",
   "randomized-trial",
@@ -278,13 +287,17 @@ const clinicalConsensusTiers = new Set<string>([
   "case-series",
   "clinical-guideline",
   "consensus-statement",
-]);
+] as const satisfies readonly EvidenceTier<"clinical">[];
+
+const clinicalConsensusTierSet = new Set<string>(clinicalConsensusTiers);
 
 export const EdsRecordSchema = z
   .strictObject({
     id: SlugSchema,
     kind: z.enum(recordKinds),
     title: CompactTextSchema.max(160),
+    /* Page description; required when the summary's first sentence is over 160 characters. */
+    description: CompactTextSchema.max(160).optional(),
     summary: z.string().trim().min(1).max(2_000),
     date: PartialDateSchema.optional(),
     date_precision: z
@@ -364,7 +377,7 @@ export const EdsRecordSchema = z
     if (record.status === "established") {
       const hasClinicalConsensus = record.evidence.some(
         ({ stratum, tier }) =>
-          stratum === "clinical" && clinicalConsensusTiers.has(tier),
+          stratum === "clinical" && clinicalConsensusTierSet.has(tier),
       );
       const hasRegistryAuthority =
         record.kind === "program" &&
@@ -373,7 +386,7 @@ export const EdsRecordSchema = z
         context.addIssue({
           code: "custom",
           message:
-            "Status established requires clinical attestation at consensus strength (guideline, consensus statement, review, trial, or cohort); programs may instead attest a registry record",
+            `Status established requires a clinical attestation with one of these tiers: ${clinicalConsensusTiers.join(", ")}; programs may instead attest a registry record`,
           path: ["status"],
         });
       }
@@ -392,10 +405,14 @@ export const EdsRecordSchema = z
         path: ["status"],
       });
     }
-    if (record.status === "refuted" && record.corroboration === "convergent") {
+    if (
+      record.status === "refuted" &&
+      (record.corroboration === "convergent" ||
+        record.corroboration === "single-origin")
+    ) {
       context.addIssue({
         code: "custom",
-        message: "A refuted record cannot also be marked convergent",
+        message: "A refuted record cannot also be marked convergent or single-origin",
         path: ["status"],
       });
     }

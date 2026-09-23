@@ -2,7 +2,7 @@ schema: eds-research/questions/v1
 questions:
   - id: heds-molecular-basis
     question: What is the molecular basis of hEDS, and how genetically heterogeneous is it?
-    why_open: KLK15 is the first associated gene but explains only a fraction of families; HEDGE (n=1,000) publications are expected to clarify. hEDS remains a clinical diagnosis.
+    why_open: KLK15 is a candidate gene that is not yet used for diagnosis, and the HEDGE study (1,000 people with hEDS) is expected to report further genetic findings. hEDS remains a clinical diagnosis.
     status: watching
     strata_sought: [clinical, gray, registry]
     related_source_ids:
@@ -29,11 +29,11 @@ questions:
     last_reviewed: "2026-09-16"
   - id: mcas-pots-heds-trifecta
     question: Is the hEDS-POTS-MCAS clustering a shared mechanism or a referral artifact?
-    why_open: The triad is community-observed and registry-supported, but mechanism evidence is thin and diagnostic criteria for each leg differ in rigor.
+    why_open: Patient communities report the triad often, and POTS and MCAS were among the diagnoses most often endorsed in a registry survey, but evidence on mechanism is thin and the diagnostic criteria for each condition differ in rigor.
     status: watching
     strata_sought: [clinical, registry, community]
     related_source_ids:
-      - source-d4a910b62f451448889e
+      - source-9a67b455782a95159bd9
     opened_at: "2026-09-16"
     last_reviewed: "2026-09-16"
   - id: exercise-intervention-evidence
@@ -45,30 +45,30 @@ questions:
     last_reviewed: "2026-09-16"
   - id: anesthetic-resistance-mechanism
     question: What mechanism explains reduced local-anesthetic effectiveness in EDS?
-    why_open: The phenomenon is now trial-confirmed but the mechanism is unexplained; hypotheses range from tissue diffusion to sodium-channel and connective-tissue effects.
+    why_open: A 2026 randomized trial supports the patient reports, but the mechanism is unexplained; hypotheses range from tissue diffusion to sodium-channel and connective-tissue effects.
     status: watching
     strata_sought: [clinical]
     related_source_ids:
-      - source-d91980e8e90850a3f3b9
-      - source-aef7c864eb540644a26f
+      - source-ed80c4098795181b156a
+      - source-99c47d7654307a3505da
       - source-27684d4afee8b83b9d25
     opened_at: "2026-09-16"
     last_reviewed: "2026-09-16"
   - id: cci-tethered-cord-evidence
     question: How should craniocervical instability and tethered-cord claims in hEDS be weighed?
-    why_open: Strong community and some surgical-literature attention, limited controlled evidence, and meaningful surgical risk make this the sharpest contested area.
+    why_open: These conditions come up often in patient communities, controlled evidence is limited, and surgery for them carries real risk.
     status: watching
     strata_sought: [clinical, community]
     opened_at: "2026-09-16"
     last_reviewed: "2026-09-16"
   - id: diagnostic-delay-reduction
-    question: Which interventions actually shorten the EDS diagnostic odyssey?
-    why_open: Delays of 10-22 years are documented across cohorts; clinician-education programs exist (EDS ECHO) but effectiveness evidence is early.
+    question: Which interventions shorten the time it takes to diagnose EDS?
+    why_open: The average time to diagnosis was 10.39 years in a Global Registry survey of people with hEDS, and the median was 23.0 years for hEDS or HSD at one German clinic. Clinician education programs such as EDS ECHO exist, but evidence on whether they shorten diagnosis is early.
     status: open
     strata_sought: [clinical, community, registry]
     related_source_ids:
       - source-de164233cddfefc4105a
-      - source-d4a910b62f451448889e
+      - source-9a67b455782a95159bd9
       - source-fa671c0df94cd9c20ecb
     opened_at: "2026-09-16"
     last_reviewed: "2026-09-16"

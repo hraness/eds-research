@@ -3,6 +3,7 @@ import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import { JsonLdScript } from "@hraness/web-discovery/json-ld";
 import type { Metadata } from "next";
 
+import { GENETIC_STATUS_LABELS, INHERITANCE_LABELS } from "../display";
 import { collectionPageJsonLd } from "../seo";
 import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
 
@@ -10,7 +11,7 @@ export const dynamic = "force-static";
 
 const TITLE = "EDS subtypes";
 const DESCRIPTION =
-  "All thirteen Ehlers-Danlos syndrome subtypes under the 2017 International Classification, plus hypermobility spectrum disorder — genes, inheritance, prevalence, and distinguishing features.";
+  "The 13 Ehlers-Danlos syndrome types in the 2017 classification, plus hypermobility spectrum disorder: genes, inheritance, prevalence, and key features.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -38,12 +39,13 @@ export default async function SubtypesPage() {
         )}
         id="eds-subtypes-structured-data"
       />
-      <h1 className="page-title">Subtypes</h1>
+      <h1 className="page-title">EDS subtypes</h1>
       <p className="page-lede">
-        The 2017 International Classification defines thirteen EDS subtypes.
-        Twelve have confirmed molecular bases; hEDS — the most common — remains
-        a clinical diagnosis. HSD sits beside them as the residual category for
-        symptomatic hypermobility.
+        The 2017 International Classification defines thirteen types of EDS.
+        Twelve have known causative genes and can be confirmed with a genetic
+        test. hEDS, the most common, is still diagnosed from clinical signs
+        alone. Hypermobility spectrum disorder (HSD) covers people with
+        symptomatic joint hypermobility who do not meet the hEDS criteria.
       </p>
       <ul className="record-list">
         {subtypes.map((subtype) => (
@@ -56,14 +58,14 @@ export default async function SubtypesPage() {
               </h2>
               <span className="badge badge--kind">{subtype.abbreviation}</span>
               <span className="badge badge--kind">
-                {subtype.genetic_status.replaceAll("-", " ")}
+                {GENETIC_STATUS_LABELS[subtype.genetic_status]}
               </span>
             </div>
             <p className="record-item__summary">{subtype.summary}</p>
             <p className="record-item__meta">
-              {subtype.inheritance.replaceAll("-", " ")}
+              {INHERITANCE_LABELS[subtype.inheritance]}
               {subtype.genes.length > 0
-                ? ` · ${subtype.genes.join(", ")}`
+                ? ` · ${subtype.genetic_status === "candidate-emerging" ? "candidate gene " : ""}${subtype.genes.join(", ")}`
                 : ""}
             </p>
           </li>

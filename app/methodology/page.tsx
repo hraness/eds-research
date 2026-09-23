@@ -2,13 +2,16 @@ import { loadResearch } from "@/lib/content";
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
+import { clinicalConsensusTiers } from "@/lib/eds-schema";
+
+import { displayTier } from "../display";
 import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Methodology";
 const DESCRIPTION =
-  "How this index researches a rare disease: stratified sources, per-stratum evidence tiers, cross-stratum corroboration, diagnostic-era tagging, subtype scoping, and a review lifecycle.";
+  "How the EDS Research Index sorts sources into five kinds of evidence, grades them within each kind, and schedules records for review.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -23,167 +26,164 @@ export function generateMetadata(): Metadata {
 export default async function MethodologyPage() {
   const research = await loadResearch();
   const policy = research.publicationPolicy;
+  const consensusTiers = clinicalConsensusTiers.map(displayTier);
 
   return (
     <article className="prose">
       <h1 className="page-title">Methodology</h1>
       <p className="page-lede">
-        A rare disease is researched differently from a common one. The trial
-        record is thin, patient communities carry real signal years before the
-        literature does, and the diagnostic criteria themselves have changed
-        three times in forty years. This is the methodology the index runs on —
-        enforced in its schema, not just described in prose.
+        Rare diseases are studied differently from common ones. Trials are few,
+        patient communities sometimes notice problems years before the
+        literature does, and the diagnostic criteria for EDS have changed three
+        times in forty years. This page sets out the rules the index follows.
+        The site checks some of them automatically when it builds; the rest
+        depend on editorial review.
       </p>
 
-      <h2>1. Five source strata</h2>
+      <h2>1. Five kinds of evidence</h2>
       <p>
-        Every source enters under exactly one stratum, and every record attests
-        its evidence per stratum. The strata are never collapsed into a single
-        evidence score.
+        Every source is filed under exactly one of five kinds of evidence, and
+        every record lists its evidence by kind. The kinds are never merged
+        into a single score.
       </p>
       <ul>
         <li>
-          <strong>Clinical</strong> — peer-reviewed articles, trials,
-          guidelines, consensus statements, and mechanistic studies.
+          Clinical: peer-reviewed articles, trials, guidelines, consensus
+          statements, and laboratory studies.
         </li>
         <li>
-          <strong>Community</strong> — venue-level patterns from forums,
-          support groups, and patient organizations. Indexed at venue level
-          only; no individual poster, handle, or verbatim post enters the
-          corpus.
+          Community: patterns reported across forums, support groups, and
+          patient organizations. The index names the venue only; no individual
+          poster, username, or verbatim post is recorded.
         </li>
         <li>
-          <strong>Historical</strong> — pre-nosology case reports,
-          contemporaneous accounts, archival records, and documented folk
+          Historical: case reports from before EDS was formally classified,
+          accounts written at the time, archival records, and documented folk
           practice.
         </li>
         <li>
-          <strong>Registry</strong> — patient registries, trial registrations,
-          and rare-disease reference rails (Orphanet, GARD, ClinicalTrials.gov).
+          Registry: patient registries, trial registrations, and rare-disease
+          reference databases (Orphanet, GARD, ClinicalTrials.gov).
         </li>
         <li>
-          <strong>Gray literature</strong> — preprints, theses, conference
-          abstracts, and working papers ahead of peer review.
+          Gray literature: preprints, theses, conference abstracts, and working
+          papers that have not been peer reviewed.
         </li>
       </ul>
 
-      <h2>2. Per-stratum evidence tiers</h2>
+      <h2>2. Evidence levels within each kind</h2>
       <p>
-        A randomized trial and a recurring forum pattern are both real evidence;
-        they are not the same kind of real. Each stratum defines its own tier
-        ladder — systematic review down to case report in the clinical stratum,
-        structured patient survey down to individual account in the community
-        stratum, primary historical document down to folk tradition in the
-        historical stratum. The schema rejects attestations whose tier does not
-        belong to their stratum.
+        Each kind of evidence has its own scale, so a randomized trial and a
+        recurring forum pattern are never ranked against each other. The
+        clinical scale runs from systematic review to case report, the
+        community scale from structured patient survey to individual account,
+        and the historical scale from primary historical document to folk
+        tradition. The build rejects a record that gives a source a level from
+        the wrong scale, or a level different from the one in the source
+        catalog.
       </p>
 
-      <h2>3. Cross-stratum corroboration</h2>
+      <h2>3. When kinds of evidence agree or disagree</h2>
       <p>
-        When a record&apos;s evidence spans more than one stratum, it must
-        declare a corroboration state: <strong>convergent</strong> (independent
-        strata agree), <strong>contested</strong> (strata disagree), or{" "}
-        <strong>refuted</strong>. Single-stratum records cannot claim
-        corroboration. Disagreement between strata is publishable signal — the
-        lidocaine record is the model: decades of community reports, then
-        structured surveys, then a randomized trial.
+        A record whose evidence spans more than one kind states how that
+        evidence relates: <strong>convergent</strong> when independent studies
+        or reports agree, <strong>one underlying source</strong> when the
+        different kinds restate a single study or report (a paper, its
+        preprint, and a press release are one study),{" "}
+        <strong>contested</strong> when they disagree, or{" "}
+        <strong>refuted</strong>. Records with one kind of evidence make no
+        such claim. Local anesthetic resistance is the clearest example of
+        agreement: patient reports came first, then surveys, then a randomized
+        trial.
       </p>
 
-      <h2>4. Diagnostic-era tagging</h2>
+      <h2>4. Diagnostic criteria</h2>
       <p>
-        The meaning of &ldquo;EDS&rdquo; changed with each nosology — Berlin
-        1988 expanded it to eleven types, Villefranche 1997 consolidated to six,
-        and the 2017 International Classification defines thirteen and created
-        HSD as the residual category. Every record carries the criteria era its
-        sources worked under, so pre-2017 cohorts are never silently read as
-        modern hEDS.
+        What counted as &ldquo;EDS&rdquo; changed with each classification. The
+        1997 Villefranche nosology consolidated the types to six, and the 2017
+        International Classification defines thirteen and created
+        hypermobility spectrum disorder (HSD) for people with symptomatic
+        hypermobility who do not meet the hEDS criteria. Every record names the
+        criteria in force when its sources were written, so a study from before
+        2017 is not read as a study of hEDS as defined today.
       </p>
 
-      <h2>5. Subtype scoping</h2>
+      <h2>5. EDS types</h2>
       <p>
-        Every record declares its subtype scope. hEDS findings are never
-        silently generalized to vEDS or other monogenic types — the conditions
-        share a name and differ in mechanism, risk, and management. Records
-        scoped to all types say so explicitly.
+        Every record names the EDS types it applies to. A finding about hEDS is
+        not applied to vEDS or other types with a known gene: the conditions
+        share a name but differ in cause, risk, and management. Records that
+        apply to all types say so.
       </p>
 
-      <h2>6. Epistemic status</h2>
+      <h2>6. How settled each claim is</h2>
       <ul>
         <li>
-          <strong>Established</strong> — attested at consensus strength
-          (guideline, consensus statement, review, trial, or cohort) in the
-          clinical stratum, or by registry authority for program records.
+          Established: at least one clinical source at one of these levels:{" "}
+          {consensusTiers.join(", ")}. A research program record may instead
+          rest on a registry source.
         </li>
         <li>
-          <strong>Probable</strong> — supported by sub-consensus clinical or
-          registry evidence.
+          Probable: supported by other clinical or registry evidence.
         </li>
         <li>
-          <strong>Emerging</strong> — new and not yet replicated; always carries
-          a reassessment date.
+          Emerging: new and not yet replicated. Always has a reassessment date.
         </li>
         <li>
-          <strong>Contested</strong> — strata or studies disagree; always
-          carries a reassessment date.
+          Contested: sources or studies disagree. Always has a reassessment
+          date.
         </li>
         <li>
-          <strong>Community signal</strong> — real as community evidence, not
-          yet clinically earned; always carries a reassessment date.
+          Community signal: a pattern patients report consistently that
+          clinical research has not tested. Always has a reassessment date.
         </li>
         <li>
-          <strong>Historical record</strong> — documented history; presence
-          records provenance, never efficacy.
+          Historical record: something documented in the past. Listing it
+          records that it happened, not that it works.
         </li>
         <li>
-          <strong>Refuted</strong> — contradicted by stronger evidence; kept
-          visible rather than deleted.
+          Refuted: contradicted by stronger evidence. Kept on the site and
+          labeled, not deleted.
         </li>
       </ul>
 
-      <h2>7. Review lifecycle</h2>
+      <h2>7. Review dates</h2>
       <p>
-        Every record carries a <code>reviewed_at</code> date. Emerging,
-        contested, and community-signal records are inadmissible without a{" "}
-        <code>reassess_by</code> date — undated emerging claims do not enter the
-        corpus. Reassessment cadences are set by the publication policy:
-        emerging {policy.reassessment_days.emerging} days, contested{" "}
-        {policy.reassessment_days.contested} days, community signal{" "}
-        {policy.reassessment_days.community_signal} days, established{" "}
-        {policy.reassessment_days.established} days.
+        Every record carries the date it was last reviewed. Emerging,
+        contested, and community-signal records cannot be published without a
+        reassessment date. The publication policy sets target intervals of{" "}
+        {policy.reassessment_days.emerging} days for emerging records,{" "}
+        {policy.reassessment_days.contested} for contested,{" "}
+        {policy.reassessment_days.community_signal} for community signals, and{" "}
+        {policy.reassessment_days.established} for established records. The
+        build does not enforce these intervals.
       </p>
 
       <h2>8. Publication policy</h2>
-      <p>
-        What may enter the corpus and under what review, verbatim from the
-        published policy file:
-      </p>
+      <p>These rules are quoted from the published policy file:</p>
       <ul>
         {policy.rules.map((rule) => (
           <li key={rule.id}>{rule.text}</li>
         ))}
       </ul>
       <p>
-        Auto-publishable admissions are bibliographic only (
-        {policy.auto_publishable
-          .map(({ stratum, media_type }) => `${stratum} ${media_type}`)
-          .join("; ")}
-        ). Everything else requires review:{" "}
-        {policy.review_required
-          .map(({ stratum }) => stratum)
-          .filter((value, index, array) => array.indexOf(value) === index)
-          .join(", ")}
-        -stratum material at claim level, and all community and historical
-        material without exception.
+        Two kinds of entry can go live without review, and only as
+        bibliographic facts: trial registrations and journal articles (title,
+        venue, date, and identifier). Everything else needs review: every
+        clinical claim, practice assessment, and risk note; any reading of a
+        registry beyond its own fields; and all community, historical, and gray
+        literature material. Preprints enter provisionally and are marked
+        emerging.
       </p>
 
-      <h2>9. Discovery monitors and the run ledger</h2>
+      <h2>9. Searches and the change log</h2>
       <p>
-        The index is a living program, not a one-time article. Declared
-        monitors watch PubMed, ClinicalTrials.gov, society feeds, preprint
-        servers, guideline bodies, community venues, and historical archives on
-        fixed cadences. Every intake pass is logged in an append-only run
-        ledger — admitted sources, admitted records, and rejected candidates
-        with reasons. Corrections append; nothing rewrites history.
+        The index lists the searches it uses to find new evidence (PubMed,
+        ClinicalTrials.gov, society news, preprint servers, guideline bodies,
+        community venues, and historical archives) and how often each should
+        run. Each update to the data is logged with its date, the searches
+        used, and what changed. Corrections add a new log entry; earlier
+        entries are not edited.
       </p>
 
       <h2>10. What this index does not do</h2>

@@ -1,6 +1,11 @@
 import { describe, expect, it } from "bun:test";
 
-import { loadCorpus, loadResearch, loadSubtypes } from "./content";
+import {
+  CorpusIntegrityError,
+  loadCorpus,
+  loadResearch,
+  loadSubtypes,
+} from "./content";
 import { subtypeIds } from "./eds-schema";
 import { stableResearchSourceId } from "./source-identity";
 
@@ -31,6 +36,20 @@ describe("research layer", () => {
         expect(research.venueById.has(source.venue_id ?? "")).toBe(true);
       }
     }
+  });
+
+  it("keeps the two bibliographic-only entry types the methodology page names", async () => {
+    const { publicationPolicy } = await loadResearch();
+    expect(
+      publicationPolicy.auto_publishable.map(
+        ({ stratum, media_type }) => `${stratum}:${media_type}`,
+      ),
+    ).toEqual(["registry:trial-record", "clinical:journal-article"]);
+    expect(
+      new Set(publicationPolicy.review_required.map(({ stratum }) => stratum)),
+    ).toEqual(
+      new Set(["clinical", "community", "historical", "registry", "gray"]),
+    );
   });
 
   it("references only existing monitors from runs", async () => {
@@ -64,6 +83,52 @@ describe("corpus layer", () => {
         }
       }
     }
+  });
+
+  it("attests every source at the tier the source catalog gives it", async () => {
+    const corpus = await loadCorpus();
+    for (const record of corpus.records) {
+      for (const attestation of record.evidence) {
+        for (const source of attestation.sources) {
+          expect(source.tier).toBe(attestation.tier);
+        }
+      }
+    }
+  });
+
+  it("fails the build when a record's tier differs from the catalog tier", async () => {
+    const research = await loadResearch();
+    const target = "source-21337422dde3976b584c";
+    const source = research.sourceById.get(target);
+    expect(source?.tier).toBe("qualitative-study");
+    const sourceById = new Map(research.sourceById);
+    sourceById.set(target, { ...source!, tier: "cohort-study" });
+    await expect(loadCorpus({ ...research, sourceById })).rejects.toThrow(
+      CorpusIntegrityError,
+    );
+  });
+
+  it("keeps em dashes out of record and category text", async () => {
+    const corpus = await loadCorpus();
+    const texts = [
+      ...corpus.categories.map(({ description }) => description),
+      ...corpus.records.flatMap((record) => [
+        record.title,
+        record.summary,
+        record.risk?.note ?? "",
+        ...record.evidence.map(({ note }) => note ?? ""),
+      ]),
+    ];
+    for (const text of texts) expect(text).not.toContain("\u2014");
+  });
+
+  it("keeps the home page lead record, lidocaine, convergent and established", async () => {
+    const corpus = await loadCorpus();
+    const lidocaine = corpus.records.find(
+      ({ id }) => id === "mgmt-lidocaine-resistance",
+    );
+    expect(lidocaine?.corroboration).toBe("convergent");
+    expect(lidocaine?.status).toBe("established");
   });
 
   it("resolves every venue reference to a venue name", async () => {

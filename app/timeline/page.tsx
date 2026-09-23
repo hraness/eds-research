@@ -2,14 +2,14 @@ import { loadCorpus, sortRecordsChronological } from "@/lib/content";
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
-import { displayDate, STATUS_LABELS } from "../display";
+import { CRITERIA_ERA_LABELS, displayDate, STATUS_LABELS } from "../display";
 import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Timeline";
 const DESCRIPTION =
-  "The Ehlers-Danlos concept across four centuries — from van Meek'ren's 1682 case report through the Berlin and Villefranche nosologies to the 2017 International Classification and the first hEDS gene.";
+  "How the idea of Ehlers-Danlos syndrome took shape, from van Meek'ren's 1682 case report to the 2017 classification and the first candidate hEDS gene.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -31,9 +31,9 @@ export default async function TimelinePage() {
     <>
       <h1 className="page-title">Timeline</h1>
       <p className="page-lede">
-        The disease concept, not just the disease. Every event is tagged with
-        the diagnostic-criteria era its sources worked under — a 1975 cohort and
-        a 2020 hEDS cohort are not the same population.
+        How the idea of EDS changed over time. Each event is tagged with the
+        diagnostic criteria in force when its sources were written, because a
+        1975 cohort and a 2020 hEDS cohort are not the same population.
       </p>
       <ol className="timeline">
         {events.map((event) => (
@@ -49,7 +49,8 @@ export default async function TimelinePage() {
               </h2>
               <p className="timeline__summary">{event.summary}</p>
               <p className="record-item__meta">
-                {STATUS_LABELS[event.status]} · {event.criteria_era}
+                {STATUS_LABELS[event.status]} ·{" "}
+                {CRITERIA_ERA_LABELS[event.criteria_era]}
               </p>
             </div>
           </li>

@@ -177,6 +177,12 @@ export async function loadCorpus(research?: EdsResearch): Promise<EdsCorpus> {
             );
             continue;
           }
+          if (source.tier !== attestation.tier) {
+            problems.push(
+              `${fileName}: record ${record.id} attests source ${sourceId} as ${attestation.tier} but the source catalog gives it tier ${source.tier}`,
+            );
+            continue;
+          }
           sources.push(source);
         }
         return { ...attestation, sources };

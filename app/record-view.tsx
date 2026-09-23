@@ -2,6 +2,7 @@ import type { ResolvedRecord } from "@/lib/content";
 import type { ResearchSource } from "@/lib/research-schema";
 import {
   CORROBORATION_LABELS,
+  CRITERIA_ERA_LABELS,
   displayDate,
   displayTier,
   KIND_LABELS,
@@ -65,11 +66,15 @@ export function RecordItem({
       </div>
       <p className="record-item__summary">{record.summary}</p>
       <p className="record-item__meta">
-        {record.subtypes.map((id) => SUBTYPE_LABELS[id]).join(", ")}
-        {" · "}
-        {displayDate(record.date, record.date_precision)}
-        {" · "}
-        {record.categoryLabel}
+        {[
+          record.subtypes.map((id) => SUBTYPE_LABELS[id]).join(", "),
+          record.date === undefined
+            ? undefined
+            : displayDate(record.date, record.date_precision),
+          record.categoryLabel,
+        ]
+          .filter((part) => part !== undefined)
+          .join(" · ")}
       </p>
     </li>
   );
@@ -119,7 +124,7 @@ export function RecordDetail({
       <table className="meta-table">
         <tbody>
           <tr>
-            <th scope="row">Subtype scope</th>
+            <th scope="row">EDS types</th>
             <td>
               {record.subtypes.map((id) => SUBTYPE_LABELS[id]).join(", ")}
             </td>
@@ -131,12 +136,12 @@ export function RecordDetail({
             </tr>
           )}
           <tr>
-            <th scope="row">Criteria era</th>
-            <td>{record.criteria_era}</td>
+            <th scope="row">Diagnostic criteria</th>
+            <td>{CRITERIA_ERA_LABELS[record.criteria_era]}</td>
           </tr>
           {record.practice_kind !== undefined && (
             <tr>
-              <th scope="row">Practice kind</th>
+              <th scope="row">Type of practice</th>
               <td>{PRACTICE_KIND_LABELS[record.practice_kind]}</td>
             </tr>
           )}

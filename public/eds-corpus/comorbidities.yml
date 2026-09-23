@@ -2,13 +2,14 @@ schema: eds-research/corpus/v1
 category:
   id: comorbidities
   label: Comorbidities and systemic features
-  description: The multisystem reality — dysautonomia and POTS, MCAS, GI, pain, fatigue, and the comorbidity structure the community named before the literature did.
+  description: "Conditions that often come with EDS: dysautonomia and POTS, mast cell activation, digestive problems, pain, and fatigue."
   order: 40
 records:
   - id: com-trifecta-pattern
     kind: signal
-    title: The "trifecta" — hEDS, POTS/dysautonomia, and MCAS co-clustering
-    summary: "Patient communities converged on the hEDS–POTS–MCAS triad years before it appeared in clinical reviews. Registry data now supports the clustering: in the Global Registry survey (n=505), POTS and mast cell activation syndrome were among the alternative diagnoses participants most endorsed as accurate. The triad is community-coined and increasingly clinically studied; the mechanism remains unexplained."
+    title: "The “trifecta”: hEDS, POTS, and mast cell activation reported together"
+    description: Patient communities often describe hEDS, POTS, and mast cell activation syndrome occurring together, and call the combination the “trifecta”.
+    summary: Patient communities often describe hEDS, POTS (a form of dysautonomia), and mast cell activation syndrome (MCAS) occurring together, and call the combination the “trifecta”. In a Global Registry survey of 505 people with hEDS, POTS and MCAS were among the diagnoses participants most often endorsed as accurate. Whether the three share a mechanism is unknown.
     subtypes: [heds, hsd]
     status: community-signal
     criteria_era: international-2017
@@ -19,8 +20,8 @@ records:
         note: Recurring across Reddit and Inspire over multiple years.
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
-        note: POTS and MCAS among the most-endorsed comorbid diagnoses.
+        source_ids: [source-9a67b455782a95159bd9]
+        note: POTS and MCAS were among the diagnoses participants most often endorsed as accurate.
     corroboration: convergent
     venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
     reviewed_at: "2026-09-16"
@@ -28,8 +29,9 @@ records:
     tags: [dysautonomia, mcas, trifecta]
   - id: com-multisystem-2017
     kind: finding
-    title: The 2017 criteria formalized multisystem involvement
-    summary: The 2017 classification moved EDS from a skin-and-joints frame to an explicitly multisystem one — systemic manifestations entered the hEDS criteria themselves, and companion papers covered GI, cardiovascular-autonomic, pain, and psychiatric comorbidity. This codified what patient communities had long reported.
+    title: The 2017 classification papers cover symptoms beyond joints and skin
+    description: The 2017 hEDS criteria count connective-tissue signs such as hernias and prolapse. Papers published with them also review pain and other symptoms.
+    summary: "The hEDS criteria in the 2017 classification count signs of a more generalized connective tissue disorder, such as soft skin, hernias, pelvic floor prolapse, mitral valve prolapse, and aortic root dilatation. Digestive, autonomic, pain, and fatigue problems are not diagnostic criteria, but papers published alongside the classification describe them: Tinkle and colleagues review the symptoms and disorders reported with hEDS, and Chopra and colleagues review chronic pain in EDS."
     date: "2017-03"
     date_precision: month
     subtypes: [all-eds]
@@ -41,33 +43,34 @@ records:
         source_ids: [source-36ad1cab53c4cea4f4b4]
       - stratum: clinical
         tier: expert-review
-        source_ids: [source-1ad3f0edd57e0fab1524]
+        source_ids: [source-1ad3f0edd57e0fab1524, source-d7ba05272083315d9e1f]
     reviewed_at: "2026-09-16"
     tags: [multisystem]
   - id: com-misdiagnosis-load
     kind: finding
-    title: hEDS patients average ten alternative diagnoses before confirmation
-    summary: The Global Registry survey (n=505, clinically confirmed hEDS) found a mean of 10.45 alternative diagnoses — most commonly anxiety, depression, and migraine — with functional neurological disorder and multiple sclerosis among the most-rejected labels. Post-diagnosis, participants most endorsed POTS, cervical instability, and MCAS as accurate.
-    date: "2024"
+    title: In a registry survey, people with hEDS reported about ten other diagnoses
+    summary: A Global Registry survey of 505 people with clinically confirmed hEDS, published in 2023, found an average of 10.45 other diagnoses. Anxiety, depression, and migraine were the most common. Participants most often rejected functional neurological disorder, multiple sclerosis, and fibromyalgia as wrong, and most often endorsed POTS, cervical instability, and MCAS as accurate.
+    date: "2023"
     date_precision: year
     subtypes: [heds]
-    status: established
+    status: probable
     criteria_era: international-2017
     evidence:
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
+        source_ids: [source-9a67b455782a95159bd9]
       - stratum: clinical
-        tier: cohort-study
+        tier: qualitative-study
         source_ids: [source-21337422dde3976b584c]
-        note: Qualitative confirmation — dismissal and misdiagnosis recur through the diagnostic odyssey literature.
+        note: A 2025 qualitative study describes misdiagnosis and dismissal on the way to an hEDS diagnosis.
     corroboration: convergent
     reviewed_at: "2026-09-16"
     tags: [misdiagnosis, registry]
   - id: com-cci-tethered-cord
     kind: finding
-    title: Craniocervical instability and tethered cord — the contested frontier
-    summary: Craniocervical instability and tethered-cord claims circulate strongly in community venues and some surgical case series, and CCI was among the most-endorsed diagnoses in the registry survey. Controlled evidence remains limited and surgical intervention carries real risk; this index marks the area contested rather than dismissing it.
+    title: "Craniocervical instability and tethered cord in hEDS: contested"
+    description: Craniocervical instability and tethered cord come up often in hEDS patient communities. Controlled evidence is limited, and surgery carries real risk.
+    summary: Craniocervical instability (CCI) and tethered cord come up often in patient communities, and cervical instability was one of the diagnoses participants most often endorsed as accurate in a Global Registry survey of people with hEDS. Controlled evidence is limited, and surgery for these conditions carries real risk.
     subtypes: [heds, ceds]
     status: contested
     criteria_era: international-2017
@@ -77,8 +80,8 @@ records:
         source_ids: [source-ec36295ad04f34148c63, source-641ce29242a70e8a5f01]
       - stratum: registry
         tier: registry-analysis
-        source_ids: [source-d4a910b62f451448889e]
-        note: CCI among most-endorsed alternative diagnoses in the registry survey.
+        source_ids: [source-9a67b455782a95159bd9]
+        note: Cervical instability was among the diagnoses participants most often endorsed as accurate.
     corroboration: convergent
     venues: [venue-reddit-ehlersdanlos, venue-inspire-eds-hsd]
     reviewed_at: "2026-09-16"
@@ -87,7 +90,8 @@ records:
   - id: com-gi-dysautonomia-cluster
     kind: finding
     title: GI dysmotility and autonomic features are documented comorbidity domains
-    summary: The 2017 series and subsequent cohort work document gastrointestinal dysmotility (reflux, gastroparesis, constipation) and autonomic dysfunction (orthostatic intolerance, POTS) as leading comorbidity domains in hEDS/HSD. The German 2025 cohort shows musculoskeletal pain and joint instability as the dominant presenting manifestations.
+    description: A 2017 review describes digestive dysmotility and autonomic problems, including POTS, as common comorbidities in hEDS and HSD.
+    summary: The 2017 series and subsequent cohort work document gastrointestinal dysmotility (reflux, gastroparesis, constipation) and autonomic dysfunction (orthostatic intolerance, POTS) as leading comorbidity domains in hEDS/HSD. In a 2025 survey at a German EDS clinic, musculoskeletal pain and joint instability were the most common first symptoms.
     subtypes: [heds, hsd]
     status: probable
     criteria_era: international-2017
@@ -96,7 +100,7 @@ records:
         tier: expert-review
         source_ids: [source-1ad3f0edd57e0fab1524]
       - stratum: clinical
-        tier: cohort-study
+        tier: cross-sectional-study
         source_ids: [source-de164233cddfefc4105a]
     reviewed_at: "2026-09-16"
     tags: [gi, dysautonomia]

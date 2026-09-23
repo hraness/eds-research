@@ -22,9 +22,9 @@ export function absoluteSiteUrl(path: SitePath): string {
 export const site = {
   applicationName: "EDS Research Index",
   datasetDescription:
-    "Open, source-linked YAML records behind the EDS research index: canonical sources across clinical, community, historical, registry, and gray strata; research records with per-stratum evidence attestations; subtype registry; discovery monitors; open questions; and the append-only run ledger.",
+    "The YAML files behind the EDS Research Index: the source catalog, research records, subtype registry, searches for new evidence, open questions, and the log of every change.",
   description:
-    "An independent, source-linked research index for the Ehlers-Danlos syndromes — peer-reviewed literature, corroborated community knowledge, registries and trials, and documented historical and folk practice, each with explicit evidence tiers and provenance.",
+    "An independent index of Ehlers-Danlos syndromes research. Each record links its sources and labels the kind of evidence, from clinical trials to patient forums.",
   domain: SITE_LABEL,
   indexTitle: "EDS Research Index",
   name: "EDS Research Index",
