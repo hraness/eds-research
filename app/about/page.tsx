@@ -38,11 +38,11 @@ export default function AboutPage() {
       <h2>Why this exists</h2>
       <p>
         The diagnostic criteria for EDS have been revised three times in forty
-        years, and the most common type, hEDS, still has no confirmed gene. The
-        first candidate gene, KLK15, was reported in a 2024 preprint and
-        published in 2025. Patients sometimes notice a problem long before
-        researchers study it; local anesthetics failing in EDS is the
-        best-documented case. The index takes patient reports seriously and
+        years, and the most common type, hEDS, still has no confirmed gene. A
+        candidate gene, KLK15, was reported in a 2024 preprint and published
+        in 2025. Patients sometimes notice a problem long before researchers
+        study it; local anesthetics failing in EDS is one example, now
+        supported by surveys and a 2026 trial. The index takes patient reports seriously and
         labels them as reports, so they are not mistaken for trial results.
       </p>
 

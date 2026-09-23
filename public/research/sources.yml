@@ -195,7 +195,7 @@ sources:
     url: https://pubmed.ncbi.nlm.nih.gov/15684369/
     published_at: "2005-02"
     access: public
-    note: Hakim, Grahame, Norris, Hopper; in a survey, 58% of women with symptomatic joint hypermobility syndrome recalled poor local anesthetic effect, against 21% of women without hypermobility.
+    note: Hakim, Grahame, Norris, Hopper; letter reporting a questionnaire from a 2003 study. 58% of 172 women with joint hypermobility syndrome and 21% of 53 age-matched controls without hypermobility said a local anesthetic had not been as effective as it should have been.
   - id: source-9a67b455782a95159bd9
     stratum: registry
     tier: registry-analysis

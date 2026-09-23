@@ -52,7 +52,7 @@ records:
     tags: [genetics, frontier]
   - id: gen-hedge-study
     kind: program
-    title: HEDGE, the 1,000-participant hEDS genetics study
+    title: HEDGE is studying the genetics of 1,000 people with hEDS
     description: HEDGE is studying the genetics of 1,000 people with hEDS. In October 2025 the society expected first publications in late 2025 or early 2026.
     summary: HEDGE (Hypermobile Ehlers-Danlos Genetic Evaluation), listed among The Ehlers-Danlos Society's research programs, is studying the genetics of 1,000 people with hEDS. In October 2025 the society said it expected the first publications in late 2025 or early 2026, and that timelines may shift.
     subtypes: [heds, hsd]

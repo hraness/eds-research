@@ -69,7 +69,7 @@ runs:
         evidence: PubMed 28186390 abstract.
       - target: mgmt-lidocaine-resistance
         change: Trial date changed to 2026-03. Survey tiers changed to cross-sectional-study. Summary restated from the papers, and "for decades" removed. The risk note now attributes its advice to the trial authors.
-        evidence: Europe PMC abstracts for PMIDs 41775498 and 31723666.
+        evidence: Europe PMC abstracts for PMIDs 41775498 and 31723666; Hakim et al. 2005 letter, full text PMC1079398 (172 women with JHS, 53 age-matched controls).
       - target: px-trauma-informed-2025
         change: Tier changed to qualitative-study and status established to probable. Journal named correctly. The sample size (n=9) and the quoted phrase could not be confirmed from the abstract and were removed.
         evidence: Crossref abstract for 10.1136/bmjccgg-2025-000044.
@@ -123,8 +123,8 @@ runs:
         change: The claim that delays of 10 to 22 years are documented across cohorts was replaced with the registry survey's average and the German clinic's median, with their populations.
         evidence: Europe PMC abstracts for PMC11613559 and PMC12358066.
       - target: com-multisystem-2017
-        change: Removed the claim that systemic manifestations such as digestive, autonomic, pain, and fatigue problems entered the 2017 hEDS criteria, and the unsourced claim that the criteria codified patient reports. The criteria's systemic features are connective-tissue signs. Added the Chopra pain review as a source for the companion-paper sentence.
-        evidence: The Ehlers-Danlos Society's 2017 hEDS diagnostic checklist (Criterion 2, Feature A); Tinkle et al. 2017 abstract, PubMed 28145611.
+        change: Removed the claim that systemic manifestations such as digestive, autonomic, and fatigue problems entered the 2017 hEDS criteria, and the unsourced claim that the criteria codified patient reports. The criteria's systemic features (Feature A) are connective-tissue signs; chronic musculoskeletal pain counts under Feature C. Added the Chopra pain review as a source for the companion-paper sentence.
+        evidence: The Ehlers-Danlos Society's 2017 hEDS diagnostic checklist (Criterion 2, Features A and C); Tinkle et al. 2017 abstract, PubMed 28145611.
       - target: px-fatigue-underrecognized
         change: Removed the unsourced claims that fatigue was systematically underweighted and that the 2017 criteria restored it to the clinical picture. The summary now gives the German survey figure for fatigue.
         evidence: PMC12358066, results on burden of disease.

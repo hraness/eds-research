@@ -54,7 +54,7 @@ records:
   - id: px-german-cohort-manifestations
     kind: finding
     title: Pain and joint instability lead the symptoms reported at a German EDS clinic
-    summary: A survey of 99 adults diagnosed at the EDS clinic of University Hospital Cologne, 80 of them with hEDS or HSD, was published in 2025. Musculoskeletal pain and joint instability, including repeated subluxations and dislocations, were the most common first symptoms. Pain was the problem respondents most often said severely affected daily activities (60.2%), followed by joint instability (38.8%), digestive complaints (35.7%), and fatigue (32.7%). The results come from one specialist clinic.
+    summary: A survey of 99 adults diagnosed at the EDS clinic of University Hospital Cologne, 80 of them with hEDS or HSD, was published in 2025. Musculoskeletal pain and joint instability, including repeated subluxations and dislocations, were the most common first symptoms. Pain was the problem respondents most often said severely affected daily activities (60.2%), followed by joint instability (38.8%), other orthopedic problems (36.7%), digestive complaints (35.7%), and fatigue (32.7%). The results come from one specialist clinic.
     date: "2025"
     date_precision: year
     subtypes: [heds, hsd]

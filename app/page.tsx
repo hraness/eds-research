@@ -120,9 +120,9 @@ export default async function Home() {
         <h2 className="section-title">Five kinds of evidence</h2>
         <p className="section-sub">
           Knowledge about rare diseases is scattered. The index files each
-          source under one of five kinds of evidence and keeps them apart
-          rather than blending them into one score, so a pattern seen in
-          patient forums never carries the weight of a randomized trial.
+          source under one of five kinds of evidence and grades it on that
+          kind&apos;s own scale, so a pattern seen in patient forums is never
+          scored against a randomized trial.
         </p>
         <ul className="card-grid">
           {STRATUM_ORDER.map((stratum) => (
@@ -227,8 +227,9 @@ export default async function Home() {
           Records where independent studies or reports from more than one kind
           of evidence point the same way. Local anesthetics are the clearest
           case: patients reported that they failed, surveys measured how often,
-          and a randomized trial published in 2026 found a shorter effect in
-          people with EDS.
+          and a randomized trial published in 2026 found that fewer people
+          with EDS were still numb 15 and 30 minutes after a lidocaine
+          injection.
         </p>
         <ul className="record-list">
           {featuredByPriority.slice(0, 6).map((record) => (

@@ -29,7 +29,7 @@ records:
   - id: mgmt-lidocaine-resistance
     kind: practice
     title: "Local anesthetic resistance in EDS: patient reports, two surveys, and a 2026 trial"
-    summary: People with EDS often report that local anesthetics fail or wear off early. In a survey reported in 2005, 58% of women with symptomatic joint hypermobility syndrome recalled poor local anesthetic effect, against 21% of women without hypermobility. In a 2019 online survey, 88% of 980 people with EDS who had a dental local anesthetic recalled inadequate pain prevention, against 33% of 249 people without EDS. A randomized cross-over trial published in 2026 (135 participants, 91 with EDS) found that fewer participants with EDS still had numbness 15 and 30 minutes after a lidocaine injection, which the authors read as a shorter-lasting effect.
+    summary: People with EDS often report that local anesthetics fail or wear off early. In a survey reported in 2005, 58% of 172 women with joint hypermobility syndrome said a local anesthetic had not been as effective as it should have been, against 21% of 53 age-matched controls without hypermobility. In a 2019 online survey, 88% of 980 people with EDS who had a dental local anesthetic recalled inadequate pain prevention, against 33% of 249 people without EDS. A randomized cross-over trial published in 2026 (135 participants, 91 with EDS) found that fewer participants with EDS still had numbness 15 and 30 minutes after a lidocaine injection, which the authors read as a shorter-lasting effect.
     date: "2026-03"
     date_precision: month
     subtypes: [all-eds]
@@ -55,7 +55,7 @@ records:
     reviewed_at: "2026-09-16"
     risk:
       level: caution
-      note: In the 2026 trial, lidocaine's effect faded sooner in people with EDS. The authors say clinicians should be aware of this reduced effectiveness and adjust care.
+      note: In the 2026 trial, fewer people with EDS than healthy controls still had numbness 15 and 30 minutes after lidocaine. The authors say clinicians should be aware of this reduced effectiveness and adjust care.
     tags: [anesthesia, dental, convergence]
   - id: mgmt-pain-management-2017
     kind: practice

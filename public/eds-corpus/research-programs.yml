@@ -7,8 +7,8 @@ category:
 records:
   - id: prog-dice-registry
     kind: program
-    title: DICE, the Ehlers-Danlos Society's global patient registry
-    summary: The Ehlers-Danlos Society's DICE EDS and HSD Global Registry collects health information that patients report about themselves. A 2023 survey on misdiagnosis was circulated through it to registry members with hEDS who were also enrolled in the HEDGE genetics study; 505 completed it.
+    title: The DICE Global Registry collects patient-reported data on EDS and HSD
+    summary: The Ehlers-Danlos Society's DICE EDS and HSD Global Registry collects health information that patients report about themselves. A misdiagnosis survey published in 2023 was circulated through it to registry members with hEDS who were also enrolled in the HEDGE genetics study; 505 completed it.
     subtypes: [all-eds]
     status: established
     criteria_era: international-2017
@@ -25,7 +25,7 @@ records:
     tags: [registry]
   - id: prog-echo
     kind: program
-    title: EDS ECHO, the society's clinician education program
+    title: EDS ECHO teaches clinicians and community members about EDS
     summary: EDS ECHO is The Ehlers-Danlos Society's education program for clinicians and community members, built on the Project ECHO model. It is meant to bring research and management knowledge to the clinicians patients see.
     subtypes: [all-eds]
     status: established
@@ -53,7 +53,7 @@ records:
     tags: [trials, registry]
   - id: prog-orpha-gard
     kind: program
-    title: Orphanet and GARD, the rare-disease reference databases
+    title: Orphanet and GARD keep reference records for rare diseases, including EDS
     description: Orphanet and the NIH's GARD keep reference records for rare diseases, including EDS nomenclature and prevalence estimates.
     summary: Orphanet (ORPHA:75531) and the NIH's Genetic and Rare Diseases Information Center (GARD) keep reference records for rare diseases, including EDS nomenclature and prevalence estimates.
     subtypes: [all-eds]

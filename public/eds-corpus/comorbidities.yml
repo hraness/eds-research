@@ -31,7 +31,7 @@ records:
     kind: finding
     title: The 2017 classification papers cover symptoms beyond joints and skin
     description: The 2017 hEDS criteria count connective-tissue signs such as hernias and prolapse. Papers published with them also review pain and other symptoms.
-    summary: "The hEDS criteria in the 2017 classification count signs of a more generalized connective tissue disorder, such as soft skin, hernias, pelvic floor prolapse, mitral valve prolapse, and aortic root dilatation. Digestive, autonomic, pain, and fatigue problems are not diagnostic criteria, but papers published alongside the classification describe them: Tinkle and colleagues review the symptoms and disorders reported with hEDS, and Chopra and colleagues review chronic pain in EDS."
+    summary: "The hEDS criteria in the 2017 classification count signs of a more generalized connective tissue disorder, such as soft skin, hernias, pelvic floor prolapse, mitral valve prolapse, and aortic root dilatation. Chronic musculoskeletal pain counts toward the criteria as a musculoskeletal complication (Feature C), but digestive, autonomic, and fatigue problems are not diagnostic criteria. Papers published alongside the classification describe them: Tinkle and colleagues review the symptoms and disorders reported with hEDS, and Chopra and colleagues review chronic pain in EDS."
     date: "2017-03"
     date_precision: month
     subtypes: [all-eds]
