@@ -11,6 +11,16 @@ const TITLE = "Research program";
 const DESCRIPTION =
   "Open questions the EDS Research Index is tracking, the searches it uses to find new evidence, curated collections, and the log of every change to the data.";
 
+const MONITOR_KIND_LABELS: Record<string, string> = {
+  "literature-query": "literature search",
+  "trial-registry": "trial registry",
+  "guideline-watch": "guideline watch",
+  "registry-watch": "registry watch",
+  "preprint-watch": "preprint watch",
+  "venue-scan": "venue scan",
+  "org-feed": "organization feed",
+};
+
 export function generateMetadata(): Metadata {
   return {
     title: TITLE,
@@ -48,7 +58,7 @@ export default async function ResearchPage() {
               </div>
               <p className="record-item__summary">{question.why_open}</p>
               <p className="record-item__meta">
-                seeks:{" "}
+                could be answered by:{" "}
                 {question.strata_sought
                   .map((s) => STRATUM_LABELS[s])
                   .join(", ")}{" "}
@@ -96,7 +106,8 @@ export default async function ResearchPage() {
               </div>
               <p className="record-item__summary">{monitor.purpose}</p>
               <p className="record-item__meta">
-                {monitor.kind} · every {monitor.cadence_days}d · strata:{" "}
+                {MONITOR_KIND_LABELS[monitor.kind] ?? monitor.kind} · every{" "}
+                {monitor.cadence_days} days · evidence:{" "}
                 {monitor.strata.map((s) => STRATUM_LABELS[s]).join(", ")}
                 {monitor.last_checked !== undefined
                   ? ` · checked ${monitor.last_checked}`
@@ -138,7 +149,7 @@ export default async function ResearchPage() {
                 </ul>
               )}
               <p className="record-item__meta">
-                {run.id} · {run.date} · strata:{" "}
+                {run.id} · {run.date} · evidence:{" "}
                 {run.strata.map((s) => STRATUM_LABELS[s]).join(", ")}
                 {run.monitors_used !== undefined
                   ? ` · ${run.monitors_used.length} monitors`

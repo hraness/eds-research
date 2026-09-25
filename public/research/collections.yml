@@ -16,7 +16,7 @@ collections:
       - class-heds-2017-criteria
   - id: diagnostic-odyssey-evidence
     label: The diagnostic odyssey
-    description: Quantified delay, misdiagnosis, and dismissal across clinical and registry strata.
+    description: Quantified delay, misdiagnosis, and dismissal across clinical and registry evidence.
     record_ids:
       - px-diagnostic-odyssey-2021
       - com-misdiagnosis-load

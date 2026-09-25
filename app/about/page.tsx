@@ -29,21 +29,30 @@ export default function AboutPage() {
     <article className="prose">
       <h1 className="page-title">About</h1>
       <p className="page-lede">
-        The EDS Research Index is an independent, open-source guide to what is
-        known about the Ehlers-Danlos syndromes. It draws on journals,
-        registries, patient forums, and historical case reports, and it keeps
-        track of which kind of source each claim comes from.
+        EDS Research Index is an independent index of Ehlers-Danlos syndromes
+        research for patients and clinicians. Each record links its sources
+        and labels the kind of evidence behind it.
       </p>
 
       <h2>Why this exists</h2>
       <p>
-        The diagnostic criteria for EDS have been revised three times in forty
-        years, and the most common type, hEDS, still has no confirmed gene. A
-        candidate gene, KLK15, was reported in a 2024 preprint and published
-        in 2025. Patients sometimes notice a problem long before researchers
-        study it; local anesthetics failing in EDS is one example, now
-        supported by surveys and a 2026 trial. The index takes patient reports seriously and
-        labels them as reports, so they are not mistaken for trial results.
+        Rare diseases break the usual order of evidence. Evidence-based
+        medicine ranks study designs, from systematic reviews down to case
+        reports, and trials in the Ehlers-Danlos syndromes are few. People
+        with EDS compare notes in forums and patient groups, and what they
+        report can point research somewhere new. Patients reported that local
+        anesthetics often failed them; surveys in 2005 and 2019 measured how
+        often, and a randomized trial published in 2026 found that fewer
+        people with EDS were still numb 15 and 30 minutes after a lidocaine
+        injection.
+      </p>
+      <p>
+        The index keeps each kind of evidence visible and separate. A forum
+        pattern is labeled as a patient report and graded on its own scale, so
+        it can be taken seriously without being mistaken for a trial result.
+        The diagnostic criteria were rewritten in 1988, 1997, and 2017, and
+        the most common type, hEDS, still has no confirmed gene, so every
+        record also names the types and criteria it applies to.
       </p>
 
       <h2>Editorial position</h2>

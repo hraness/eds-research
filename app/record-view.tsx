@@ -121,6 +121,10 @@ export function RecordDetail({
         <RecordBadges record={record} />
       </div>
       <p className="page-lede">{record.summary}</p>
+      <div className="notice">
+        <strong>Not medical advice.</strong> This page summarizes research and
+        does not recommend any course of care.
+      </div>
       <table className="meta-table">
         <tbody>
           <tr>

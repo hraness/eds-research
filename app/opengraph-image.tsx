@@ -14,7 +14,7 @@ export const contentType = socialImageContentType;
 
 export default function OpengraphImage() {
   return createSocialImageResponse({
-    description: site.description,
+    description: site.tagline,
     domain: site.domain,
     eyebrow: "Ehlers-Danlos syndromes",
     mark: <EdsMark />,

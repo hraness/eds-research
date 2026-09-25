@@ -31,7 +31,7 @@ const STRATUM_SUMMARIES: Record<string, string> = {
 };
 
 export function generateMetadata(): Metadata {
-  const title = `${site.indexTitle}: sourced evidence on the Ehlers-Danlos syndromes`;
+  const title = `${site.indexTitle}: ${site.tagline}`;
   return {
     title,
     description: site.description,
@@ -79,12 +79,22 @@ export default async function Home() {
         )}
         id="eds-research-index-structured-data"
       />
-      <h1 className="page-title">EDS Research Index</h1>
+      <p className="eyebrow">Medical research index</p>
+      <h1 className="page-title">
+        Ehlers-Danlos research, sorted by kind of evidence.
+      </h1>
       <p className="page-lede">
-        An independent index of research on the Ehlers-Danlos syndromes (EDS),
-        covering what is known and what is still unsettled. Each record links
-        its sources, says what kind of evidence they are, and names the EDS
-        types and the diagnostic criteria it applies to.
+        An independent index that links each record&apos;s sources and labels
+        the kind of evidence behind it.
+      </p>
+      <p className="hero-actions">
+        <a
+          className="hero-actions__primary"
+          href={publicSitePath("/subtypes")}
+        >
+          Browse the index
+        </a>
+        <a href={publicSitePath("/methodology")}>Read the method</a>
       </p>
       <div className="notice">
         <strong>Not medical advice.</strong> This index describes the evidence
@@ -112,7 +122,7 @@ export default async function Home() {
         </span>
         <span className="stat">
           <span className="stat__n">{research.monitors.length}</span>
-          <span className="stat__label">search monitors</span>
+          <span className="stat__label">saved searches</span>
         </span>
       </div>
 
@@ -158,8 +168,8 @@ export default async function Home() {
               <p className="card__title">Timeline</p>
               <p className="card__body">
                 From van Meek&apos;ren&apos;s 1682 report through Berlin,
-                Villefranche, and the 2017 International Classification to
-                KLK15.
+                Villefranche, and the 2017 International Classification to the
+                search for an hEDS gene.
               </p>
             </a>
           </li>
