@@ -89,6 +89,10 @@ export default async function SubtypePage({ params }: PageProps) {
         {subtype.name} ({subtype.abbreviation})
       </h1>
       <p className="page-lede">{subtype.summary}</p>
+      <div className="notice">
+        <strong>Not medical advice.</strong> This page summarizes research and
+        does not recommend any course of care.
+      </div>
       <table className="meta-table">
         <tbody>
           <tr>

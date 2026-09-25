@@ -53,7 +53,7 @@ export default async function SourcesPage() {
               <span className={`badge badge--stratum-${stratum}`}>
                 {STRATUM_LABELS[stratum]}
               </span>{" "}
-              {sources.length} sources
+              {sources.length} {sources.length === 1 ? "source" : "sources"}
             </h2>
             <ul className="source-list">
               {sources.map((source) => (

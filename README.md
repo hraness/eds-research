@@ -1,6 +1,6 @@
 # EDS Research Index
 
-An independent, open-source index of research on the Ehlers-Danlos syndromes, published at [hraness.com/eds](https://hraness.com/eds). It is not medical advice. Each record links its sources and labels the kind of evidence: clinical, patient community, historical, registry, or gray literature (preprints and theses).
+EDS Research Index is an independent index of Ehlers-Danlos syndromes research for patients and clinicians. Each record links its sources and labels the kind of evidence behind it. It is published at [hraness.com/eds](https://hraness.com/eds) as a reference, not medical advice.
 
 ## Methodology
 
@@ -39,4 +39,4 @@ bun run research:source-id    # stable source ID for a URL
 
 The index describes evidence and where it comes from; it does not diagnose, recommend, or discourage any course of care. Community evidence is filed as patient reports. Historical and folk records describe what was done, not what works.
 
-The EDS Research Index is built on the design every Hraness project shares: each record links its sources and labels the kind of evidence, so what the index says can be checked against where it came from. [The thread through hraness](https://hraness.com/writing/the-thread-through-hraness) follows that design across the projects.
+The EDS Research Index is built on a design several Hraness projects share: each record links its sources and labels the kind of evidence, so what the index says can be checked against where it came from. [The thread through hraness](https://hraness.com/writing/the-thread-through-hraness) follows that design across the projects.

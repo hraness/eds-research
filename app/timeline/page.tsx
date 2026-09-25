@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Timeline";
 const DESCRIPTION =
-  "How the idea of Ehlers-Danlos syndrome took shape, from van Meek'ren's 1682 case report to the 2017 classification and KLK15, a candidate hEDS gene published in 2025.";
+  "How the idea of Ehlers-Danlos syndrome took shape, from van Meek'ren's 1682 case report to the 2017 classification and the search for an hEDS gene.";
 
 export function generateMetadata(): Metadata {
   return {

@@ -19,16 +19,19 @@ export function absoluteSiteUrl(path: SitePath): string {
   return path === "/" ? SITE_ORIGIN : `${SITE_ORIGIN}${path}`;
 }
 
+const SITE_TAGLINE = "Ehlers-Danlos research, sorted by kind of evidence.";
+
 export const site = {
   applicationName: "EDS Research Index",
   datasetDescription:
     "The YAML files behind the EDS Research Index: the source catalog, research records, subtype registry, searches for new evidence, open questions, and the log of every change.",
   description:
-    "An independent index of Ehlers-Danlos syndromes research. Each record links its sources and labels the kind of evidence, from clinical trials to patient forums.",
+    "EDS Research Index is an independent, open-source index of Ehlers-Danlos syndromes research that links each record's sources and labels the kind of evidence.",
   domain: SITE_LABEL,
   indexTitle: "EDS Research Index",
   name: "EDS Research Index",
-  socialImageAlt: `Ehlers-Danlos syndromes research index at ${SITE_LABEL}`,
+  socialImageAlt: `EDS Research Index at ${SITE_LABEL}: ${SITE_TAGLINE}`,
+  tagline: SITE_TAGLINE,
   title: `EDS Research Index | ${SITE_LABEL}`,
   titleTemplate: `%s | ${SITE_LABEL}`,
 } as const;

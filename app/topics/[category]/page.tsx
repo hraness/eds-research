@@ -78,6 +78,10 @@ export default async function CategoryPage({ params }: PageProps) {
       />
       <h1 className="page-title">{resolved.category.label}</h1>
       <p className="page-lede">{resolved.category.description}</p>
+      <div className="notice">
+        <strong>Not medical advice.</strong> This page summarizes research and
+        does not recommend any course of care.
+      </div>
       <ul className="record-list">
         {resolved.records.map((record) => (
           <RecordItem key={record.id} record={record} />

@@ -4,10 +4,11 @@ const NAV_LINKS = [
   { href: publicSitePath("/subtypes"), label: "subtypes" },
   { href: publicSitePath("/timeline"), label: "timeline" },
   { href: publicSitePath("/practices"), label: "practices" },
-  { href: publicSitePath("/community"), label: "community" },
-  { href: publicSitePath("/sources"), label: "sources" },
-  { href: publicSitePath("/research"), label: "research" },
+  { href: publicSitePath("/community"), label: "community knowledge" },
+  { href: publicSitePath("/sources"), label: "source catalog" },
+  { href: publicSitePath("/research"), label: "research program" },
   { href: publicSitePath("/methodology"), label: "methodology" },
+  { href: publicSitePath("/about"), label: "about" },
 ] as const;
 
 export function SiteHeader() {
