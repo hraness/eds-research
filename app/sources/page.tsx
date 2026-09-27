@@ -38,9 +38,9 @@ export default async function SourcesPage() {
       <h1 className="page-title">Source catalog</h1>
       <p className="page-lede">
         {research.sources.length} sources in five categories. Each has a
-        permanent ID built from its URL and publication date. The site will not
-        build if a record cites a source missing from this list or gives a
-        source a different evidence level than this catalog does.
+        permanent ID built from its URL and publication date. Every source a
+        record cites appears here, with the same evidence level the record
+        gives it.
       </p>
       {STRATUM_ORDER.map((stratum) => {
         const sources = research.sources.filter(
@@ -66,10 +66,11 @@ export default async function SourcesPage() {
                       ? ` · ${source.published_at}`
                       : ""}
                     {source.access !== "public" ? ` · ${source.access}` : ""}
-                    <br />
-                    {source.id}
-                    {source.note !== undefined ? ` · ${source.note}` : ""}
                   </span>
+                  {source.note !== undefined && (
+                    <span className="source-list__note">{source.note}</span>
+                  )}
+                  <span className="source-list__id">{source.id}</span>
                 </li>
               ))}
             </ul>
