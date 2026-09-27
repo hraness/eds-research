@@ -6,7 +6,6 @@ const NAV_LINKS = [
   { href: publicSitePath("/practices"), label: "Practices" },
   { href: publicSitePath("/community"), label: "Community" },
   { href: publicSitePath("/sources"), label: "Sources" },
-  { href: publicSitePath("/methodology"), label: "Method" },
 ] as const;
 
 export function SiteHeader() {

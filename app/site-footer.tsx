@@ -10,6 +10,7 @@ export function SiteFooter() {
           <nav aria-label="site links">
             <a href={publicSitePath("/research")}>Research program</a>
             <a href={publicSitePath("/data")}>Data</a>
+            <a href={publicSitePath("/methodology")}>Method</a>
             <a href={publicSitePath("/about")}>About</a>
             <a href={publicSitePath("/contact")}>Contact</a>
             <a href={publicSitePath("/privacy")}>Privacy</a>
@@ -19,7 +20,6 @@ export function SiteFooter() {
       </div>
       <HranessSiteFooter
         mailingList={{ kind: "signup", audience: "hraness" }}
-        placement="flow"
         support={{
           id: "hraness",
           name: "Hraness",

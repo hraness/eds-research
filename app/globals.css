@@ -68,7 +68,7 @@ body {
 a { color: var(--accent); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
 a:hover { color: var(--accent-ink); }
 
-.site-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.site-shell { min-height: 100dvh; display: flex; flex-direction: column; }
 
 .site-header {
   position: sticky;
@@ -148,7 +148,7 @@ main {
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
-  font-weight: 600;
+  font-weight: 550;
   text-wrap: balance;
 }
 .page-title--hero {
@@ -393,3 +393,13 @@ article > .record-item__head { margin: 0 0 1rem; }
 .site-footer__resources a:hover { color: var(--ink); text-decoration: underline; }
 
 .pagination-note { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-faint); }
+
+:root {
+  --hraness-site-footer-measure: var(--maxw);
+  --hraness-site-footer-background: var(--bg);
+  --hraness-site-footer-foreground: var(--ink);
+  --hraness-site-footer-muted: var(--ink-soft);
+  --hraness-site-footer-line: var(--line);
+  --hraness-site-footer-focus: var(--accent);
+  --hraness-site-footer-field-background: var(--bg-raised);
+}
