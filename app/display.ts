@@ -174,7 +174,11 @@ export function displayDate(
 export function describe(text: string, maxLength = 160): string {
   const normalized = text.replace(/\s+/gu, " ").trim();
   if (normalized.length <= maxLength) return normalized;
-  const sentences = normalized.split(/(?<=[.!?][”"’)]?)\s+(?=[A-Z0-9“"(])/u);
+  // A period after a lone capital letter ends an initial ("A. P. Barabas"),
+  // not a sentence.
+  const sentences = normalized.split(
+    /(?<!(?:^|[\s(“"])[A-Z]\.)(?<=[.!?][”"’)]?)\s+(?=[A-Z0-9“"(])/u,
+  );
   let description = "";
   for (const sentence of sentences) {
     const next = description === "" ? sentence : `${description} ${sentence}`;

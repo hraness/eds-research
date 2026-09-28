@@ -153,3 +153,21 @@ runs:
         change: Collection description now says "clinical and registry evidence" instead of "clinical and registry strata", keeping the internal word off the public page.
         evidence: The site's style guide keeps internal vocabulary out of public copy.
     notes: Copy-only correction. No record, source, tier, or citation changed.
+  - id: run-2026-09-28-seo
+    date: "2026-09-28"
+    scope: Subtype wording and one record page description, checked against the sources each subtype already lists
+    strata: [clinical, historical]
+    corrections:
+      - target: hist-barabas-1967-vascular
+        change: Added a page description. The first summary sentence is longer than 160 characters, and the page description had been cut to "A. P." at the initials. The description restates facts already in the record.
+        evidence: The record's own summary and cited source; no new claim.
+      - target: subtypes.yml veds
+        change: Summary rewritten in plain words. It names the organs the 2017 classification lists for rupture (arteries, bowel, uterus) and drops the phrase "celiprolol debate", which the page did not explain or cite.
+        evidence: Malfait et al. 2017 (doi 10.1002/ajmg.c.31552), vEDS major criteria.
+      - target: subtypes.yml veds
+        change: Prevalence changed from "Estimated around 1 in 50,000 to 1 in 200,000" to "Rare". Neither listed source states that range. The National Academies EDS chapter (NBK584966) gives 1 in 50,000 while citing another work, and The Ehlers-Danlos Society's EDS types page gives no figure.
+        evidence: National Academies Press (2022), Selected Heritable Disorders of Connective Tissue and Disability, chapter 4 prevalence section, read on 2026-09-28; ehlers-danlos.com/eds-types/ read on 2026-09-28.
+      - target: subtypes.yml heds
+        change: Prevalence now gives the 2019 Wales figure with its value and population (194.2 per 100,000 in 2016/2017, EDS and joint hypermobility syndrome combined) and drops the "older textbook figures near 1 in 5,000", which no listed source reports as a result.
+        evidence: Demmler et al. 2019, BMJ Open, doi 10.1136/bmjopen-2019-031365, PubMed 31685485 abstract, results (6,021 people; diagnosed point prevalence 194.2 per 100,000 in 2016/2017), checked on 2026-09-28.
+    notes: Wording and data corrections only. No record ID, source, tier, or citation changed. Drafted by an AI agent (Claude Code) during the 2026-09-28 search and copy pass; no independent human review is recorded.

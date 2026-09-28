@@ -38,7 +38,8 @@ export async function generateMetadata({
   const { category } = await params;
   const resolved = await resolve(category);
   if (resolved === undefined) return {};
-  const title = resolved.category.label;
+  const label = resolved.category.label;
+  const title = `EDS ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
   return {
     title,
     description: resolved.category.description,
@@ -65,14 +66,20 @@ export default async function CategoryPage({ params }: PageProps) {
             { name: "EDS Research Index", path: "/" },
             { name: resolved.category.label, path: `/topics/${category}` },
           ]),
-          collectionPageJsonLd(resolved.records, {
-            description: resolved.category.description,
-            path: `/topics/${category}`,
-            reviewedAt: [...resolved.records.map((r) => r.reviewed_at)]
-              .sort()
-              .at(-1),
-            title: resolved.category.label,
-          }),
+          collectionPageJsonLd(
+            resolved.records.map(({ id, title }) => ({
+              path: `/records/${id}` as const,
+              title,
+            })),
+            {
+              description: resolved.category.description,
+              path: `/topics/${category}`,
+              reviewedAt: [...resolved.records.map((r) => r.reviewed_at)]
+                .sort()
+                .at(-1),
+              title: resolved.category.label,
+            },
+          ),
         ]}
         id="eds-category-structured-data"
       />

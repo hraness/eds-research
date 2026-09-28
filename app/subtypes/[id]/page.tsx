@@ -1,4 +1,4 @@
-import { loadCorpus, loadSubtypes } from "@/lib/content";
+import { loadCorpus, loadResearch, loadSubtypes } from "@/lib/content";
 import { subtypeIds } from "@/lib/eds-schema";
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import { JsonLdScript } from "@hraness/web-discovery/json-ld";
@@ -9,11 +9,10 @@ import {
   describe,
   GENETIC_STATUS_LABELS,
   INHERITANCE_LABELS,
-  SUBTYPE_LABELS,
 } from "../../display";
-import { RecordItem } from "../../record-view";
+import { RecordItem, SourceLink } from "../../record-view";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
-import { absoluteSiteUrl, socialMetadata } from "../../site";
+import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../../site";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -56,14 +55,24 @@ export async function generateMetadata({
 
 export default async function SubtypePage({ params }: PageProps) {
   const { id } = await params;
-  const [subtype, corpus] = await Promise.all([resolve(id), loadCorpus()]);
+  const research = await loadResearch();
+  const [subtypes, corpus] = await Promise.all([
+    loadSubtypes(research),
+    loadCorpus(research),
+  ]);
+  const subtype = subtypes.find((candidate) => candidate.id === id);
   if (subtype === undefined) notFound();
 
-  const related = corpus.records.filter(
-    (record) =>
-      record.subtypes.includes(subtype.id) ||
-      record.subtypes.includes("all-eds"),
+  const specific = corpus.records.filter((record) =>
+    record.subtypes.includes(subtype.id),
   );
+  const general = corpus.records.filter((record) =>
+    record.subtypes.includes("all-eds"),
+  );
+  const sources = subtype.source_ids.flatMap((sourceId) => {
+    const source = research.sourceById.get(sourceId);
+    return source === undefined ? [] : [source];
+  });
 
   return (
     <>
@@ -81,6 +90,7 @@ export default async function SubtypePage({ params }: PageProps) {
           description: subtype.summary,
           path: `/subtypes/${subtype.id}`,
           reviewedAt: subtype.reviewed_at,
+          citations: sources.map((source) => source.url),
         })}
         id="eds-subtype-webpage"
       />
@@ -136,26 +146,49 @@ export default async function SubtypePage({ params }: PageProps) {
             <td>{subtype.distinguishing_features}</td>
           </tr>
           <tr>
-            <th scope="row">Reviewed</th>
+            <th scope="row">Last checked</th>
             <td>{subtype.reviewed_at}</td>
           </tr>
         </tbody>
       </table>
 
-      <section className="section">
-        <h2 className="section-title">Related records</h2>
-        <p className="section-sub">
-          Records scoped to {SUBTYPE_LABELS[subtype.id]} or to all EDS types.
-        </p>
-        {related.length === 0 ? (
-          <p className="section-sub">No records cover this type yet.</p>
-        ) : (
+      {specific.length > 0 && (
+        <section className="section">
+          <h2 className="section-title">
+            Records about {subtype.abbreviation}
+          </h2>
           <ul className="record-list">
-            {related.map((record) => (
+            {specific.map((record) => (
               <RecordItem key={record.id} record={record} />
             ))}
           </ul>
-        )}
+        </section>
+      )}
+
+      {general.length > 0 && (
+        <section className="section">
+          <h2 className="section-title">
+            Records that apply to every EDS type
+          </h2>
+          <ul>
+            {general.map((record) => (
+              <li key={record.id}>
+                <a href={publicSitePath(`/records/${record.id}`)}>
+                  {record.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section className="section">
+        <h2 className="section-title">Sources</h2>
+        <ul className="source-list">
+          {sources.map((source) => (
+            <SourceLink key={source.id} source={source} />
+          ))}
+        </ul>
       </section>
     </>
   );

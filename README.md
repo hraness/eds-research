@@ -2,6 +2,10 @@
 
 EDS Research Index is an independent index of Ehlers-Danlos syndromes research for patients and clinicians. Each record links its sources and labels the kind of evidence behind it. It is published at [hraness.com/eds](https://hraness.com/eds) as a reference, not medical advice.
 
+## Other EDS references
+
+[The Ehlers-Danlos Society](https://www.ehlers-danlos.com/2017-eds-international-classification/) hosts the 2017 classification and the hEDS diagnostic checklist. [GeneReviews](https://www.ncbi.nlm.nih.gov/books/NBK1116/) has clinician-written chapters on vascular, classical, and hypermobile EDS. [Orphanet](https://www.orpha.net/) lists expert centers and prevalence estimates, and [GARD](https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome) and [NORD](https://rarediseases.org/rare-diseases/ehlers-danlos-syndrome/) have plain-language overviews. This index is narrower. It lists individual findings, practices, and events, shows the kind of evidence behind each, and keeps patient reports next to clinical studies without ranking them together.
+
 ## Methodology
 
 Each kind of evidence has its own scale of evidence levels, and a record gives each source the level recorded in the source catalog. Records that cite more than one kind of evidence state how it relates: `convergent`, `single-origin` (the kinds restate one underlying study or report), `contested`, or `refuted`. Community evidence is recorded by venue, never by poster. Historical and folk practices are listed as history, not as recommendations. Every record carries a `reviewed_at` date, and emerging, contested, and community-signal records also need a `reassess_by` date.

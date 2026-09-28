@@ -88,6 +88,29 @@ export default function AboutPage() {
         it cannot tell you what you have or what to do.
       </p>
 
+      <h2 id="other-eds-references">Other EDS references</h2>
+      <p>
+        <a href="https://www.ehlers-danlos.com/2017-eds-international-classification/">
+          The Ehlers-Danlos Society
+        </a>{" "}
+        hosts the 2017 classification and the hEDS diagnostic checklist.{" "}
+        <a href="https://www.ncbi.nlm.nih.gov/books/NBK1116/">GeneReviews</a>{" "}
+        has clinician-written chapters on vascular, classical, and hypermobile
+        EDS. <a href="https://www.orpha.net/">Orphanet</a> lists expert centers
+        and prevalence estimates, and{" "}
+        <a href="https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome">
+          GARD
+        </a>{" "}
+        and{" "}
+        <a href="https://rarediseases.org/rare-diseases/ehlers-danlos-syndrome/">
+          NORD
+        </a>{" "}
+        have plain-language overviews. This index is narrower. It lists
+        individual findings, practices, and events, shows the kind of evidence
+        behind each, and keeps patient reports next to clinical studies
+        without ranking them together.
+      </p>
+
       <h2>Independence and source code</h2>
       <p>
         The index is published by Hraness as an independent editorial project.

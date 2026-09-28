@@ -8,7 +8,7 @@ import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Source catalog";
+const TITLE = "EDS research sources by kind of evidence";
 const DESCRIPTION =
   "Every source the EDS Research Index cites, grouped by kind of evidence, with its evidence level, publisher, and permanent ID.";
 

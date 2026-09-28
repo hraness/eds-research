@@ -46,6 +46,28 @@ group("describe", () => {
     );
   });
 
+  it("does not split sentences after initials", () => {
+    expect(
+      describe("A. P. Barabas demonstrated that EDS was heterogeneous. Second."),
+    ).toBe("A. P. Barabas demonstrated that EDS was heterogeneous. Second.");
+    const text =
+      "A. P. Barabas demonstrated that EDS was heterogeneous. " +
+      "A second sentence pushes the text past the limit so the first sentence must stand alone as the description.";
+    expect(describe(text)).toBe(
+      "A. P. Barabas demonstrated that EDS was heterogeneous.",
+    );
+  });
+
+  it("never reduces a long text that starts with initials to the initials", () => {
+    const text =
+      "A. P. Barabas demonstrated that EDS was heterogeneous and delineated the form with arterial complications, " +
+      "the direct ancestor of the vascular subtype (type IV in Villefranche, vEDS today).";
+    const result = describe(text);
+    expect(result).not.toBe("A. P.");
+    expect(result.length).toBeGreaterThan(100);
+    expect(result.length).toBeLessThanOrEqual(160);
+  });
+
   it("cuts an over-long first sentence at a word boundary without an ellipsis", () => {
     const text = `${"word ".repeat(60).trim()}.`;
     const result = describe(text);
@@ -70,6 +92,7 @@ group("describe", () => {
     const corpus = await loadCorpus();
     for (const record of corpus.records) {
       const description = record.description ?? describe(record.summary);
+      expect(description.length).toBeGreaterThanOrEqual(40);
       expect(description.length).toBeLessThanOrEqual(160);
       expect(description).toMatch(/[.!?][”"’)]?$/u);
       expect(description).not.toContain("\u2014");
