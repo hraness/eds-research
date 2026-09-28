@@ -8,17 +8,18 @@ export function SiteFooter() {
         <div className="site-footer__resources">
           <span className="site-footer__resources-label">EDS Research Index</span>
           <nav aria-label="site links">
-            <a href={publicSitePath("/data")}>data</a>
-            <a href={publicSitePath("/about")}>about</a>
-            <a href={publicSitePath("/contact")}>contact</a>
-            <a href={publicSitePath("/privacy")}>privacy</a>
-            <a href={GITHUB_REPOSITORY_URL}>github</a>
+            <a href={publicSitePath("/research")}>Research program</a>
+            <a href={publicSitePath("/data")}>Data</a>
+            <a href={publicSitePath("/methodology")}>Method</a>
+            <a href={publicSitePath("/about")}>About</a>
+            <a href={publicSitePath("/contact")}>Contact</a>
+            <a href={publicSitePath("/privacy")}>Privacy</a>
+            <a href={GITHUB_REPOSITORY_URL}>GitHub</a>
           </nav>
         </div>
       </div>
       <HranessSiteFooter
         mailingList={{ kind: "signup", audience: "hraness" }}
-        placement="flow"
         support={{
           id: "hraness",
           name: "Hraness",

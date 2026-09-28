@@ -80,7 +80,7 @@ export default async function Home() {
         id="eds-research-index-structured-data"
       />
       <p className="eyebrow">Medical research index</p>
-      <h1 className="page-title">
+      <h1 className="page-title page-title--hero">
         Ehlers-Danlos research, sorted by kind of evidence.
       </h1>
       <p className="page-lede">
@@ -96,35 +96,34 @@ export default async function Home() {
         </a>
         <a href={publicSitePath("/methodology")}>Read the method</a>
       </p>
+      <p className="hero-facts">
+        {corpus.records.length} records · {research.sources.length} sources ·{" "}
+        {edsTypeCount} EDS types, plus HSD · {research.questions.length} open
+        questions · {research.monitors.length} saved searches
+      </p>
       <div className="notice">
         <strong>Not medical advice.</strong> This index describes the evidence
         and where it comes from. It does not diagnose, recommend, or discourage
-        any course of care. Historical and folk records describe what was done, not what
-        works.
+        any course of care. Historical and folk records describe what was
+        done, not what works.
       </div>
 
-      <div className="stat-row">
-        <span className="stat">
-          <span className="stat__n">{corpus.records.length}</span>
-          <span className="stat__label">records</span>
-        </span>
-        <span className="stat">
-          <span className="stat__n">{research.sources.length}</span>
-          <span className="stat__label">sources</span>
-        </span>
-        <span className="stat">
-          <span className="stat__n">{edsTypeCount}</span>
-          <span className="stat__label">EDS types, plus HSD</span>
-        </span>
-        <span className="stat">
-          <span className="stat__n">{research.questions.length}</span>
-          <span className="stat__label">open questions</span>
-        </span>
-        <span className="stat">
-          <span className="stat__n">{research.monitors.length}</span>
-          <span className="stat__label">saved searches</span>
-        </span>
-      </div>
+      <section className="section">
+        <h2 className="section-title">Where kinds of evidence agree</h2>
+        <p className="section-sub">
+          Records where independent studies or reports from more than one kind
+          of evidence point the same way. Local anesthetics are the clearest
+          case: patients reported that they failed, surveys measured how often,
+          and a randomized trial published in 2026 found that fewer people
+          with EDS were still numb 15 and 30 minutes after a lidocaine
+          injection.
+        </p>
+        <ul className="record-list">
+          {featuredByPriority.slice(0, 6).map((record) => (
+            <RecordItem key={record.id} record={record} />
+          ))}
+        </ul>
+      </section>
 
       <section className="section">
         <h2 className="section-title">Five kinds of evidence</h2>
@@ -228,23 +227,6 @@ export default async function Home() {
               </p>
             </a>
           </li>
-        </ul>
-      </section>
-
-      <section className="section">
-        <h2 className="section-title">Where kinds of evidence agree</h2>
-        <p className="section-sub">
-          Records where independent studies or reports from more than one kind
-          of evidence point the same way. Local anesthetics are the clearest
-          case: patients reported that they failed, surveys measured how often,
-          and a randomized trial published in 2026 found that fewer people
-          with EDS were still numb 15 and 30 minutes after a lidocaine
-          injection.
-        </p>
-        <ul className="record-list">
-          {featuredByPriority.slice(0, 6).map((record) => (
-            <RecordItem key={record.id} record={record} />
-          ))}
         </ul>
       </section>
 

@@ -1,14 +1,11 @@
 import { publicSitePath } from "./site";
 
 const NAV_LINKS = [
-  { href: publicSitePath("/subtypes"), label: "subtypes" },
-  { href: publicSitePath("/timeline"), label: "timeline" },
-  { href: publicSitePath("/practices"), label: "practices" },
-  { href: publicSitePath("/community"), label: "community knowledge" },
-  { href: publicSitePath("/sources"), label: "source catalog" },
-  { href: publicSitePath("/research"), label: "research program" },
-  { href: publicSitePath("/methodology"), label: "methodology" },
-  { href: publicSitePath("/about"), label: "about" },
+  { href: publicSitePath("/subtypes"), label: "Subtypes" },
+  { href: publicSitePath("/timeline"), label: "Timeline" },
+  { href: publicSitePath("/practices"), label: "Practices" },
+  { href: publicSitePath("/community"), label: "Community" },
+  { href: publicSitePath("/sources"), label: "Sources" },
 ] as const;
 
 export function SiteHeader() {
@@ -18,7 +15,6 @@ export function SiteHeader() {
         <a className="site-header__brand" href={publicSitePath("/")}>
           EDS Research Index
         </a>
-        <span className="site-header__domain">hraness.com/eds</span>
         <nav aria-label="primary" className="site-header__nav">
           {NAV_LINKS.map(({ href, label }) => (
             <a href={href} key={href}>
