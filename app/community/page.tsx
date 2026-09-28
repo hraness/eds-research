@@ -7,7 +7,7 @@ import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Community knowledge";
+const TITLE = "What EDS patient communities report";
 const DESCRIPTION =
   "Patterns reported in EDS patient forums and organizations, filed as patient reports rather than clinical findings. Venues are named, individual posters never.";
 

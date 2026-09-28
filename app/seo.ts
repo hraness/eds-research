@@ -12,28 +12,11 @@ export interface BreadcrumbItem {
   readonly path: SitePath;
 }
 
-const publisherJsonLd = {
-  "@type": "Organization",
-  "@id": `${HRANESS_URL}#organization`,
-  name: "Hraness",
-  url: HRANESS_URL,
-  sameAs: ["https://github.com/hraness"],
-} as const;
-
-export function siteOrganizationJsonLd() {
-  const rootUrl = absoluteSiteUrl("/");
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${rootUrl}#organization`,
-    name: site.name,
-    alternateName: site.domain,
-    description: site.description,
-    url: rootUrl,
-    sameAs: [GITHUB_REPOSITORY_URL],
-    parentOrganization: publisherJsonLd,
-  } as const;
-}
+/*
+ * The index is a Hraness publication. Its publisher is the Hraness
+ * organization node that hraness.com itself describes, referenced by ID.
+ */
+const publisherReference = { "@id": `${HRANESS_URL}#organization` } as const;
 
 export function websiteJsonLd() {
   const rootUrl = absoluteSiteUrl("/");
@@ -46,13 +29,13 @@ export function websiteJsonLd() {
     alternateName: site.domain,
     description: site.description,
     inLanguage: "en-US",
-    publisher: publisherJsonLd,
+    publisher: publisherReference,
     sameAs: [GITHUB_REPOSITORY_URL],
   } as const;
 }
 
 export function collectionPageJsonLd(
-  items: readonly Readonly<{ id: string; title: string }>[],
+  items: readonly Readonly<{ path: SitePath; title: string }>[],
   input: Readonly<{
     description: string;
     path: SitePath;
@@ -71,10 +54,15 @@ export function collectionPageJsonLd(
     inLanguage: "en-US",
     isPartOf: { "@id": `${SITE_ORIGIN}#website` },
     ...(input.reviewedAt !== undefined && { dateModified: input.reviewedAt }),
-    hasPart: items.map((item) => ({
-      "@type": "ListItem",
-      name: item.title,
-    })),
+    hasPart: items.map((item) => {
+      const itemUrl = absoluteSiteUrl(item.path);
+      return {
+        "@type": "WebPage",
+        "@id": `${itemUrl}#webpage`,
+        url: itemUrl,
+        name: item.title,
+      };
+    }),
   } as const;
 }
 

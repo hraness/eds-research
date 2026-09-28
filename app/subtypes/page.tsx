@@ -9,7 +9,7 @@ import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "EDS subtypes";
+const TITLE = "The 13 types of Ehlers-Danlos syndrome, plus HSD";
 const DESCRIPTION =
   "The 13 Ehlers-Danlos syndrome types in the 2017 classification, plus hypermobility spectrum disorder: genes, inheritance, prevalence, and key features.";
 
@@ -29,7 +29,10 @@ export default async function SubtypesPage() {
     <>
       <JsonLdScript
         data={collectionPageJsonLd(
-          subtypes.map(({ id, name }) => ({ id, title: name })),
+          subtypes.map(({ id, name }) => ({
+            path: `/subtypes/${id}` as const,
+            title: name,
+          })),
           {
             description: DESCRIPTION,
             path: "/subtypes",

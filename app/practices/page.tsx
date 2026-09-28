@@ -9,7 +9,7 @@ import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Practices";
+const TITLE = "EDS care practices and their evidence";
 const DESCRIPTION =
   "Care and management records for the Ehlers-Danlos syndromes, from physical therapy to historical folk practice, with the evidence level and any known risk.";
 

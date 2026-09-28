@@ -6,7 +6,7 @@ import { absoluteSiteUrl, publicSitePath, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Data";
+const TITLE = "EDS Research Index data downloads (YAML)";
 const DESCRIPTION =
   "Download the YAML files behind the EDS Research Index: sources, records, subtypes, searches, open questions, and the log of changes.";
 

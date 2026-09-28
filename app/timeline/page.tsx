@@ -7,7 +7,7 @@ import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Timeline";
+const TITLE = "History of the Ehlers-Danlos syndromes, from 1682";
 const DESCRIPTION =
   "How the idea of Ehlers-Danlos syndrome took shape, from van Meek'ren's 1682 case report to the 2017 classification and the search for an hEDS gene.";
 

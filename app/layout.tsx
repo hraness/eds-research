@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "@hraness/site-footer/stylex.css";
 import "./globals.css";
-import { siteOrganizationJsonLd, websiteJsonLd } from "./seo";
+import { websiteJsonLd } from "./seo";
 import { absoluteSiteUrl, SITE_HOST_ORIGIN, site } from "./site";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
@@ -52,7 +52,7 @@ export default function RootLayout({
     <html lang="en-US">
       <body>
         <JsonLdScript
-          data={[websiteJsonLd(), siteOrganizationJsonLd()]}
+          data={websiteJsonLd()}
           id="eds-research-website-structured-data"
         />
         <div className="site-shell">

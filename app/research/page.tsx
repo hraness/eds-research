@@ -7,7 +7,7 @@ import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Research program";
+const TITLE = "Open questions in EDS research";
 const DESCRIPTION =
   "Open questions the EDS Research Index is tracking, the searches it uses to find new evidence, curated collections, and the log of every change to the data.";
 

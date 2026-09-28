@@ -8,7 +8,7 @@ subtypes:
     genes: [KLK15]
     genetic_status: candidate-emerging
     villefranche_equivalent: EDS type III / hypermobility type
-    prevalence_display: Most common EDS type; diagnosed EDS/HSD prevalence about 1 in 500 in the 2019 Wales cohort, versus older textbook figures near 1 in 5,000
+    prevalence_display: Most common EDS type. In Wales in 2016/2017, 194.2 per 100,000 people (about 1 in 500) had a recorded diagnosis of EDS or joint hypermobility syndrome, all types combined.
     distinguishing_features: Generalized joint hypermobility (Beighton score), musculoskeletal pain, and systemic manifestations; diagnosed clinically under the 2017 three-part criteria because molecular confirmation is not yet available
     summary: The most common EDS type and the only one in the 2017 classification without a confirmed gene. Diagnosis is clinical, under the 2017 criteria. KLK15, published in 2025, is a candidate gene that is not yet used for diagnosis, and the HEDGE study of 1,000 people with hEDS is expected to report further findings.
     source_ids:
@@ -41,9 +41,9 @@ subtypes:
     genes: [COL3A1]
     genetic_status: confirmed-molecular-basis
     villefranche_equivalent: EDS type IV
-    prevalence_display: Estimated around 1 in 50,000 to 1 in 200,000
+    prevalence_display: Rare
     distinguishing_features: Arterial and organ rupture risk, thin translucent skin, characteristic facial features; the highest-acuity EDS type
-    summary: The severe vascular type defined by COL3A1 variants. Arterial dissection and organ rupture drive its distinct management, including cautious surgical and anesthetic approaches and celiprolol debate.
+    summary: Vascular EDS is caused by COL3A1 variants. Arteries, the bowel, and the uterus can tear or rupture, and that risk shapes how surgery and anesthesia are approached.
     source_ids:
       - source-36ad1cab53c4cea4f4b4
       - source-c55aca51ea775bf6d160

@@ -152,6 +152,7 @@ records:
   - id: hist-barabas-1967-vascular
     kind: event
     title: Barabas establishes heterogeneity and the arterial complication profile
+    description: A. P. Barabas showed in 1967 that EDS is more than one disorder and described the form with arterial complications, the forerunner of vascular EDS.
     summary: A. P. Barabas demonstrated that EDS was heterogeneous and delineated the form with arterial complications, the direct ancestor of the vascular subtype (type IV in Villefranche, vEDS today).
     date: "1967"
     date_precision: year

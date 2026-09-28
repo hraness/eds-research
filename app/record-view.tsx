@@ -1,4 +1,5 @@
 import type { ResolvedRecord } from "@/lib/content";
+import type { SubtypeId } from "@/lib/eds-schema";
 import type { ResearchSource } from "@/lib/research-schema";
 import {
   CORROBORATION_LABELS,
@@ -12,9 +13,11 @@ import {
   STRATUM_LABELS,
   SUBTYPE_LABELS,
 } from "./display";
+import { Fragment } from "react";
+
 import { publicSitePath } from "./site";
 
-function SourceLink({ source }: Readonly<{ source: ResearchSource }>) {
+export function SourceLink({ source }: Readonly<{ source: ResearchSource }>) {
   return (
     <li>
       <a href={source.url}>{source.title}</a>
@@ -35,10 +38,10 @@ export function RecordBadges({
 }: Readonly<{ record: ResolvedRecord }>) {
   return (
     <>
-      <span className={`badge badge--status-${record.status}`}>
-        {STATUS_LABELS[record.status]}
-      </span>
       <span className="badge badge--kind">{KIND_LABELS[record.kind]}</span>
+      <span className={`badge badge--status-${record.status}`}>
+        {`evidence: ${STATUS_LABELS[record.status]}`}
+      </span>
       {record.corroboration !== undefined && (
         <span className="badge badge--kind">
           {CORROBORATION_LABELS[record.corroboration]}
@@ -51,6 +54,27 @@ export function RecordBadges({
       )}
     </>
   );
+}
+
+/*
+ * The EDS types a record covers. Named types link to their subtype page,
+ * "all EDS types" links to the subtype list, and "unspecified" stays text.
+ */
+function SubtypeLinks({ ids }: Readonly<{ ids: readonly SubtypeId[] }>) {
+  return ids.map((id, index) => (
+    <Fragment key={id}>
+      {index > 0 && ", "}
+      {id === "unspecified" ? (
+        SUBTYPE_LABELS[id]
+      ) : (
+        <a
+          href={publicSitePath(id === "all-eds" ? "/subtypes" : `/subtypes/${id}`)}
+        >
+          {SUBTYPE_LABELS[id]}
+        </a>
+      )}
+    </Fragment>
+  ));
 }
 
 export function RecordItem({
@@ -115,7 +139,12 @@ export function RecordDetail({
 }: Readonly<{ record: ResolvedRecord }>) {
   return (
     <article>
-      <p className="eyebrow">{record.categoryLabel}</p>
+      <nav aria-label="Breadcrumb" className="eyebrow">
+        <a href={publicSitePath("/")}>EDS Research Index</a> /{" "}
+        <a href={publicSitePath(`/topics/${record.categoryId}`)}>
+          {record.categoryLabel}
+        </a>
+      </nav>
       <h1 className="page-title">{record.title}</h1>
       <div className="record-item__head">
         <RecordBadges record={record} />
@@ -130,7 +159,7 @@ export function RecordDetail({
           <tr>
             <th scope="row">EDS types</th>
             <td>
-              {record.subtypes.map((id) => SUBTYPE_LABELS[id]).join(", ")}
+              <SubtypeLinks ids={record.subtypes} />
             </td>
           </tr>
           {record.date !== undefined && (
@@ -162,7 +191,7 @@ export function RecordDetail({
             </tr>
           )}
           <tr>
-            <th scope="row">Reviewed</th>
+            <th scope="row">Last checked</th>
             <td>{record.reviewed_at}</td>
           </tr>
           {record.reassess_by !== undefined && (

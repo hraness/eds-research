@@ -31,7 +31,7 @@ const STRATUM_SUMMARIES: Record<string, string> = {
 };
 
 export function generateMetadata(): Metadata {
-  const title = `${site.indexTitle}: ${site.tagline}`;
+  const title = `${site.indexTitle}: ${site.tagline.replace(/\.$/u, "")}`;
   return {
     title,
     description: site.description,
@@ -63,6 +63,8 @@ export default async function Home() {
     ({ classification }) => classification === "eds-2017",
   ).length;
 
+  const lastUpdated = research.runs.map(({ date }) => date).sort().at(-1);
+
   const strataCounts = new Map<string, number>();
   for (const record of corpus.records) {
     for (const stratum of new Set(record.evidence.map((e) => e.stratum))) {
@@ -74,7 +76,10 @@ export default async function Home() {
     <>
       <JsonLdScript
         data={collectionPageJsonLd(
-          corpus.records.map(({ id, title }) => ({ id, title })),
+          corpus.records.map(({ id, title }) => ({
+            path: `/records/${id}` as const,
+            title,
+          })),
           { description: site.description, path: "/", title: site.indexTitle },
         )}
         id="eds-research-index-structured-data"
@@ -84,8 +89,10 @@ export default async function Home() {
         Ehlers-Danlos research, sorted by kind of evidence.
       </h1>
       <p className="page-lede">
-        An independent index that links each record&apos;s sources and labels
-        the kind of evidence behind it.
+        For patients, families, and clinicians. Each record links its sources,
+        labels the kind of evidence (clinical study, patient report, registry,
+        historical account, or gray literature), and names the EDS types and
+        diagnostic criteria it covers.
       </p>
       <p className="hero-actions">
         <a
@@ -99,7 +106,7 @@ export default async function Home() {
       <p className="hero-facts">
         {corpus.records.length} records · {research.sources.length} sources ·{" "}
         {edsTypeCount} EDS types, plus HSD · {research.questions.length} open
-        questions · {research.monitors.length} saved searches
+        questions · updated {lastUpdated}
       </p>
       <div className="notice">
         <strong>Not medical advice.</strong> This index describes the evidence
@@ -107,6 +114,15 @@ export default async function Home() {
         any course of care. Historical and folk records describe what was
         done, not what works.
       </div>
+      <p className="section-sub">
+        For clinical summaries of each type, see{" "}
+        <a href="https://www.ncbi.nlm.nih.gov/books/NBK1116/">GeneReviews</a>.
+        For the 2017 hEDS diagnostic checklist, see{" "}
+        <a href="https://www.ehlers-danlos.com/heds-diagnostic-checklist/">
+          The Ehlers-Danlos Society
+        </a>
+        .
+      </p>
 
       <section className="section">
         <h2 className="section-title">Where kinds of evidence agree</h2>
@@ -128,10 +144,9 @@ export default async function Home() {
       <section className="section">
         <h2 className="section-title">Five kinds of evidence</h2>
         <p className="section-sub">
-          Knowledge about rare diseases is scattered. The index files each
-          source under one of five kinds of evidence and grades it on that
-          kind&apos;s own scale, so a pattern seen in patient forums is never
-          scored against a randomized trial.
+          Each source belongs to one of five kinds of evidence and is graded
+          on that kind&apos;s own scale, so a pattern reported in patient
+          forums is never scored against a randomized trial.
         </p>
         <ul className="card-grid">
           {STRATUM_ORDER.map((stratum) => (
