@@ -80,7 +80,7 @@ try {
       const response = await page.goto(origin + path, { waitUntil: 'load' });
       assert.equal(response.status(), path === '/missing-public-verification' ? 404 : 200, label);
       await page.evaluate(async () => { await document.fonts.ready; });
-      assert.match(await page.title(), /EDS Research Index|not found|404/i, label);
+      assert.match(await page.title(), path === '/missing-public-verification' ? /EDS Research Index|hraness\.com\/eds|not found|404/i : /EDS Research Index|hraness\.com\/eds/i, label);
       assert.equal(await page.locator('h1').count(), 1, label);
       assert.equal(await page.locator('#hraness-site-footer').count(), 1, label);
       assert.equal(await page.locator('iframe').count(), 0, 'Retired embedded preview stays absent');
