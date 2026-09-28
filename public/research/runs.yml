@@ -156,7 +156,7 @@ runs:
   - id: run-2026-09-28-seo
     date: "2026-09-28"
     scope: Subtype wording and one record page description, checked against the sources each subtype already lists
-    strata: [clinical]
+    strata: [clinical, historical]
     corrections:
       - target: hist-barabas-1967-vascular
         change: Added a page description. The first summary sentence is longer than 160 characters, and the page description had been cut to "A. P." at the initials. The description restates facts already in the record.

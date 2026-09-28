@@ -90,9 +90,9 @@ export default async function Home() {
       </h1>
       <p className="page-lede">
         For patients, families, and clinicians. Each record links its sources,
-        labels the kind of evidence (clinical study, patient report, registry,
-        historical account, or gray literature), and names the EDS types and
-        diagnostic criteria it covers.
+        labels the kind of evidence (clinical, community, registry, historical,
+        or gray literature), and names the EDS types and diagnostic criteria it
+        covers.
       </p>
       <p className="hero-actions">
         <a
@@ -115,7 +115,7 @@ export default async function Home() {
         done, not what works.
       </div>
       <p className="section-sub">
-        For clinical summaries of each type, see{" "}
+        For clinician-written chapters on several EDS types, see{" "}
         <a href="https://www.ncbi.nlm.nih.gov/books/NBK1116/">GeneReviews</a>.
         For the 2017 hEDS diagnostic checklist, see{" "}
         <a href="https://www.ehlers-danlos.com/heds-diagnostic-checklist/">

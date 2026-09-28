@@ -4,7 +4,7 @@ EDS Research Index is an independent index of Ehlers-Danlos syndromes research f
 
 ## Other EDS references
 
-[The Ehlers-Danlos Society](https://www.ehlers-danlos.com/2017-eds-international-classification/) hosts the 2017 classification and the hEDS diagnostic checklist. [GeneReviews](https://www.ncbi.nlm.nih.gov/books/NBK1116/) has clinician-written chapters on vascular, classical, and hypermobile EDS. [Orphanet](https://www.orpha.net/) lists expert centres and prevalence estimates, and [GARD](https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome) and [NORD](https://rarediseases.org/rare-diseases/ehlers-danlos-syndrome/) have plain-language overviews. This index is narrower. It collects single findings, shows the kind of evidence behind each, and keeps patient reports next to clinical studies without ranking them together.
+[The Ehlers-Danlos Society](https://www.ehlers-danlos.com/2017-eds-international-classification/) hosts the 2017 classification and the hEDS diagnostic checklist. [GeneReviews](https://www.ncbi.nlm.nih.gov/books/NBK1116/) has clinician-written chapters on vascular, classical, and hypermobile EDS. [Orphanet](https://www.orpha.net/) lists expert centers and prevalence estimates, and [GARD](https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome) and [NORD](https://rarediseases.org/rare-diseases/ehlers-danlos-syndrome/) have plain-language overviews. This index is narrower. It lists individual findings, practices, and events, shows the kind of evidence behind each, and keeps patient reports next to clinical studies without ranking them together.
 
 ## Methodology
 

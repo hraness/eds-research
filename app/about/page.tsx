@@ -96,7 +96,7 @@ export default function AboutPage() {
         hosts the 2017 classification and the hEDS diagnostic checklist.{" "}
         <a href="https://www.ncbi.nlm.nih.gov/books/NBK1116/">GeneReviews</a>{" "}
         has clinician-written chapters on vascular, classical, and hypermobile
-        EDS. <a href="https://www.orpha.net/">Orphanet</a> lists expert centres
+        EDS. <a href="https://www.orpha.net/">Orphanet</a> lists expert centers
         and prevalence estimates, and{" "}
         <a href="https://rarediseases.info.nih.gov/diseases/6322/ehlers-danlos-syndrome">
           GARD
@@ -105,9 +105,10 @@ export default function AboutPage() {
         <a href="https://rarediseases.org/rare-diseases/ehlers-danlos-syndrome/">
           NORD
         </a>{" "}
-        have plain-language overviews. This index is narrower. It collects
-        single findings, shows the kind of evidence behind each, and keeps
-        patient reports next to clinical studies without ranking them together.
+        have plain-language overviews. This index is narrower. It lists
+        individual findings, practices, and events, shows the kind of evidence
+        behind each, and keeps patient reports next to clinical studies
+        without ranking them together.
       </p>
 
       <h2>Independence and source code</h2>
