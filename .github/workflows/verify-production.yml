@@ -4,8 +4,9 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: production-public-browser-${{ github.ref }}
-  cancel-in-progress: true
+  # Production verification is evidence for a specific commit; never cancel it.
+  group: production-public-browser-${{ github.sha }}
+  cancel-in-progress: false
 jobs:
   browser:
     runs-on: ubuntu-24.04
@@ -21,12 +22,21 @@ jobs:
         with:
           node-version: 24
           package-manager-cache: false
-      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      - name: Restore Bun install cache
+        id: bun-cache
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.bun/install/cache
           key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
           restore-keys: bun-${{ runner.os }}-
       - run: bun install --frozen-lockfile --ignore-scripts
+      # Only main writes the cache; other refs restore main's entry.
+      - name: Save Bun install cache
+        if: github.ref == 'refs/heads/main' && steps.bun-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
       - name: Verify the live public routes
         env:
           EDS_BROWSER_EXECUTABLE: /usr/bin/google-chrome
