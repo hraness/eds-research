@@ -6,6 +6,7 @@
 - `lib/content.ts` – YAML loading from `unknown`, referential integrity, and corpus resolution.
 - `public/eds-corpus/` – the record corpus: one category file per subject area plus `subtypes.yml`.
 - `public/research/` – sources, venues, monitors, runs, questions, collections, and the publication policy.
+- `app/social.ts` – the one social-image declaration (name, description, domain, app icon, theme) rendered by the shared web-discovery template.
 - `app/` – the public site at `hraness.com/eds` (basePath `/eds`): index, subtypes, topics, records, timeline, practices, community, sources, methodology, research, data, about/contact/privacy, and discovery surfaces.
 - `scripts/` – `source-id.ts` (stable IDs), `audit-eds-research.ts` (integrity + coverage), `submit-indexnow.ts`.
 - `*.test.ts` – schema regressions and corpus-integrity tests over the real data.
@@ -21,6 +22,7 @@
 - Source IDs are derived (`scripts/source-id.ts`); never invent one by hand.
 - The site is not medical advice and never recommends, prescribes, or discourages a course of care. State that once, near the top of a page, rather than repeating it in every section.
 - Pin Hraness dependencies to reviewed immutable releases or full commits.
+- Share images come only from the shared `@hraness/web-discovery` social-image template via the site's single `defineSocialImageSite` declaration in `app/social.ts`. Pages pass copy only (`headline`, `description`, `eyebrow`); no per-site drawing code.
 - Run `bun run check` before handoff.
 
 # Writing and evidence rules for records
