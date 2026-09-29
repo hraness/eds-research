@@ -60,6 +60,15 @@ export default function DataPage() {
         ))}
       </ul>
 
+      <h2>License</h2>
+      <p>
+        These files are licensed under{" "}
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        Credit them as &ldquo;EDS Research Index (hraness.com/eds), CC BY
+        4.0&rdquo; and say whether you changed them. The papers and reports
+        they cite keep their own terms.
+      </p>
+
       <h2>How the files stay consistent</h2>
       <p>
         Each source&apos;s ID is built from its URL and publication date, so

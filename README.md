@@ -44,3 +44,9 @@ bun run research:source-id    # stable source ID for a URL
 The index describes evidence and where it comes from; it does not diagnose, recommend, or discourage any course of care. Community evidence is filed as patient reports. Historical and folk records describe what was done, not what works.
 
 The EDS Research Index is built on a design several Hraness projects share: each record links its sources and labels the kind of evidence, so what the index says can be checked against where it came from. [The thread through hraness](https://hraness.com/writing/the-thread-through-hraness) follows that design across the projects.
+
+## License
+
+The code is available under the [MIT License](LICENSE). The data files in
+`public/eds-corpus/` and `public/research/` are licensed under CC BY 4.0; see
+[DATA_LICENSE.md](DATA_LICENSE.md).

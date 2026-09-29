@@ -10,6 +10,7 @@
 - `app/` – the public site at `hraness.com/eds` (basePath `/eds`): index, subtypes, topics, records, timeline, practices, community, sources, methodology, research, data, about/contact/privacy, and discovery surfaces.
 - `scripts/` – `source-id.ts` (stable IDs), `audit-eds-research.ts` (integrity + coverage), `submit-indexnow.ts`.
 - `*.test.ts` – schema regressions and corpus-integrity tests over the real data.
+- `LICENSE` and `DATA_LICENSE.md` – MIT for the code; CC BY 4.0 for the data files in `public/eds-corpus/` and `public/research/`.
 
 # Guidelines
 
