@@ -409,3 +409,61 @@ article > .record-item__head { margin: 0 0 1rem; }
   --hraness-site-footer-focus: var(--accent);
   --hraness-site-footer-field-background: var(--bg-raised);
 }
+
+/* Annotated record illustration (app/record-anatomy.tsx). The sheet draws
+   with the site's own tokens so it follows the page in light and dark. */
+.record-anatomy {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+.record-anatomy .record-anatomy__sheet {
+  color: var(--ink);
+  font-family: var(--sans);
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05), 0 14px 32px -18px rgb(0 0 0 / 0.3);
+}
+.record-anatomy__sheet p { margin: 0; }
+.record-anatomy__crumb { font-size: 0.75rem; color: var(--ink-faint); }
+.record-anatomy__title { font-weight: 650; font-size: 1.02rem; line-height: 1.35; margin: 0.35rem 0 0.55rem !important; text-wrap: pretty; }
+.record-anatomy__badges { display: flex; flex-wrap: wrap; gap: 0.45rem 0.4rem; align-items: center; }
+.record-anatomy__summary { font-size: 0.86rem; color: var(--ink-soft); margin: 0.7rem 0 0.8rem !important; }
+.record-anatomy__meta { margin: 0; display: grid; gap: 0.35rem; font-size: 0.82rem; border-top: 1px solid var(--line); padding-top: 0.6rem; }
+.record-anatomy__meta > div { display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.5rem; }
+.record-anatomy__meta dt { color: var(--ink-faint); font-weight: 600; font-size: 0.75rem; }
+.record-anatomy__meta dd { margin: 0; }
+.record-anatomy__evidence-label { font-size: 0.75rem; font-weight: 600; color: var(--ink-faint); margin: 0.8rem 0 0.35rem !important; }
+.record-anatomy__evidence { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.record-anatomy__evidence li { display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; align-items: center; padding: 0.45rem 0; border-bottom: 1px solid var(--line); font-size: 0.82rem; }
+.record-anatomy__tier { color: var(--ink-soft); }
+.record-anatomy__sources { color: var(--accent); margin-left: auto; }
+.record-anatomy__part { display: inline-flex; align-items: center; gap: 0.25rem; }
+.record-anatomy__marker {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-raised);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.record-anatomy__caption { font-size: 0.9rem; }
+.record-anatomy__note { margin: 0 0 0.8rem; color: var(--ink-faint); font-size: 0.82rem; }
+.record-anatomy__legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
+.record-anatomy__legend li { display: grid; grid-template-columns: 1.15rem 1fr; gap: 0.6rem; line-height: 1.45; color: var(--ink-soft); }
+.record-anatomy__legend li .record-anatomy__marker { margin-top: 0.12rem; }
+.record-anatomy__legend strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 47.99rem) {
+  .record-anatomy { grid-template-columns: minmax(0, 1fr); }
+  .record-anatomy__meta > div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+}
