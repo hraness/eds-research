@@ -30,6 +30,7 @@ export function websiteJsonLd() {
     description: site.description,
     inLanguage: "en-US",
     publisher: publisherReference,
+    author: publisherReference,
     sameAs: [GITHUB_REPOSITORY_URL],
   } as const;
 }

@@ -5,7 +5,15 @@ import {
   publicSitePath,
   SITE_BASE_PATH,
   SITE_ORIGIN,
+  site,
 } from "./site";
+
+describe("byline", () => {
+  it("credits Hraness and discloses AI drafting", () => {
+    expect(site.author).toBe("Hraness");
+    expect(site.draftingNote).toBe("Drafted with AI assistance.");
+  });
+});
 
 describe("site paths", () => {
   it("maps the root to the base path", () => {
