@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import { CRITERIA_ERA_LABELS, displayDate, STATUS_LABELS } from "../display";
 import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
+import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
@@ -35,6 +36,7 @@ export default async function TimelinePage() {
         diagnostic criteria in force when its sources were written, because a
         1975 cohort and a 2020 hEDS cohort are not the same population.
       </p>
+      <Byline />
       <ol className="timeline">
         {events.map((event) => (
           <li className="timeline__item" key={event.id}>

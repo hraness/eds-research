@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { PRACTICE_KIND_LABELS } from "../display";
 import { RecordItem } from "../record-view";
 import { absoluteSiteUrl, socialMetadata } from "../site";
+import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
@@ -56,6 +57,7 @@ export default async function PracticesPage() {
         labeled by the kind and strength of its evidence. Nothing here is a
         recommendation.
       </p>
+      <Byline />
       <div className="notice">
         <strong>Listed, not recommended.</strong> Folk and historical practices
         are included because people used them. Being listed says nothing about

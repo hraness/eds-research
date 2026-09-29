@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { RecordItem } from "../../record-view";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, socialMetadata } from "../../site";
+import { Byline } from "../../byline";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -85,6 +86,7 @@ export default async function CategoryPage({ params }: PageProps) {
       />
       <h1 className="page-title">{resolved.category.label}</h1>
       <p className="page-lede">{resolved.category.description}</p>
+      <Byline />
       <div className="notice">
         <strong>Not medical advice.</strong> This page summarizes research and
         does not recommend any course of care.

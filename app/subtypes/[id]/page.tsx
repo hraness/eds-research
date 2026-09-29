@@ -13,6 +13,7 @@ import {
 import { RecordItem, SourceLink } from "../../record-view";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../../site";
+import { Byline } from "../../byline";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -99,6 +100,7 @@ export default async function SubtypePage({ params }: PageProps) {
         {subtype.name} ({subtype.abbreviation})
       </h1>
       <p className="page-lede">{subtype.summary}</p>
+      <Byline />
       <div className="notice">
         <strong>Not medical advice.</strong> This page summarizes research and
         does not recommend any course of care.
