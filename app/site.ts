@@ -1,4 +1,7 @@
+import { socialImageAlt } from "@hraness/web-discovery/social-image/card";
 import type { Metadata } from "next";
+
+import { socialSite } from "./social";
 
 export const SITE_DOMAIN = "hraness.com" as const;
 export const SITE_HOST_ORIGIN = `https://${SITE_DOMAIN}` as const;
@@ -19,8 +22,6 @@ export function absoluteSiteUrl(path: SitePath): string {
   return path === "/" ? SITE_ORIGIN : `${SITE_ORIGIN}${path}`;
 }
 
-const SITE_TAGLINE = "Ehlers-Danlos research, sorted by kind of evidence.";
-
 export const site = {
   applicationName: "EDS Research Index",
   datasetDescription:
@@ -30,8 +31,8 @@ export const site = {
   domain: SITE_LABEL,
   indexTitle: "EDS Research Index",
   name: "EDS Research Index",
-  socialImageAlt: `EDS Research Index at ${SITE_LABEL}: ${SITE_TAGLINE}`,
-  tagline: SITE_TAGLINE,
+  socialImageAlt: socialImageAlt(socialSite),
+  tagline: socialSite.description,
   title: `EDS Research Index | ${SITE_LABEL}`,
   titleTemplate: `%s | ${SITE_LABEL}`,
 } as const;
