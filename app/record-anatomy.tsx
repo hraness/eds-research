@@ -21,7 +21,7 @@ import { publicSitePath } from "./site";
  * real text and the picture is one image with a description.
  */
 
-/** The record the homepage and method page use to explain the labels. */
+/** The record the homepage uses to explain the labels. */
 export const ANATOMY_RECORD_ID = "mgmt-lidocaine-resistance";
 
 export const ANATOMY_PARTS = [
