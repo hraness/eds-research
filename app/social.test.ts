@@ -2,10 +2,14 @@ import { describe, expect, it, mock } from "bun:test";
 import { readFileSync } from "node:fs";
 
 import * as socialImage from "@hraness/web-discovery/social-image";
-import { socialImageSiteDetails } from "@hraness/web-discovery/social-image/card";
+import {
+  socialImageFit,
+  socialImageIconShape,
+  socialImageSiteDetails,
+} from "@hraness/web-discovery/social-image/card";
 
 import { SITE_LABEL, site } from "./site";
-import { APP_ICON_SVG, socialSite } from "./social";
+import { APP_ICON_SVG, SOCIAL_CARD_NAME, socialSite } from "./social";
 
 describe("social image declaration", () => {
   it("uses the real app icon from app/icon.svg", () => {
@@ -19,7 +23,8 @@ describe("social image declaration", () => {
   });
 
   it("declares the site's brand copy and light theme", () => {
-    expect(socialSite.name).toBe(site.name);
+    expect(socialSite.name).toBe(SOCIAL_CARD_NAME);
+    expect(site.name.startsWith(SOCIAL_CARD_NAME)).toBe(true);
     expect(socialSite.domain).toBe(SITE_LABEL);
     expect(socialSite.description).toBe(site.tagline);
     expect(socialSite.theme).toEqual({
@@ -38,9 +43,25 @@ describe("social image declaration", () => {
 
   it("feeds the shared template the site details", () => {
     const details = socialImageSiteDetails(socialSite);
-    expect(details.title).toBe("EDS Research Index");
+    expect(details.title).toBe("EDS Research");
     expect(details.domain).toBe("hraness.com/eds");
     expect(details.icon).toEqual(socialSite.icon);
+  });
+});
+
+describe("social image fit", () => {
+  it("lays out the home card as written, with the name on one line", () => {
+    const fit = socialImageFit(socialImageSiteDetails(socialSite));
+    expect(fit.issues).toEqual([]);
+    expect(fit.layout).toBe("product");
+    expect(fit.headline.lines).toEqual([SOCIAL_CARD_NAME]);
+    expect(fit.headline.reduced).toBe(false);
+    expect(fit.description?.cut).toBe("none");
+    expect(fit.removed).toEqual([]);
+  });
+
+  it("draws the app icon as solid full-bleed art", () => {
+    expect(socialSite.icon && socialImageIconShape(socialSite.icon)).toBe("solid");
   });
 });
 
