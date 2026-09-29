@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import { STRATUM_LABELS } from "../display";
 import { absoluteSiteUrl, socialMetadata } from "../site";
+import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
@@ -42,6 +43,7 @@ export default async function ResearchPage() {
         What the index is tracking: open questions, the searches it uses to
         find new evidence, and a log of every change to the data.
       </p>
+      <Byline />
 
       <section className="section">
         <h2 className="section-title">Open questions</h2>

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import { RecordItem } from "../record-view";
 import { absoluteSiteUrl, socialMetadata } from "../site";
+import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
@@ -34,6 +35,7 @@ export default async function CommunityPage() {
         organizations, names the venue rather than any person, and labels them
         as patient reports.
       </p>
+      <Byline />
       <div className="notice">
         <strong>Reports, not proof.</strong> These records describe what
         patients report. When clinical research later supports a pattern, as a

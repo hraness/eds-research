@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { GENETIC_STATUS_LABELS, INHERITANCE_LABELS } from "../display";
 import { collectionPageJsonLd } from "../seo";
 import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../site";
+import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
@@ -50,6 +51,7 @@ export default async function SubtypesPage() {
         alone. Hypermobility spectrum disorder (HSD) covers people with
         symptomatic joint hypermobility who do not meet the hEDS criteria.
       </p>
+      <Byline />
       <ul className="record-list">
         {subtypes.map((subtype) => (
           <li className="record-item" key={subtype.id}>
