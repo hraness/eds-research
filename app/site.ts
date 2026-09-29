@@ -24,6 +24,9 @@ export function absoluteSiteUrl(path: SitePath): string {
 
 export const site = {
   applicationName: "EDS Research Index",
+  /** Visible byline. Pages are drafted with AI assistance and credited to Hraness, never to a named human author. */
+  author: "Hraness",
+  draftingNote: "Drafted with AI assistance.",
   datasetDescription:
     "The YAML files behind the EDS Research Index: the source catalog, research records, subtype registry, searches for new evidence, open questions, and the log of every change.",
   description:

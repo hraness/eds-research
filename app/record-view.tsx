@@ -15,6 +15,7 @@ import {
 } from "./display";
 import { Fragment } from "react";
 
+import { Byline } from "./byline";
 import { publicSitePath } from "./site";
 
 export function SourceLink({ source }: Readonly<{ source: ResearchSource }>) {
@@ -150,6 +151,7 @@ export function RecordDetail({
         <RecordBadges record={record} />
       </div>
       <p className="page-lede">{record.summary}</p>
+      <Byline />
       <div className="notice">
         <strong>Not medical advice.</strong> This page summarizes research and
         does not recommend any course of care.

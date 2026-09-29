@@ -3,6 +3,7 @@ import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import { JsonLdScript } from "@hraness/web-discovery/json-ld";
 import type { Metadata } from "next";
 
+import { Byline } from "./byline";
 import { STRATUM_LABELS } from "./display";
 import { RecordItem } from "./record-view";
 import { collectionPageJsonLd } from "./seo";
@@ -108,6 +109,7 @@ export default async function Home() {
         {edsTypeCount} EDS types, plus HSD · {research.questions.length} open
         questions · updated {lastUpdated}
       </p>
+      <Byline />
       <div className="notice">
         <strong>Not medical advice.</strong> This index describes the evidence
         and where it comes from. It does not diagnose, recommend, or discourage

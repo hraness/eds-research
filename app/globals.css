@@ -218,6 +218,12 @@ main {
   font-variant-numeric: tabular-nums;
 }
 
+.byline {
+  margin: 0 0 1.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
 .section { margin: 0 0 3rem; }
 main > .section, main > article > .section { border-top: 1px solid var(--line); padding-top: 2rem; }
 .section-title {
