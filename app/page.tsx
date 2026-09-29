@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 
 import { Byline } from "./byline";
 import { STRATUM_LABELS } from "./display";
+import { ANATOMY_RECORD_ID, RecordAnatomy } from "./record-anatomy";
 import { RecordItem } from "./record-view";
 import { collectionPageJsonLd } from "./seo";
 import { absoluteSiteUrl, publicSitePath, site, socialMetadata } from "./site";
@@ -49,6 +50,13 @@ export default async function Home() {
     loadSubtypes(),
   ]);
 
+  const anatomyRecord = corpus.records.find(
+    ({ id }) => id === ANATOMY_RECORD_ID,
+  );
+  if (anatomyRecord === undefined) {
+    throw new Error(`Homepage record ${ANATOMY_RECORD_ID} is missing from the corpus.`);
+  }
+
   const featured = corpus.records.filter(
     ({ corroboration, status }) =>
       corroboration === "convergent" &&
@@ -56,8 +64,8 @@ export default async function Home() {
       status !== "refuted",
   );
   const featuredByPriority = [
-    corpus.records.find(({ id }) => id === "mgmt-lidocaine-resistance"),
-    ...featured.filter(({ id }) => id !== "mgmt-lidocaine-resistance"),
+    anatomyRecord,
+    ...featured.filter(({ id }) => id !== ANATOMY_RECORD_ID),
   ].filter((record) => record !== undefined);
 
   const edsTypeCount = subtypes.filter(
@@ -141,6 +149,14 @@ export default async function Home() {
             <RecordItem key={record.id} record={record} />
           ))}
         </ul>
+      </section>
+
+      <section className="section">
+        <h2 className="section-title">How to read a record</h2>
+        <p className="section-sub">
+          Every record carries the same labels. Here is one, numbered.
+        </p>
+        <RecordAnatomy record={anatomyRecord} />
       </section>
 
       <section className="section">
