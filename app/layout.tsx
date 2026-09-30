@@ -1,3 +1,4 @@
+import { SiteAnalytics } from "./site-analytics";
 import { JsonLdScript } from "@hraness/web-discovery/json-ld";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en-US">
       <body>
+        <SiteAnalytics />
         <JsonLdScript
           data={websiteJsonLd()}
           id="eds-research-website-structured-data"

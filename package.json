@@ -41,12 +41,13 @@
     "research:source-id": "bun run scripts/source-id.ts",
     "search:indexnow": "bun run scripts/submit-indexnow.ts",
     "start": "next start",
-    "test": "bun test ./app ./lib ./scripts",
+    "test": "bun test ./app ./lib ./scripts ./analytics.test.ts",
     "typecheck": "tsc --noEmit",
     "check:public-site:browser": "bun scripts/check-public-site-browser.mjs"
   },
   "dependencies": {
     "@hraness/design-kit": "github:hraness/design-kit#v0.30.3",
+    "@hraness/posthog": "github:hraness/posthog#f0e9f89bcca2b8f4536d6bec2eef8762a688502c",
     "@hraness/site-footer": "github:hraness/site-footer#v0.20.1",
     "@hraness/vercel-delivery": "github:hraness/vercel-delivery#v0.1.2",
     "@hraness/web-discovery": "github:hraness/web-discovery#v0.13.0",
