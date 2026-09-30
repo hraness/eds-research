@@ -6,9 +6,9 @@ import { absoluteSiteUrl, publicSitePath, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "EDS Research Index data downloads (YAML)";
+const TITLE = `${site.name} data downloads (YAML)`;
 const DESCRIPTION =
-  "Download the YAML files behind the EDS Research Index: sources, records, subtypes, searches, open questions, and the log of changes.";
+  `Download the YAML files behind the ${site.name}: sources, records, subtypes, searches, open questions, and the log of changes.`;
 
 export function generateMetadata(): Metadata {
   return {
@@ -64,7 +64,7 @@ export default function DataPage() {
       <p>
         These files are licensed under{" "}
         <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
-        Credit them as &ldquo;EDS Research Index (hraness.com/eds), CC BY
+        Credit them as &ldquo;{site.name} ({site.domain}), CC BY
         4.0&rdquo; and say whether you changed them. The papers and reports
         they cite keep their own terms.
       </p>

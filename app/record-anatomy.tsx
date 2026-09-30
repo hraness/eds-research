@@ -12,7 +12,7 @@ import {
   STRATUM_LABELS,
   SUBTYPE_LABELS,
 } from "./display";
-import { publicSitePath } from "./site";
+import { publicSitePath, site } from "./site";
 
 /*
  * An annotated illustration of one real record page. It renders the record
@@ -143,7 +143,7 @@ export function RecordAnatomySheet({
       kind="record"
     >
       <p className="record-anatomy__crumb">
-        EDS Research Index / {record.categoryLabel}
+        {site.name} / {record.categoryLabel}
       </p>
       <p className="record-anatomy__title">{record.title}</p>
       <p className="record-anatomy__badges">

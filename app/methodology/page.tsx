@@ -5,13 +5,13 @@ import type { Metadata } from "next";
 import { clinicalConsensusTiers } from "@/lib/eds-schema";
 
 import { displayTier } from "../display";
-import { absoluteSiteUrl, socialMetadata } from "../site";
+import { absoluteSiteUrl, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Methodology";
 const DESCRIPTION =
-  "How the EDS Research Index sorts sources into five kinds of evidence, grades them within each kind, and schedules records for review.";
+  `How the ${site.name} sorts sources into five kinds of evidence, grades them within each kind, and schedules records for review.`;
 
 export function generateMetadata(): Metadata {
   return {

@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import { describe } from "../../display";
 import { RecordDetail } from "../../record-view";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
-import { absoluteSiteUrl, socialMetadata } from "../../site";
+import { absoluteSiteUrl, socialMetadata, site } from "../../site";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -55,7 +55,7 @@ export default async function RecordPage({ params }: PageProps) {
     <>
       <JsonLdScript
         data={breadcrumbJsonLd([
-          { name: "EDS Research Index", path: "/" },
+          { name: site.name, path: "/" },
           {
             name: record.categoryLabel,
             path: `/topics/${record.categoryId}`,

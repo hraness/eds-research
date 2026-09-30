@@ -16,7 +16,7 @@ import {
 import { Fragment } from "react";
 
 import { Byline } from "./byline";
-import { publicSitePath } from "./site";
+import { publicSitePath, site } from "./site";
 
 export function SourceLink({ source }: Readonly<{ source: ResearchSource }>) {
   return (
@@ -141,7 +141,7 @@ export function RecordDetail({
   return (
     <article>
       <nav aria-label="Breadcrumb" className="eyebrow">
-        <a href={publicSitePath("/")}>EDS Research Index</a> /{" "}
+        <a href={publicSitePath("/")}>{site.name}</a> /{" "}
         <a href={publicSitePath(`/topics/${record.categoryId}`)}>
           {record.categoryLabel}
         </a>

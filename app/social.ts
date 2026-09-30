@@ -1,4 +1,5 @@
 import { defineSocialImageSite } from "@hraness/web-discovery/social-image/card";
+import { productMessaging } from "./product-messaging";
 
 /**
  * The site's app icon, byte-for-byte the same SVG as `app/icon.svg` (the
@@ -14,7 +15,7 @@ export const APP_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 
 `;
 
 /** The name drawn on the share card (see below). */
-export const SOCIAL_CARD_NAME = "EDS Research" as const;
+export const SOCIAL_CARD_NAME = productMessaging.names.name.replace(/ Index$/u, "");
 
 /**
  * The one social-image declaration for this site. Every Open Graph and
@@ -26,7 +27,7 @@ export const SOCIAL_CARD_NAME = "EDS Research" as const;
  * domain and icon on the card carry the rest of the identity.
  */
 export const socialSite = defineSocialImageSite({
-  description: "Ehlers-Danlos research, sorted by kind of evidence.",
+  description: productMessaging.tagline,
   domain: "hraness.com/eds",
   icon: {
     kind: "app",

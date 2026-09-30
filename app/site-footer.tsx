@@ -1,12 +1,12 @@
 import { HranessSiteFooter } from "@hraness/site-footer/react";
-import { GITHUB_REPOSITORY_URL, publicSitePath } from "./site";
+import { GITHUB_REPOSITORY_URL, publicSitePath, site } from "./site";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="site-footer__resources">
-          <span className="site-footer__resources-label">EDS Research Index</span>
+          <span className="site-footer__resources-label">{site.name}</span>
           <nav aria-label="site links">
             <a href={publicSitePath("/research")}>Research program</a>
             <a href={publicSitePath("/data")}>Data</a>
