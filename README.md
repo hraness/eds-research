@@ -50,3 +50,17 @@ The EDS Research Index is built on a design several Hraness projects share: each
 The code is available under the [MIT License](LICENSE). The data files in
 `public/eds-corpus/` and `public/research/` are licensed under CC BY 4.0; see
 [DATA_LICENSE.md](DATA_LICENSE.md).
+
+## Shared website copy
+
+The website imports `portfolio-messaging.generated.json` at build time for its product name, description, hero, and marketing headings. The snapshot records its revision of [the Hraness portfolio](https://hraness.com/portfolio.json), plus canonical facts for related products. Ordinary builds use the checked-in file without a network request.
+
+Change shared copy in the canonical portfolio, refresh the snapshot through the portfolio refresh workflow, review the generated diff, and run `bun run check`. Keep historical records, research findings, and methodology in their repository-owned sources.
+
+From the company repository, include the package projection when refreshing:
+
+```sh
+bun scripts/sync-product-messaging.ts --product eds-research --output /path/to/eds-research/portfolio-messaging.generated.json --package-json /path/to/eds-research/package.json --write
+```
+
+Replace `--write` with `--check` to verify both files without changing them. During a coordinated unpublished update, add `--portfolio portfolio.public.generated.json` to select the validated local portfolio revision. Package description derives from canonical `messaging.meta`; package identity, version, and other fields stay intact.

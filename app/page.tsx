@@ -9,6 +9,7 @@ import { ANATOMY_RECORD_ID, RecordAnatomy } from "./record-anatomy";
 import { RecordItem } from "./record-view";
 import { collectionPageJsonLd } from "./seo";
 import { absoluteSiteUrl, publicSitePath, site, socialMetadata } from "./site";
+import { productHeadings, productMessaging } from "./product-messaging";
 
 export const dynamic = "force-static";
 
@@ -93,24 +94,21 @@ export default async function Home() {
         )}
         id="eds-research-index-structured-data"
       />
-      <p className="eyebrow">Medical research index</p>
+      <p className="eyebrow">{productMessaging.category}</p>
       <h1 className="page-title page-title--hero">
-        Ehlers-Danlos research, sorted by kind of evidence.
+        {productMessaging.hero.heading}
       </h1>
       <p className="page-lede">
-        For patients, families, and clinicians. Each record links its sources,
-        labels the kind of evidence (clinical, community, registry, historical,
-        or gray literature), and names the EDS types and diagnostic criteria it
-        covers.
+        {productMessaging.hero.summary}
       </p>
       <p className="hero-actions">
         <a
           className="hero-actions__primary"
           href={publicSitePath("/subtypes")}
         >
-          Browse the index
+          {productMessaging.hero.primaryAction}
         </a>
-        <a href={publicSitePath("/methodology")}>Read the method</a>
+        <a href={publicSitePath("/methodology")}>{productMessaging.hero.secondaryAction}</a>
       </p>
       <p className="hero-facts">
         {corpus.records.length} records · {research.sources.length} sources ·{" "}
@@ -135,7 +133,7 @@ export default async function Home() {
       </p>
 
       <section className="section">
-        <h2 className="section-title">Where kinds of evidence agree</h2>
+        <h2 className="section-title">{productHeadings.agreement}</h2>
         <p className="section-sub">
           Records where independent studies or reports from more than one kind
           of evidence point the same way. Local anesthetics are the clearest
@@ -152,7 +150,7 @@ export default async function Home() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">How to read a record</h2>
+        <h2 className="section-title">{productHeadings["record-guide"]}</h2>
         <p className="section-sub">
           Every record carries the same labels. Here is one, numbered.
         </p>
@@ -160,7 +158,7 @@ export default async function Home() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Five kinds of evidence</h2>
+        <h2 className="section-title">{productHeadings["evidence-kinds"]}</h2>
         <p className="section-sub">
           Each source belongs to one of five kinds of evidence and is graded
           on that kind&apos;s own scale, so a pattern reported in patient
@@ -184,7 +182,7 @@ export default async function Home() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Browse the index</h2>
+        <h2 className="section-title">{productHeadings.browse}</h2>
         <ul className="card-grid">
           <li className="card">
             <a className="card__link" href={publicSitePath("/subtypes")}>
@@ -264,7 +262,7 @@ export default async function Home() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Categories</h2>
+        <h2 className="section-title">{productHeadings.categories}</h2>
         <ul className="card-grid">
           {corpus.categories.map((category) => (
             <li className="card" key={category.id}>

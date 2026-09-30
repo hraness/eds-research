@@ -6,6 +6,8 @@
 
 # Contents
 
+- `portfolio-messaging.generated.json` and `app/product-messaging.ts` – the checked-in canonical product copy and related-product facts consumed at build time.
+
 - `lib/eds-schema.ts` – the EDS domain contract: five source strata, per-stratum evidence tiers, corroboration states, criteria eras, subtype registry, record lifecycle.
 - `lib/research-schema.ts` – source catalog, venues, monitors, run ledger, questions, collections, publication policy.
 - `lib/source-identity.ts` – deterministic source identity and stable IDs.
@@ -19,6 +21,8 @@
 - `LICENSE` and `DATA_LICENSE.md` – MIT for the code; CC BY 4.0 for the data files in `public/eds-corpus/` and `public/research/`.
 
 # Guidelines
+
+- Keep shared product names, descriptions, hero copy, and marketing section headings in the canonical Hraness portfolio. Import the pinned `portfolio-messaging.generated.json` through `app/product-messaging.ts`; refresh it explicitly and never fetch or rewrite it during a normal build.
 
 - Use Bun 1.3.14 for installs, builds, and tests. One `bun.lock`; no other package manager.
 - Parse every foreign value from `unknown`. Reject unknown keys, duplicate IDs, unresolved references, malformed URLs, wrong-stratum tiers, record tiers that differ from the source catalog, and invalid dates at schema level. The loader fails the build, not the page.

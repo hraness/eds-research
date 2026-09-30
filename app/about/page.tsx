@@ -1,10 +1,12 @@
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
+import { productMessaging } from "../product-messaging";
 
 import {
   absoluteSiteUrl,
   GITHUB_REPOSITORY_URL,
   publicSitePath,
+  site,
   socialMetadata,
 } from "../site";
 
@@ -12,7 +14,7 @@ export const dynamic = "force-static";
 
 const TITLE = "About";
 const DESCRIPTION =
-  "Who publishes the EDS Research Index, why it exists, and the rules it follows for weighing clinical, patient, and historical evidence.";
+  `Who publishes the ${site.name}, why it exists, and the rules it follows for weighing clinical, patient, and historical evidence.`;
 
 export function generateMetadata(): Metadata {
   return {
@@ -29,9 +31,7 @@ export default function AboutPage() {
     <article className="prose">
       <h1 className="page-title">About</h1>
       <p className="page-lede">
-        EDS Research Index is an independent index of Ehlers-Danlos syndromes
-        research for patients and clinicians. Each record links its sources
-        and labels the kind of evidence behind it.
+        {productMessaging.medium}
       </p>
 
       <h2>Why this exists</h2>

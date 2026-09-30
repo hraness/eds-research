@@ -12,7 +12,7 @@ import {
 } from "../../display";
 import { RecordItem, SourceLink } from "../../record-view";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
-import { absoluteSiteUrl, publicSitePath, socialMetadata } from "../../site";
+import { absoluteSiteUrl, publicSitePath, socialMetadata, site } from "../../site";
 import { Byline } from "../../byline";
 
 export const dynamic = "force-static";
@@ -79,7 +79,7 @@ export default async function SubtypePage({ params }: PageProps) {
     <>
       <JsonLdScript
         data={breadcrumbJsonLd([
-          { name: "EDS Research Index", path: "/" },
+          { name: site.name, path: "/" },
           { name: "Subtypes", path: "/subtypes" },
           { name: subtype.abbreviation, path: `/subtypes/${subtype.id}` },
         ])}

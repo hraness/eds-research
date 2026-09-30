@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 
 import { RecordItem } from "../../record-view";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "../../seo";
-import { absoluteSiteUrl, socialMetadata } from "../../site";
+import { absoluteSiteUrl, socialMetadata, site } from "../../site";
 import { Byline } from "../../byline";
 
 export const dynamic = "force-static";
@@ -64,7 +64,7 @@ export default async function CategoryPage({ params }: PageProps) {
       <JsonLdScript
         data={[
           breadcrumbJsonLd([
-            { name: "EDS Research Index", path: "/" },
+            { name: site.name, path: "/" },
             { name: resolved.category.label, path: `/topics/${category}` },
           ]),
           collectionPageJsonLd(

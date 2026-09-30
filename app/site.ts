@@ -2,6 +2,7 @@ import { socialImageAlt } from "@hraness/web-discovery/social-image/card";
 import type { Metadata } from "next";
 
 import { socialSite } from "./social";
+import { productMessaging } from "./product-messaging";
 
 export const SITE_DOMAIN = "hraness.com" as const;
 export const SITE_HOST_ORIGIN = `https://${SITE_DOMAIN}` as const;
@@ -23,20 +24,19 @@ export function absoluteSiteUrl(path: SitePath): string {
 }
 
 export const site = {
-  applicationName: "EDS Research Index",
+  applicationName: productMessaging.names.name,
   /** Visible byline. Pages are drafted with AI assistance and credited to Hraness, never to a named human author. */
   author: "Hraness",
   draftingNote: "Drafted with AI assistance.",
   datasetDescription:
-    "The YAML files behind the EDS Research Index: the source catalog, research records, subtype registry, searches for new evidence, open questions, and the log of every change.",
-  description:
-    "EDS Research Index is an independent, open-source index of Ehlers-Danlos syndromes research that links each record's sources and labels the kind of evidence.",
+    `The YAML files behind the ${productMessaging.names.name}: the source catalog, research records, subtype registry, searches for new evidence, open questions, and the log of every change.`,
+  description: productMessaging.meta,
   domain: SITE_LABEL,
-  indexTitle: "EDS Research Index",
-  name: "EDS Research Index",
+  indexTitle: productMessaging.names.name,
+  name: productMessaging.names.name,
   socialImageAlt: socialImageAlt(socialSite),
-  tagline: socialSite.description,
-  title: `EDS Research Index | ${SITE_LABEL}`,
+  tagline: productMessaging.tagline,
+  title: `${productMessaging.names.name} | ${SITE_LABEL}`,
   titleTemplate: `%s | ${SITE_LABEL}`,
 } as const;
 

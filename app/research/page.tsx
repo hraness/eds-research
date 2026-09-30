@@ -3,14 +3,14 @@ import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
 import { STRATUM_LABELS } from "../display";
-import { absoluteSiteUrl, socialMetadata } from "../site";
+import { absoluteSiteUrl, site, socialMetadata } from "../site";
 import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
 const TITLE = "Open questions in EDS research";
 const DESCRIPTION =
-  "Open questions the EDS Research Index is tracking, the searches it uses to find new evidence, curated collections, and the log of every change to the data.";
+  `Open questions the ${site.name} is tracking, the searches it uses to find new evidence, curated collections, and the log of every change to the data.`;
 
 const MONITOR_KIND_LABELS: Record<string, string> = {
   "literature-query": "literature search",

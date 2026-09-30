@@ -1,13 +1,13 @@
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
-import { absoluteSiteUrl, socialMetadata } from "../site";
+import { absoluteSiteUrl, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Privacy";
 const DESCRIPTION =
-  "What the EDS Research Index collects from readers, and what it does not.";
+  `What the ${site.name} collects from readers, and what it does not.`;
 
 export function generateMetadata(): Metadata {
   return {

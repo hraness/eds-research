@@ -1,13 +1,13 @@
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
-import { absoluteSiteUrl, GITHUB_REPOSITORY_URL, socialMetadata } from "../site";
+import { absoluteSiteUrl, GITHUB_REPOSITORY_URL, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "Contact and corrections";
 const DESCRIPTION =
-  "How to send corrections, source suggestions, and scope notes to the EDS Research Index.";
+  `How to send corrections, source suggestions, and scope notes to the ${site.name}.`;
 
 export function generateMetadata(): Metadata {
   return {

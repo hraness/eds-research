@@ -4,13 +4,13 @@ import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
 import { displayTier, STRATUM_LABELS } from "../display";
-import { absoluteSiteUrl, socialMetadata } from "../site";
+import { absoluteSiteUrl, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
 const TITLE = "EDS research sources by kind of evidence";
 const DESCRIPTION =
-  "Every source the EDS Research Index cites, grouped by kind of evidence, with its evidence level, publisher, and permanent ID.";
+  `Every source the ${site.name} cites, grouped by kind of evidence, with its evidence level, publisher, and permanent ID.`;
 
 export function generateMetadata(): Metadata {
   return {
