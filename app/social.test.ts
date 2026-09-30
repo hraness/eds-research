@@ -46,6 +46,7 @@ describe("social image declaration", () => {
     expect(details.title).toBe("EDS Research");
     expect(details.domain).toBe("hraness.com/eds");
     expect(details.icon).toEqual(socialSite.icon);
+    expect(socialSite.keepTogether).toEqual([SOCIAL_CARD_NAME]);
   });
 });
 
@@ -53,6 +54,7 @@ describe("social image fit", () => {
   it("lays out the home card as written, with the name on one line", () => {
     const fit = socialImageFit(socialImageSiteDetails(socialSite));
     expect(fit.issues).toEqual([]);
+    expect(fit.findings).toEqual([]);
     expect(fit.layout).toBe("product");
     expect(fit.headline.lines).toEqual([SOCIAL_CARD_NAME]);
     expect(fit.headline.reduced).toBe(false);
