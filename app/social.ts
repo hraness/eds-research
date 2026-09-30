@@ -32,6 +32,8 @@ export const socialSite = defineSocialImageSite({
     kind: "app",
     src: `data:image/svg+xml;base64,${Buffer.from(APP_ICON_SVG, "utf8").toString("base64")}`,
   },
+  // Keep the product name whole if a card ever has to wrap it.
+  keepTogether: [SOCIAL_CARD_NAME],
   name: SOCIAL_CARD_NAME,
   theme: {
     accent: "#2c5f8a",
