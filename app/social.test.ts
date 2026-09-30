@@ -4,33 +4,31 @@ import { readFileSync } from "node:fs";
 import * as socialImage from "@hraness/web-discovery/social-image";
 import {
   socialImageFit,
-  socialImageIconShape,
   socialImageSiteDetails,
 } from "@hraness/web-discovery/social-image/card";
 
 import { SITE_LABEL, site } from "./site";
-import { APP_ICON_SVG, SOCIAL_CARD_NAME, socialSite } from "./social";
+import { productMessaging } from "./product-messaging";
+import { homeSocialPage, socialSite } from "./social";
 
 describe("social image declaration", () => {
-  it("uses the real app icon from app/icon.svg", () => {
-    const iconFile = readFileSync(new URL("./icon.svg", import.meta.url), "utf8");
-    expect(APP_ICON_SVG).toBe(iconFile);
-    expect(socialSite.icon?.kind).toBe("app");
-    const src = socialSite.icon?.src ?? "";
-    expect(src.startsWith("data:image/svg+xml;base64,")).toBe(true);
-    const decoded = Buffer.from(src.split(",")[1] ?? "", "base64").toString("utf8");
-    expect(decoded).toBe(iconFile);
-  });
-
-  it("declares the site's brand copy and light theme", () => {
-    expect(socialSite.name).toBe(SOCIAL_CARD_NAME);
-    expect(site.name.startsWith(SOCIAL_CARD_NAME)).toBe(true);
+  it("draws the header as the site shows it: text brand, no mark", () => {
+    expect(socialSite.brand).toBe(site.name);
+    expect(socialSite.name).toBe(site.name);
+    expect(socialSite.brandMark).toBeUndefined();
+    expect(socialSite).not.toHaveProperty("icon");
+    expect(socialSite).not.toHaveProperty("palette");
     expect(socialSite.domain).toBe(SITE_LABEL);
     expect(socialSite.description).toBe(site.tagline);
+  });
+
+  it("takes its theme from the page's own colours", () => {
     expect(socialSite.theme).toEqual({
       accent: "#2c5f8a",
       background: "#faf9f7",
       foreground: "#1c1a17",
+      headerBackground: "#faf9f7",
+      line: "#e4e0d8",
       muted: "#57534b",
     });
     const css = readFileSync(new URL("./globals.css", import.meta.url), "utf8");
@@ -39,31 +37,29 @@ describe("social image declaration", () => {
     expect(root).toContain("--bg: #faf9f7;");
     expect(root).toContain("--ink: #1c1a17;");
     expect(root).toContain("--ink-soft: #57534b;");
+    expect(root).toContain("--line: #e4e0d8;");
+    expect(css).toMatch(/\.site-header \{[^}]*background: var\(--bg\);/u);
   });
 
-  it("feeds the shared template the site details", () => {
-    const details = socialImageSiteDetails(socialSite);
-    expect(details.title).toBe("EDS Research");
-    expect(details.domain).toBe("hraness.com/eds");
-    expect(details.icon).toEqual(socialSite.icon);
-    expect(socialSite.keepTogether).toEqual([SOCIAL_CARD_NAME]);
+  it("uses the hero's eyebrow and headline on the home card", () => {
+    expect(homeSocialPage).toEqual({
+      description: "",
+      eyebrow: productMessaging.category,
+      headline: productMessaging.hero.heading,
+      layout: "product",
+    });
   });
 });
 
 describe("social image fit", () => {
-  it("lays out the home card as written, with the name on one line", () => {
-    const fit = socialImageFit(socialImageSiteDetails(socialSite));
+  it("lays out the home card as written", () => {
+    const fit = socialImageFit(socialImageSiteDetails(socialSite, homeSocialPage));
     expect(fit.issues).toEqual([]);
     expect(fit.findings).toEqual([]);
     expect(fit.layout).toBe("product");
-    expect(fit.headline.lines).toEqual([SOCIAL_CARD_NAME]);
-    expect(fit.headline.reduced).toBe(false);
-    expect(fit.description?.cut).toBe("none");
+    expect(fit.headline).toMatchObject({ reduced: false, threeLine: false, truncated: false });
+    expect(fit.description).toBeUndefined();
     expect(fit.removed).toEqual([]);
-  });
-
-  it("draws the app icon as solid full-bleed art", () => {
-    expect(socialSite.icon && socialImageIconShape(socialSite.icon)).toBe("solid");
   });
 });
 
@@ -84,7 +80,7 @@ describe("opengraph-image route", () => {
     expect(route.alt).toBe(site.socialImageAlt);
     const response = route.default();
     expect(response.headers.get("content-type")).toBe("image/png");
-    expect(calls).toEqual([[socialSite]]);
+    expect(calls).toEqual([[socialSite, homeSocialPage]]);
     const png = new Uint8Array(await response.arrayBuffer());
     expect([...png.slice(1, 4)]).toEqual([0x50, 0x4e, 0x47]);
   });
