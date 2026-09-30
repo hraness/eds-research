@@ -1,8 +1,10 @@
+import { SiteNotFoundAnalytics } from "./site-analytics";
 import { publicSitePath } from "./site";
 
 export default function NotFound() {
   return (
     <article className="prose">
+      <SiteNotFoundAnalytics />
       <h1 className="page-title">Not found</h1>
       <p>
         There is no page at this address. Record addresses do not change, so

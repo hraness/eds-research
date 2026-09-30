@@ -1,10 +1,14 @@
 "use client";
 
+import { SiteExceptionAnalytics } from "./site-analytics";
+
 export default function Error({
+  error,
   reset,
 }: Readonly<{ error: Error; reset: () => void }>) {
   return (
     <article className="prose">
+      <SiteExceptionAnalytics error={error} />
       <h1 className="page-title">Something went wrong</h1>
       <p>
         This page did not load. The data behind it is unaffected, and every
