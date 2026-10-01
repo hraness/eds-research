@@ -275,6 +275,7 @@ article > .record-item__head { margin: 0 0 1rem; }
 
 .badge {
   display: inline-block;
+  max-inline-size: 100%;
   font-size: 0.75rem;
   font-weight: 550;
   line-height: 1.4;
@@ -282,7 +283,8 @@ article > .record-item__head { margin: 0 0 1rem; }
   border-radius: 0.3rem;
   border: 1px solid var(--line);
   color: var(--ink-soft);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .badge--status-established { color: var(--established); border-color: var(--established); }
 .badge--status-probable { color: var(--probable); border-color: var(--probable); }
