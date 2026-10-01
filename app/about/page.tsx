@@ -12,7 +12,7 @@ import {
 
 export const dynamic = "force-static";
 
-const TITLE = "About";
+const TITLE = "About the EDS Research Index";
 const DESCRIPTION =
   `Who publishes the ${site.name}, why it exists, and the rules it follows for weighing clinical, patient, and historical evidence.`;
 

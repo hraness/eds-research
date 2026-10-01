@@ -8,6 +8,7 @@ import { RecordItem } from "../../record-view";
 import { breadcrumbJsonLd, collectionPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, socialMetadata, site } from "../../site";
 import { Byline } from "../../byline";
+import { CATEGORY_SEARCH_DESCRIPTIONS, CATEGORY_SEARCH_TITLES } from "../../search-metadata";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -40,15 +41,16 @@ export async function generateMetadata({
   const resolved = await resolve(category);
   if (resolved === undefined) return {};
   const label = resolved.category.label;
-  const title = `EDS ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
+  const title = CATEGORY_SEARCH_TITLES[category] ?? `EDS ${label.charAt(0).toLowerCase()}${label.slice(1)}`;
+  const description = CATEGORY_SEARCH_DESCRIPTIONS[category] ?? resolved.category.description;
   return {
     title,
-    description: resolved.category.description,
+    description,
     alternates: { canonical: absoluteSiteUrl(`/topics/${category}`) },
     robots: INDEXABLE_ROBOTS,
     ...socialMetadata(
       `${title} | hraness.com/eds`,
-      resolved.category.description,
+      description,
       `/topics/${category}`,
     ),
   };

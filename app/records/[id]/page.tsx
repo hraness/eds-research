@@ -4,8 +4,8 @@ import { JsonLdScript } from "@hraness/web-discovery/json-ld";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { describe } from "../../display";
 import { RecordDetail } from "../../record-view";
+import { recordSearchDescription, recordSearchTitle } from "../../search-metadata";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, socialMetadata, site } from "../../site";
 
@@ -32,14 +32,15 @@ export async function generateMetadata({
   const { id } = await params;
   const record = await resolve(id);
   if (record === undefined) return {};
-  const description = record.description ?? describe(record.summary);
+  const title = recordSearchTitle(record);
+  const description = recordSearchDescription(record);
   return {
-    title: record.title,
+    title,
     description,
     alternates: { canonical: absoluteSiteUrl(`/records/${id}`) },
     robots: INDEXABLE_ROBOTS,
     ...socialMetadata(
-      `${record.title} | hraness.com/eds`,
+      `${title} | hraness.com/eds`,
       description,
       `/records/${id}`,
     ),

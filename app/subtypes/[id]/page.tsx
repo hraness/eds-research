@@ -6,7 +6,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import {
-  describe,
   GENETIC_STATUS_LABELS,
   INHERITANCE_LABELS,
 } from "../../display";
@@ -14,6 +13,7 @@ import { RecordItem, SourceLink } from "../../record-view";
 import { breadcrumbJsonLd, webPageJsonLd } from "../../seo";
 import { absoluteSiteUrl, publicSitePath, socialMetadata, site } from "../../site";
 import { Byline } from "../../byline";
+import { subtypeSearchDescription, subtypeSearchTitle } from "../../search-metadata";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -39,8 +39,8 @@ export async function generateMetadata({
   const { id } = await params;
   const subtype = await resolve(id);
   if (subtype === undefined) return {};
-  const title = `${subtype.name} (${subtype.abbreviation})`;
-  const description = describe(subtype.summary);
+  const title = subtypeSearchTitle(subtype);
+  const description = subtypeSearchDescription(subtype);
   return {
     title,
     description,
