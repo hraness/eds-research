@@ -10,7 +10,7 @@ import { Byline } from "../byline";
 
 export const dynamic = "force-static";
 
-const TITLE = "The 13 types of Ehlers-Danlos syndrome, plus HSD";
+const TITLE = "Ehlers-Danlos syndrome types and HSD";
 const DESCRIPTION =
   "The 13 Ehlers-Danlos syndrome types in the 2017 classification, plus hypermobility spectrum disorder: genes, inheritance, prevalence, and key features.";
 

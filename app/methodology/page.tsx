@@ -9,7 +9,7 @@ import { absoluteSiteUrl, site, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Methodology";
+const TITLE = "EDS research methodology";
 const DESCRIPTION =
   `How the ${site.name} sorts sources into five kinds of evidence, grades them within each kind, and schedules records for review.`;
 

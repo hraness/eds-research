@@ -34,13 +34,13 @@ const STRATUM_SUMMARIES: Record<string, string> = {
 };
 
 export function generateMetadata(): Metadata {
-  const title = `${site.indexTitle}: ${site.tagline.replace(/\.$/u, "")}`;
+  const title = `${site.indexTitle}: Ehlers-Danlos research`;
   return {
-    title,
+    title: { absolute: title },
     description: site.description,
     alternates: { canonical: absoluteSiteUrl("/") },
     robots: INDEXABLE_ROBOTS,
-    ...socialMetadata(`${title} | ${site.domain}`, site.description, "/"),
+    ...socialMetadata(title, site.description, "/"),
   };
 }
 

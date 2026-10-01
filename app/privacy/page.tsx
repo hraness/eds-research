@@ -1,13 +1,13 @@
 import { INDEXABLE_ROBOTS } from "@hraness/web-discovery";
 import type { Metadata } from "next";
 
-import { absoluteSiteUrl, site, socialMetadata } from "../site";
+import { absoluteSiteUrl, socialMetadata } from "../site";
 
 export const dynamic = "force-static";
 
-const TITLE = "Privacy";
+const TITLE = "EDS Research Index privacy";
 const DESCRIPTION =
-  `What the ${site.name} collects from readers, and what it does not.`;
+  "The EDS Research Index uses PostHog for visits and errors, and Hraness Accounts for signup and regional consent notices.";
 
 export function generateMetadata(): Metadata {
   return {
