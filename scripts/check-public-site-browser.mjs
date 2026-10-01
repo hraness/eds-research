@@ -3,9 +3,10 @@ import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createServer } from 'node:net';
-import { isAbsolute, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { chromium } from 'playwright-core';
+import { ownedBrowserOptions, pinnedBrowserExecutable } from './pinned-browser.ts';
 
 const { values } = parseArgs({ options: { production: { type: 'boolean', default: false } }, strict: true });
 const repository = resolve(import.meta.dirname, '..');
@@ -53,9 +54,9 @@ try {
     server.once('error', error => errors.push(`Server: ${error.message}`));
     await until(async () => { assert.equal(server.exitCode, null, 'Owned Next server exited'); return fetch(origin, { signal: AbortSignal.timeout(1000) }).then(r => r.ok, () => false); }, 'Next production server', 30000);
   }
-  const executablePath = process.env.EDS_BROWSER_EXECUTABLE;
-  if (executablePath) assert.ok(isAbsolute(executablePath), 'Explicit browser executable must be absolute');
-  browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : { channel: 'chrome' }) });
+  const executablePath = pinnedBrowserExecutable(chromium.executablePath(), process.env.EDS_BROWSER_EXECUTABLE);
+  browser = await chromium.launch(ownedBrowserOptions(executablePath));
+  console.log(`Browser: ${executablePath} (${browser.version()})`);
   for (const width of [360, 390, 1440]) for (const theme of ['light', 'dark']) {
     const context = await browser.newContext({ viewport: { width, height: width === 360 ? 740 : width === 390 ? 844 : 900 }, colorScheme: theme, reducedMotion: 'reduce', serviceWorkers: 'block' });
     const page = await context.newPage(); activePage = page;
@@ -80,6 +81,8 @@ try {
       const response = await page.goto(origin + path, { waitUntil: 'load' });
       assert.equal(response.status(), path === '/missing-public-verification' ? 404 : 200, label);
       await page.evaluate(async () => { await document.fonts.ready; });
+      // Regional consent resolves after hydration and changes the footer footprint.
+      await page.locator("[data-consent-state]:not([data-consent-state=\"checking\"]):not([hidden])").waitFor({ state: "visible" });
       assert.match(await page.title(), path === '/missing-public-verification' ? /EDS Research Index|hraness\.com\/eds|not found|404/i : /EDS Research Index|hraness\.com\/eds/i, label);
       assert.equal(await page.locator('h1').count(), 1, label);
       assert.equal(await page.locator('#hraness-site-footer').count(), 1, label);
