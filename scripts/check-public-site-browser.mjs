@@ -81,6 +81,8 @@ try {
       const response = await page.goto(origin + path, { waitUntil: 'load' });
       assert.equal(response.status(), path === '/missing-public-verification' ? 404 : 200, label);
       await page.evaluate(async () => { await document.fonts.ready; });
+      // Regional consent resolves after hydration and changes the footer footprint.
+      await page.locator("[data-consent-state]:not([data-consent-state=\"checking\"]):not([hidden])").waitFor({ state: "visible" });
       assert.match(await page.title(), path === '/missing-public-verification' ? /EDS Research Index|hraness\.com\/eds|not found|404/i : /EDS Research Index|hraness\.com\/eds/i, label);
       assert.equal(await page.locator('h1').count(), 1, label);
       assert.equal(await page.locator('#hraness-site-footer').count(), 1, label);
