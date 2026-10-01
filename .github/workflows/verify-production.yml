@@ -37,9 +37,9 @@ jobs:
         with:
           path: ~/.bun/install/cache
           key: bun-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+      - name: Install the pinned browser
+        run: node node_modules/playwright-core/cli.js install --with-deps chromium
       - name: Verify the live public routes
-        env:
-          EDS_BROWSER_EXECUTABLE: /usr/bin/google-chrome
         run: bun run check:public-site:browser --production
       - name: Save public page screenshots
         if: always()
