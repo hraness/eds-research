@@ -42,12 +42,16 @@ export async function verifySettledConsentFlow(page, { allowHidden = false, scre
           const overlapping = [...document.querySelectorAll('footer a, footer button, footer summary, [data-hraness-marketing="footer"] a')]
             .filter(target => !element.contains(target) && intersects(target.getBoundingClientRect()))
             .map(target => ({ text: target.textContent.trim(), label: target.getAttribute("aria-label") }));
-          return { position: getComputedStyle(element).position, insideFooter: !!bounds && rect.top >= bounds.top - 1 && rect.bottom <= bounds.bottom + 1 && rect.left >= bounds.left - 1 && rect.right <= bounds.right + 1, overlapping, overflow: document.documentElement.scrollWidth > innerWidth + 1, width: rect.width, height: rect.height };
+          const overflowing = [...document.querySelectorAll("main *, header, footer")].filter(target => {
+            const box = target.getBoundingClientRect();
+            return box.left < -1 || box.right > innerWidth + 1;
+          }).slice(0, 12).map(target => ({ tag: target.tagName, className: target.className, text: target.textContent.trim().slice(0, 80), left: target.getBoundingClientRect().left, right: target.getBoundingClientRect().right }));
+          return { position: getComputedStyle(element).position, insideFooter: !!bounds && rect.top >= bounds.top - 1 && rect.bottom <= bounds.bottom + 1 && rect.left >= bounds.left - 1 && rect.right <= bounds.right + 1, overlapping, overflow: document.documentElement.scrollWidth > innerWidth + 1, overflowing, width: rect.width, height: rect.height };
         });
         assert.equal(metrics.position, "relative", `${state}/${scale}/${position}: settled preferences must stay in document flow`);
         assert.equal(metrics.insideFooter, true, `${state}/${scale}/${position}: preferences outside shared footer`);
         assert.deepEqual(metrics.overlapping, [], `${state}/${scale}/${position}: preferences cover footer controls`);
-        assert.equal(metrics.overflow, false, `${state}/${scale}/${position}: page overflows`);
+        assert.equal(metrics.overflow, false, `${state}/${scale}/${position}: page overflows ${JSON.stringify(metrics.overflowing)}`);
         samples.push({ state, scale, scrollPosition: position, ...metrics });
         if (screenshot) await screenshot({ page, state, scale, position });
       }
