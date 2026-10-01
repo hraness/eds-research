@@ -32,15 +32,17 @@ export default async function MethodologyPage() {
     <article className="prose">
       <h1 className="page-title">Methodology</h1>
       <p className="page-lede">
-        Rare diseases are studied differently from common ones. Trials are few,
-        patient communities sometimes notice problems years before the
-        literature does, and the diagnostic criteria for EDS have changed three
-        times in forty years. This page sets out the rules the index follows.
-        The site checks some of them automatically when it builds; the rest
-        depend on editorial review.
+        Each finding names its sources, the EDS types it applies to, and the
+        diagnostic criteria used by those sources. Clinical studies, patient
+        reports, and historical accounts are assessed separately.
       </p>
 
-      <h2>1. Five kinds of evidence</h2>
+      <p className="notice">
+        <strong>Not medical advice.</strong> The index describes research. It
+        does not diagnose or recommend a course of care.
+      </p>
+
+      <h2>Five kinds of evidence</h2>
       <p>
         Every source is filed under exactly one of five kinds of evidence, and
         every record lists its evidence by kind. The kinds are never merged
@@ -71,19 +73,18 @@ export default async function MethodologyPage() {
         </li>
       </ul>
 
-      <h2>2. Evidence levels within each kind</h2>
+      <h2>Evidence levels within each kind</h2>
       <p>
         Each kind of evidence has its own scale, so a randomized trial and a
         recurring forum pattern are never ranked against each other. The
         clinical scale runs from systematic review to case report, the
         community scale from structured patient survey to individual account,
         and the historical scale from primary historical document to folk
-        tradition. The build rejects a record that gives a source a level from
-        the wrong scale, or a level different from the one in the source
-        catalog.
+        tradition. A source has the same evidence level wherever it appears
+        in the index.
       </p>
 
-      <h2>3. When kinds of evidence agree or disagree</h2>
+      <h2>When kinds of evidence agree or disagree</h2>
       <p>
         A record whose evidence spans more than one kind states how that
         evidence relates: <strong>convergent</strong> when independent studies
@@ -97,7 +98,7 @@ export default async function MethodologyPage() {
         trial.
       </p>
 
-      <h2>4. Diagnostic criteria</h2>
+      <h2>Diagnostic criteria</h2>
       <p>
         What counted as &ldquo;EDS&rdquo; changed with each classification. The
         1997 Villefranche nosology consolidated the types to six, and the 2017
@@ -108,7 +109,7 @@ export default async function MethodologyPage() {
         2017 is not read as a study of hEDS as defined today.
       </p>
 
-      <h2>5. EDS types</h2>
+      <h2>EDS types</h2>
       <p>
         Every record names the EDS types it applies to. A finding about hEDS is
         not applied to vEDS or other types with a known gene: the conditions
@@ -116,7 +117,7 @@ export default async function MethodologyPage() {
         apply to all types say so.
       </p>
 
-      <h2>6. How settled each claim is</h2>
+      <h2>How settled each claim is</h2>
       <ul>
         <li>
           Established: at least one clinical source at one of these levels:{" "}
@@ -147,7 +148,7 @@ export default async function MethodologyPage() {
         </li>
       </ul>
 
-      <h2>7. Review dates</h2>
+      <h2>Review dates</h2>
       <p>
         Every record carries the date it was last reviewed. Emerging,
         contested, and community-signal records cannot be published without a
@@ -155,11 +156,11 @@ export default async function MethodologyPage() {
         {policy.reassessment_days.emerging} days for emerging records,{" "}
         {policy.reassessment_days.contested} for contested,{" "}
         {policy.reassessment_days.community_signal} for community signals, and{" "}
-        {policy.reassessment_days.established} for established records. The
-        build does not enforce these intervals.
+        {policy.reassessment_days.established} for established records. These
+        are review targets, not a guarantee that a review has taken place.
       </p>
 
-      <h2>8. Publication policy</h2>
+      <h2>Publication policy</h2>
       <p>These rules are quoted from the published policy file:</p>
       <ul>
         {policy.rules.map((rule) => (
@@ -176,7 +177,7 @@ export default async function MethodologyPage() {
         emerging.
       </p>
 
-      <h2>9. Searches and the change log</h2>
+      <h2>Searches and the change log</h2>
       <p>
         The index lists the searches it uses to find new evidence (PubMed,
         ClinicalTrials.gov, society news, preprint servers, guideline bodies,
@@ -186,13 +187,6 @@ export default async function MethodologyPage() {
         entries are not edited.
       </p>
 
-      <h2>10. What this index does not do</h2>
-      <p>
-        It does not diagnose. It does not recommend or discourage any course of
-        care for any individual. It does not treat forum reports as clinical
-        evidence, and it does not treat documented folk practice as treatment.
-        When evidence is weak or contradictory, the record says so and says why.
-      </p>
     </article>
   );
 }

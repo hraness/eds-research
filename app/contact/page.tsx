@@ -37,13 +37,6 @@ export default function ContactPage() {
         For a new source, send its URL and publication date.
       </p>
 
-      <h2>What corrections do</h2>
-      <p>
-        Each correction is added to the change log as a new entry that names
-        what changed and why. A record found to be wrong is marked refuted, or
-        revised with the change logged; it is not silently rewritten.
-      </p>
-
       <h2>What this channel is not for</h2>
       <p>
         Personal medical questions cannot be answered here. Community evidence

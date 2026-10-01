@@ -45,8 +45,8 @@ records:
   - id: folk-diet-supportive
     kind: practice
     title: Diet, tonics, and general constitutional support
-    description: Historical management of fragile connective tissue included diets and general tonics. None has a validated mechanism in EDS.
-    summary: Historical management of connective-tissue fragility included dietary measures and general constitutional tonics, the usual response to a poorly understood systemic condition before specific therapies existed. None has a validated mechanism in EDS.
+    description: Historical management of fragile connective tissue included diets and general tonics.
+    summary: Historical management of connective-tissue fragility included dietary measures and general constitutional tonics, the usual response to a poorly understood systemic condition before specific therapies existed.
     date: "1900"
     date_precision: century
     subtypes: [unspecified]
@@ -58,7 +58,4 @@ records:
         tier: retrospective-account
         source_ids: [source-5c33d96b50581fbe82f8]
     reviewed_at: "2026-09-16"
-    risk:
-      level: caution
-      note: No dietary measure has validated evidence as an EDS treatment.
     tags: [diet, constitutional]

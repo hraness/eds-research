@@ -89,9 +89,9 @@ records:
     tags: [cci, tethered-cord, contested]
   - id: com-gi-dysautonomia-cluster
     kind: finding
-    title: GI dysmotility and autonomic features are documented comorbidity domains
-    description: A 2017 review describes digestive dysmotility and autonomic problems, including POTS, as common comorbidities in hEDS and HSD.
-    summary: The 2017 series and subsequent cohort work document gastrointestinal dysmotility (reflux, gastroparesis, constipation) and autonomic dysfunction (orthostatic intolerance, POTS) as leading comorbidity domains in hEDS/HSD. In a 2025 survey at a German EDS clinic, musculoskeletal pain and joint instability were the most common first symptoms.
+    title: Digestive and autonomic problems are reported with hEDS and HSD
+    description: Tinkle and colleagues review digestive and autonomic problems in hEDS. A German clinic survey reports their effects on daily activities.
+    summary: Tinkle and colleagues describe digestive and autonomic problems among the conditions reported with hEDS in their 2017 review. Autonomic problems affect functions such as heart rate and blood pressure. In Rauterberg and colleagues’ 2025 German clinic survey, 31 of 80 respondents with hEDS or HSD reported digestive complaints severely affecting daily activities (38.8%), and 25 of 80 reported autonomic complaints at that level (31.3%). Respondents could report both kinds of complaint.
     subtypes: [heds, hsd]
     status: probable
     criteria_era: international-2017
