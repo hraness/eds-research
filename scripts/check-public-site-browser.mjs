@@ -3,9 +3,10 @@ import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createServer } from 'node:net';
-import { isAbsolute, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { chromium } from 'playwright-core';
+import { ownedBrowserOptions, pinnedBrowserExecutable } from './pinned-browser.ts';
 
 const { values } = parseArgs({ options: { production: { type: 'boolean', default: false } }, strict: true });
 const repository = resolve(import.meta.dirname, '..');
@@ -53,9 +54,9 @@ try {
     server.once('error', error => errors.push(`Server: ${error.message}`));
     await until(async () => { assert.equal(server.exitCode, null, 'Owned Next server exited'); return fetch(origin, { signal: AbortSignal.timeout(1000) }).then(r => r.ok, () => false); }, 'Next production server', 30000);
   }
-  const executablePath = process.env.EDS_BROWSER_EXECUTABLE;
-  if (executablePath) assert.ok(isAbsolute(executablePath), 'Explicit browser executable must be absolute');
-  browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : { channel: 'chrome' }) });
+  const executablePath = pinnedBrowserExecutable(chromium.executablePath(), process.env.EDS_BROWSER_EXECUTABLE);
+  browser = await chromium.launch(ownedBrowserOptions(executablePath));
+  console.log(`Browser: ${executablePath} (${browser.version()})`);
   for (const width of [360, 390, 1440]) for (const theme of ['light', 'dark']) {
     const context = await browser.newContext({ viewport: { width, height: width === 360 ? 740 : width === 390 ? 844 : 900 }, colorScheme: theme, reducedMotion: 'reduce', serviceWorkers: 'block' });
     const page = await context.newPage(); activePage = page;
