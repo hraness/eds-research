@@ -37,10 +37,9 @@ export default async function SourcesPage() {
     <>
       <h1 className="page-title">Source catalog</h1>
       <p className="page-lede">
-        {research.sources.length} sources in five categories. Each has a
-        permanent ID built from its URL and publication date. Every source a
-        record cites appears here, with the same evidence level the record
-        gives it.
+        {research.sources.length} sources, grouped by kind of evidence. Each
+        entry links to the original and names its publisher and study design
+        or source type.
       </p>
       {STRATUM_ORDER.map((stratum) => {
         const sources = research.sources.filter(

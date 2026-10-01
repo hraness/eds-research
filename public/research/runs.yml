@@ -171,3 +171,36 @@ runs:
         change: Prevalence now gives the 2019 Wales figure with its value and population (194.2 per 100,000 in 2016/2017, EDS and joint hypermobility syndrome combined) and drops the "older textbook figures near 1 in 5,000", which no listed source reports as a result.
         evidence: Demmler et al. 2019, BMJ Open, doi 10.1136/bmjopen-2019-031365, PubMed 31685485 abstract, results (6,021 people; diagnosed point prevalence 194.2 per 100,000 in 2016/2017), checked on 2026-09-28.
     notes: Wording and data corrections only. No record ID, source, tier, or citation changed. Drafted by an AI agent (Claude Code) during the 2026-09-28 search and copy pass; no independent human review is recorded.
+  - id: run-2026-10-01-editorial
+    date: "2026-10-01"
+    scope: Clarify clinic survey populations and hEDS criteria
+    strata: [clinical, community, historical]
+    notes: Corrected specific details and wording after an editorial audit. Earlier event, publication, source-check, and record-review dates are preserved; this run records the date and scope of these corrections. Drafted by a Codex AI agent and independently reviewed by a second Codex AI agent for the listed changes. No human or clinical review is recorded.
+    corrections:
+      - target: px-german-cohort-manifestations
+        change: Corrected the population from adults diagnosed at Cologne to adults attending its EDS clinic. Added classical and classical-like EDS to the subtype scope, and gave each daily-activity percentage with its count and item denominator of 98.
+        evidence: Rauterberg et al., 2025, DOI 10.1186/s13023-025-03937-4, Results and Additional file 2; checked 2026-10-01. Of 99 respondents, 67 were diagnosed at Cologne and 32 elsewhere. The daily-activity table includes 98 respondents (80 hEDS/HSD and 18 classical/classical-like EDS).
+      - target: px-fatigue-underrecognized
+        change: Scoped the 32.7% figure to all 98 daily-activity respondents and added the hEDS/HSD subgroup result, 27 of 80 (33.8%). Added classical and classical-like EDS to the record scope and removed the broad population claim from the title.
+        evidence: Rauterberg et al., 2025, Additional file 2, Fatigue row, reports 32/98 overall and 27/80 for hEDS/HSD; https://media.springernature.com/original/springer-static/esm/art%3A10.1186%2Fs13023-025-03937-4/MediaObjects/13023_2025_3937_MOESM2_ESM.docx, checked 2026-10-01.
+      - target: com-gi-dysautonomia-cluster
+        change: Replaced the unrelated sentence about first musculoskeletal symptoms with digestive and autonomic daily-activity results for the 80 hEDS/HSD respondents. Defined autonomic problems and simplified the title.
+        evidence: Rauterberg et al., 2025, Additional file 2, reports digestive complaints in 31/80 hEDS/HSD respondents (38.8%) and autonomic complaints in 25/80 (31.3%); multiple complaints were allowed. The existing Tinkle et al. 2017 review supports the clinical context.
+      - target: signal-subluxation-load
+        change: Removed the unsupported statement about whether subluxation counts toward diagnosis and simplified the title. The record continues to describe community self-management discussions.
+        evidence: This record cites community venues only; they do not support a clinical diagnostic-criterion claim. No new diagnostic claim was substituted.
+      - target: class-heds-2017-criteria
+        change: Corrected the title so it does not imply systemic manifestations are mandatory in every hEDS diagnosis. Clarified that criterion 2 requires at least two of three feature groups.
+        evidence: The already-cited 2017 International Classification and hEDS checklist specify two or more of features A, B, and C; the previous record body already preserved that distinction but its title did not.
+      - target: class-molecular-confirmation-required
+        change: Removed the editorial claim that the lack of an hEDS test is the central classification problem. Preserved the 2017 distinction and added a complete description for search and sharing.
+        evidence: The cited 2017 classification supports molecular confirmation for the other twelve subtypes and clinical diagnosis for hEDS, without ranking this as the central problem.
+      - target: class-hsd-residual-category
+        change: Simplified the title and removed the undated assertion that a criteria review study is ongoing.
+        evidence: The record cites the 2017 framework and the 2025 clinic survey, neither of which establishes a study's current recruitment or publication status in October 2026.
+      - target: class-criteria-era-drift
+        change: Replaced the abstract title with a description of the diagnostic-criteria difference between older hypermobility-type studies and 2017 hEDS studies.
+        evidence: The two existing classification sources and the record body are unchanged.
+      - target: folk-diet-supportive
+        change: Removed present-day claims that no dietary measure has a validated mechanism or evidence for treating EDS, including the risk note based solely on that assertion. Preserved the historical account, date, status, and source.
+        evidence: The record cites a 2008 historical review, not a current clinical efficacy review. Its publisher page could not be read on 2026-10-01. This correction makes no new claim about treatment effectiveness, safety, or the historical account's accuracy.

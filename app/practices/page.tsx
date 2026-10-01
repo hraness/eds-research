@@ -54,8 +54,7 @@ export default async function PracticesPage() {
       <p className="page-lede">
         How EDS is managed today and how it was managed in the past. Clinical
         guidance and historical folk practice appear on the same page, each
-        labeled by the kind and strength of its evidence. Nothing here is a
-        recommendation.
+        labeled by the kind and strength of its evidence.
       </p>
       <Byline />
       <div className="notice">

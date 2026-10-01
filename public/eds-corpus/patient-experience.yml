@@ -54,10 +54,10 @@ records:
   - id: px-german-cohort-manifestations
     kind: finding
     title: Pain and joint instability lead the symptoms reported at a German EDS clinic
-    summary: A survey of 99 adults diagnosed at the EDS clinic of University Hospital Cologne, 80 of them with hEDS or HSD, was published in 2025. Musculoskeletal pain and joint instability, including repeated subluxations and dislocations, were the most common first symptoms. Pain was the problem respondents most often said severely affected daily activities (60.2%), followed by joint instability (38.8%), other orthopedic problems (36.7%), digestive complaints (35.7%), and fatigue (32.7%). The results come from one specialist clinic.
+    summary: Rauterberg and colleagues found that pain was the complaint most often reported to severely affect daily activities at a German EDS clinic. Their 2025 paper surveyed 99 adults attending University Hospital Cologne, including 80 with hEDS or HSD, 16 with classical EDS, and three with classical-like EDS. Of the 98 who answered the daily-activity question, 59 reported musculoskeletal pain (60.2%), 38 joint instability (38.8%), 36 other orthopedic problems (36.7%), 35 digestive complaints (35.7%), and 32 fatigue (32.7%). Respondents could name more than one complaint. These figures describe one specialist clinic.
     date: "2025"
     date_precision: year
-    subtypes: [heds, hsd]
+    subtypes: [heds, hsd, ceds, cleds]
     status: probable
     criteria_era: international-2017
     evidence:
@@ -68,10 +68,10 @@ records:
     tags: [manifestations, cohort]
   - id: px-fatigue-underrecognized
     kind: finding
-    title: Fatigue severely limits daily life for many people with hEDS or HSD
-    description: In a 2025 survey at a German EDS clinic, 32.7% of respondents said fatigue severely affected their daily activities.
-    summary: In a 2025 survey at a German EDS clinic, 32.7% of respondents said fatigue severely affected their daily activities, after pain, joint instability, other orthopedic problems, and digestive complaints. Fatigue is not one of the 2017 hEDS diagnostic criteria.
-    subtypes: [heds, hsd]
+    title: Fatigue severely affected daily activities for one-third of a German clinic sample
+    description: Rauterberg and colleagues found that 32 of 98 adults with EDS or HSD at a German clinic reported fatigue severely affecting daily activities.
+    summary: Rauterberg and colleagues found that 32 of 98 adults at a German EDS clinic reported fatigue severely affecting daily activities (32.7%). The 2025 study included people with hEDS, HSD, classical EDS, and classical-like EDS. Within the hEDS/HSD group, 27 of 80 respondents reported this level of fatigue (33.8%). Fatigue is not one of the 2017 hEDS diagnostic criteria.
+    subtypes: [heds, hsd, ceds, cleds]
     status: probable
     criteria_era: international-2017
     evidence:

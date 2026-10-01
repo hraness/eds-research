@@ -24,19 +24,19 @@ export default function PrivacyPage() {
     <article className="prose">
       <h1 className="page-title">Privacy</h1>
       <p className="page-lede">
-        This site is a static publication. Reading it needs no account, and
-        the index collects nothing from readers beyond what any web server
-        sees in a request. The shared Hraness footer is the one exception,
-        described below.
+        You can read the index without an account. The site uses PostHog to
+        measure visits, selected link clicks, performance, and errors. Email
+        signup and regional consent checks use Hraness Accounts.
       </p>
 
       <h2>What the site collects</h2>
       <p>
-        The pages are pre-rendered static documents served through a CDN.
-        There is no account system, no comment system, no tracker owned by
-        this site, and no advertising. Standard hosting logs (request path,
-        timestamp, user agent) are handled by the hosting provider under its
-        own policy.
+        PostHog receives page visits, selected link clicks, performance
+        measurements, and error reports from the public site. Analytics uses
+        memory-only state rather than tracking cookies, does not create
+        person profiles or record sessions, and respects Do Not Track and
+        your analytics preferences. Standard hosting logs are handled by the
+        hosting provider under its own policy.
       </p>
 
       <h2>The shared Hraness footer</h2>
@@ -61,9 +61,9 @@ export default function PrivacyPage() {
 
       <h2>Health information</h2>
       <p>
-        This site describes research; it does not ask for, store, or process
-        any reader&apos;s health information. Do not send medical records or
-        personal health details through any channel associated with this index.
+        The site has no medical-record uploads or personal-health
+        questionnaires. Please omit medical records and personal health details
+        from correction requests.
       </p>
     </article>
   );

@@ -7,9 +7,9 @@ category:
 records:
   - id: class-heds-2017-criteria
     kind: finding
-    title: The 2017 hEDS criteria require hypermobility, systemic manifestations, and exclusion
-    description: The 2017 hEDS criteria require joint hypermobility, two or more further features, and exclusion of other conditions. No genetic test confirms hEDS.
-    summary: hEDS diagnosis under the 2017 International Classification requires (1) generalized joint hypermobility by Beighton score, (2) two or more of systemic manifestations, positive family history, or musculoskeletal complications, and (3) exclusion of other connective-tissue disorders. Unlike every other subtype, hEDS has no molecular confirmation test.
+    title: The 2017 hEDS diagnosis requires all three sets of criteria
+    description: The 2017 classification requires joint hypermobility, two of three further feature groups, and exclusions for an hEDS diagnosis.
+    summary: "hEDS diagnosis under the 2017 International Classification requires (1) generalized joint hypermobility by Beighton score, (2) at least two of three feature groups: systemic manifestations, a positive family history, and musculoskeletal complications, and (3) exclusion of other connective-tissue disorders. Unlike every other subtype, hEDS has no molecular confirmation test."
     date: "2017-03"
     date_precision: month
     subtypes: [heds, hsd]
@@ -29,7 +29,8 @@ records:
   - id: class-molecular-confirmation-required
     kind: finding
     title: Twelve subtypes require molecular confirmation; hEDS remains clinical
-    summary: "Under the 2017 classification, definitive diagnosis of every subtype except hEDS relies on identifying a causative genetic variant. This asymmetry is the central classification problem: the most common type is the only one without a confirmatory test."
+    description: The 2017 classification requires molecular confirmation for twelve EDS subtypes. hEDS is diagnosed from clinical criteria.
+    summary: "Under the 2017 classification, definitive diagnosis of every subtype except hEDS relies on identifying a causative genetic variant. hEDS is diagnosed from clinical criteria."
     date: "2017-03"
     date_precision: month
     subtypes: [all-eds]
@@ -43,8 +44,8 @@ records:
     tags: [diagnosis, genetics]
   - id: class-hsd-residual-category
     kind: finding
-    title: HSD was created as the residual category beside hEDS
-    summary: The 2017 framework (Castori et al.) separated symptomatic joint hypermobility into hEDS when the strict criteria are met and HSD when they are not. The boundary is contested. The criteria were designed to define a more uniform group for research, not to declare HSD benign, and the hEDS/HSD criteria review study is ongoing.
+    title: The 2017 framework defines HSD for symptomatic joint hypermobility
+    summary: The 2017 framework (Castori et al.) separated symptomatic joint hypermobility into hEDS when the strict criteria are met and HSD when they are not. The boundary is contested. The criteria were designed to define a more uniform group for research, not to declare HSD benign.
     date: "2017-03"
     date_precision: month
     subtypes: [hsd, heds]
@@ -62,7 +63,7 @@ records:
     tags: [diagnosis, hsd]
   - id: class-criteria-era-drift
     kind: finding
-    title: Criteria-era drift makes old and new EDS literature non-equivalent
+    title: Older hypermobility-type studies use different diagnostic criteria
     summary: Villefranche-era “EDS type III” cohorts (1997–2017) do not map cleanly onto 2017 hEDS. The 2017 criteria are stricter, and some people who met the older hypermobility-type criteria would now be diagnosed with HSD. Studies that mix eras need to be read with that in mind.
     subtypes: [all-eds]
     status: established

@@ -7,8 +7,8 @@ category:
 records:
   - id: signal-subluxation-load
     kind: signal
-    title: Subluxation, braces, taping, and joint-stabilization self-management
-    summary: Much of the practical discussion in patient communities is about joints that partly slip out of place (subluxation) rather than fully dislocate. Members swap taping, bracing, and stabilizing techniques, often for subluxations no doctor has confirmed. Clinical literature treats subluxation as close to, but not itself, a diagnostic criterion; the community discussion is about day-to-day management rather than diagnosis.
+    title: Patients share ways to manage joints that partly slip out of place
+    summary: Much of the practical discussion in patient communities is about joints that partly slip out of place (subluxation) rather than fully dislocate. Members swap taping, bracing, and stabilizing techniques, often for subluxations no doctor has confirmed.
     subtypes: [heds, hsd, ceds]
     status: community-signal
     criteria_era: era-independent
