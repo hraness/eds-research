@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import { verifyPublicationLinks } from './verify-publication-links.mjs';
+import { verifySettledConsentFlow } from './verify-settled-consent.mjs';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -83,11 +85,20 @@ try {
       await page.evaluate(async () => { await document.fonts.ready; });
       // Regional consent resolves after hydration and changes the footer footprint.
       await page.locator("[data-consent-state]:not([data-consent-state=\"checking\"]):not([hidden])").waitFor({ state: "visible" });
+      const settledConsent = path === '/' ? await verifySettledConsentFlow(page) : undefined;
       assert.match(await page.title(), path === '/missing-public-verification' ? /EDS Research Index|hraness\.com\/eds|not found|404/i : /EDS Research Index|hraness\.com\/eds/i, label);
       assert.equal(await page.locator('h1').count(), 1, label);
       assert.equal(await page.locator('#hraness-site-footer').count(), 1, label);
       assert.equal(await page.locator('iframe').count(), 0, 'Retired embedded preview stays absent');
       assert.equal(await page.locator('body').evaluate(element => getComputedStyle(element).backgroundColor), theme === 'dark' ? 'rgb(23, 21, 18)' : 'rgb(250, 249, 247)', `${label}: resolved system appearance`);
+      const publicationLinks = ['/about', '/sources'].includes(path)
+        ? await verifyPublicationLinks(page, [
+            path === '/about'
+              ? { name: 'article', selector: 'main .prose a[href]', required: true }
+              : { name: 'sources', selector: 'main .source-list a[href]', required: true },
+            { name: 'footer', selector: '.site-footer__resources a[href]', required: true },
+          ])
+        : undefined;
       const screenshot = await page.screenshot({ path: resolve(artifacts, `${label}.png`), fullPage: true, animations: 'disabled' });
       assert.equal(screenshot.readUInt32BE(16), width, `${label}: full-page screenshot width`);
       const metrics = await page.evaluate(() => {
@@ -116,7 +127,7 @@ try {
       const moved = await page.evaluate(() => ({ scroll: scrollY, header: document.querySelector('.site-header').getBoundingClientRect().top, footer: document.querySelector('#hraness-site-footer').getBoundingClientRect().top }));
       assert.ok(Math.abs(moved.header) <= 1, `${label}: sticky chrome`);
       assert.ok(Math.abs(moved.footer + moved.scroll - metrics.footer.top) <= 2, `${label}: footer scrolls with document`);
-      records.push({ route: path, width, theme, status: response.status(), metrics });
+      records.push({ route: path, width, theme, status: response.status(), metrics, publicationLinks, settledConsent });
     }
     await page.goto(origin, { waitUntil: 'load' });
     await page.getByRole('link', { name: 'Browse the index', exact: true }).click();

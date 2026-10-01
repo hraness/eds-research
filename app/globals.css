@@ -275,6 +275,7 @@ article > .record-item__head { margin: 0 0 1rem; }
 
 .badge {
   display: inline-block;
+  max-inline-size: 100%;
   font-size: 0.75rem;
   font-weight: 550;
   line-height: 1.4;
@@ -282,7 +283,8 @@ article > .record-item__head { margin: 0 0 1rem; }
   border-radius: 0.3rem;
   border: 1px solid var(--line);
   color: var(--ink-soft);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .badge--status-established { color: var(--established); border-color: var(--established); }
 .badge--status-probable { color: var(--probable); border-color: var(--probable); }
@@ -464,6 +466,12 @@ article > .record-item__head { margin: 0 0 1rem; }
 .record-anatomy__legend li { display: grid; grid-template-columns: 1.15rem 1fr; gap: 0.6rem; line-height: 1.45; color: var(--ink-soft); }
 .record-anatomy__legend li .record-anatomy__marker { margin-top: 0.12rem; }
 .record-anatomy__legend strong { color: var(--ink); font-weight: 600; }
+@media (forced-colors: active) {
+  a[href], a[href]:is(:hover, :focus-visible) {
+    color: LinkText;
+    text-decoration-color: LinkText;
+  }
+}
 @media (max-width: 47.99rem) {
   .record-anatomy { grid-template-columns: minmax(0, 1fr); }
   .record-anatomy__meta > div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
