@@ -12,6 +12,21 @@ Each kind of evidence has its own scale of evidence levels, and a record gives e
 
 The full methodology is on the site at [/eds/methodology](https://hraness.com/eds/methodology).
 
+## Read a record and its sources
+
+Open [topics](https://hraness.com/eds/topics), choose a record, then follow its source links to the cited publications. Use the [source catalog](https://hraness.com/eds/sources) to look up each source's evidence kind and level, not as a single score across different kinds of evidence. Use [subtypes](https://hraness.com/eds/subtypes) to check which subtype the record covers. A review date records an index check; it is not a recommendation for your care.
+
+## Read the YAML data
+
+The [data downloads](https://hraness.com/eds/data) include records and their source catalog. For a nonclinical first example, download the community venue directory and list its IDs and access requirements with Bun 1.3.14:
+
+```sh
+curl --fail --location --output venues.yml https://hraness.com/eds/research/venues.yml
+bun -e 'import { YAML } from "bun"; const data = YAML.parse(await Bun.file("venues.yml").text()); console.log(data.schema); for (const venue of data.venues) console.log(venue.id, venue.access, venue.url);'
+```
+
+The first line is `eds-research/venues/v1`; each following line identifies a venue, its recorded access requirement, and its URL. This lists venues, not individual posts or patient identities. For record data, resolve `source_ids` against `public/research/sources.yml`; the [corpus schema](lib/eds-schema.ts) and [research schema](lib/research-schema.ts) define the fields. Credit reused data and identify your changes as described in [DATA_LICENSE.md](DATA_LICENSE.md). The cited papers and reports keep their own terms.
+
 ## Repository layout
 
 - `lib/`: Zod schemas (`eds-schema`, `research-schema`), stable source identity, and the content loader with referential-integrity checks.
