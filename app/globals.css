@@ -380,6 +380,8 @@ article > .record-item__head { margin: 0 0 1rem; }
 .prose ul, .prose ol { margin: 0 0 1rem; padding-left: 1.4rem; max-width: 42rem; }
 .prose li { margin-bottom: 0.4rem; }
 .prose code { font-family: var(--mono); font-size: 0.85em; background: var(--bg-raised); border: 1px solid var(--line); border-radius: 0.25rem; padding: 0.05em 0.35em; }
+.prose pre { font-family: var(--mono); font-size: 0.8rem; line-height: 1.5; background: var(--bg-raised); border: 1px solid var(--line); border-radius: 0.35rem; margin: 0 0 1rem; max-width: 44rem; overflow-x: auto; padding: 0.75rem; }
+.prose pre code { background: none; border: 0; font-size: inherit; padding: 0; }
 
 .site-footer {
   border-top: 1px solid var(--line);
