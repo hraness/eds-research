@@ -4,6 +4,7 @@ import { JsonLdScript } from "@hraness/web-discovery/json-ld";
 import type { Metadata } from "next";
 
 import { Byline } from "./byline";
+import { FounderNote } from "./founder-note";
 import { STRATUM_LABELS } from "./display";
 import { ANATOMY_RECORD_ID, RecordAnatomy } from "./record-anatomy";
 import { RecordItem } from "./record-view";
@@ -115,6 +116,14 @@ export default async function Home() {
         {edsTypeCount} EDS types, plus HSD · {research.questions.length} open
         questions · updated {lastUpdated}
       </p>
+      <FounderNote
+        action={{ label: "Browse the index:", href: "https://hraness.com/eds" }}
+        emoji="🧬"
+        paragraphs={[
+          "EDS Research Index collects Ehlers-Danlos syndromes research record by record. Each entry links its sources and labels the kind of evidence behind it, so a reader can tell a cohort study from a case report.",
+        ]}
+        signature="Ben Guo"
+      />
       <Byline />
       <div className="notice">
         <strong>Not medical advice.</strong> This index describes the evidence
