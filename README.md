@@ -1,5 +1,13 @@
 # EDS Research Index
 
+> 🧬 EDS Research Index collects Ehlers-Danlos syndromes research record by
+> record. Each entry links its sources and labels the kind of evidence behind
+> it, so a reader can tell a cohort study from a case report.
+>
+> Browse the index: https://hraness.com/eds
+>
+> — Ben Guo
+
 EDS Research Index is an independent index of Ehlers-Danlos syndromes research for patients and clinicians. Each record links its sources and labels the kind of evidence behind it. It is published at [hraness.com/eds](https://hraness.com/eds) as a reference, not medical advice.
 
 ## Other EDS references
