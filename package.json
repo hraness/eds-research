@@ -41,7 +41,7 @@
     "research:source-id": "bun run scripts/source-id.ts",
     "search:indexnow": "bun run scripts/submit-indexnow.ts",
     "start": "next start",
-    "test": "bun test ./app ./lib ./scripts ./analytics.test.ts",
+    "test": "bun test ./app ./lib ./scripts ./analytics.test.ts ./next-config.test.ts",
     "typecheck": "tsc --noEmit",
     "check:public-site:browser": "bun scripts/check-public-site-browser.mjs"
   },
@@ -68,6 +68,7 @@
     "typescript": "6.0.3"
   },
   "overrides": {
-    "fast-glob": "npm:tinyglobby@0.2.17"
+    "fast-glob": "npm:tinyglobby@0.2.17",
+    "source-map-js": "^1.2.2"
   }
 }
