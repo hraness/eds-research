@@ -1,5 +1,7 @@
 # EDS Research Index
 
+> **Retired.** EDS Research Index is no longer maintained, and the hosted index is discontinued. The source and research records are preserved under their existing licenses. The documentation below describes the archived project.
+
 > 🧬 EDS Research Index collects Ehlers-Danlos syndromes research record by
 > record. Each entry links its sources and labels the kind of evidence behind
 > it, so a reader can tell a cohort study from a case report.
